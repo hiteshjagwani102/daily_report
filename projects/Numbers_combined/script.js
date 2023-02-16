@@ -473,8 +473,17 @@ var convert = document.getElementById('convert');
 convert.addEventListener('click',()=>{
     var input = document.getElementById('input').value;
     var output = document.getElementById('output');
-
-    output.value = wordsToNumbers(input);
-    
-
+    var format =document.getElementById("formatted");
+    if(format.checked){
+      const arr = wordsToNumbers(input).split("\n");
+      var str = "";
+      for(let i=0;i<arr.length;i++){
+        str+=parseInt(arr[i]).toLocaleString('en-US').toString();
+        str+="\n";
+      }
+      output.value = str;
+    }
+    else{
+      output.value = wordsToNumbers(input);
+    }
 })
