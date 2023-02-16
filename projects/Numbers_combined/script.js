@@ -475,16 +475,20 @@ convert.addEventListener('click',()=>{
     var output = document.getElementById('output');
     var format =document.getElementById("formatted");
     if(format.checked){
-      const arr = wordsToNumbers(input).split("\n");
-      var str = "";
-      for(let i=0;i<arr.length;i++){
-        str+=parseInt(arr[i]).toLocaleString('en-US').toString();
-        str+="\n";
-      }
-      output.value = str;
+        output.value = wordsToNumbers(input);
+    const arr = output.value.split("\n");
+    output.value = "";
+    for(let i=0;i<arr.length;i++){
+      output.value+=parseInt(arr[i]).toLocaleString('en-US').toString();
+      output.value+="\n";
+    }
     }
     else{
       output.value = wordsToNumbers(input);
-      
     }
+    // output.value = parseInt(wordsToNumbers(input)).toLocaleString('en-US').toString();
+    
+    
+    
+
 })
