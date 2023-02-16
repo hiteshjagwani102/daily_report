@@ -485,5 +485,6 @@ convert.addEventListener('click',()=>{
     }
     else{
       output.value = wordsToNumbers(input);
+      
     }
 })
