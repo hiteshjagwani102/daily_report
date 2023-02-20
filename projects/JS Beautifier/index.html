@@ -14,9 +14,15 @@
     <h1 class="title">JS Beautifier</h1>
     <section class="section">
             <div class="columns has-text-centered">
-                <div class="column is-5-desktop is-12">
-                    <div id="tools_menu" style="height:30px; background-color: darkslategrey;">
-                        <div></div>
+                <div class="column is-5-desktop is-12 p-0" style="border: 1px solid #4a4a4a;">
+                    <div id="tools_menu" class="mb-0" style="height:30px; background-color: darkslategrey;">
+                        <div class="has-text-right pr-5">
+                            <ion-icon name="trash-sharp" id="clear1" style="color:white"></ion-icon>
+                            <ion-icon name="copy-sharp" id="copy1" style="color:white"></ion-icon>
+                            <ion-icon name="download-sharp" id="download1" style="color:white"></ion-icon>
+                            <ion-icon name="duplicate-sharp" id="upload1" style="color:white"></ion-icon>
+                            
+                        </div>
                     </div>
                     <div  id="editor1"></div>
                     <div id="tools_menu" style="height:20px; background-color: lightgray;">
@@ -28,8 +34,8 @@
                         <button class="button is-primary" id="beautify">Beautify JS</button>
                     </div>
                 </div>
-                <div class="column is-5-desktop is-12">
-                    <div id="tools_menu" style="height:30px; background-color: darkslategrey;">
+                <div class="column is-5-desktop is-12 p-0" style="border: 1px solid #4a4a4a;">
+                    <div id="tools_menu" class="mb-0" style="height:30px; background-color: darkslategrey;">
                         <div></div>
                     </div>
                     <div  id="editor2"></div>
@@ -44,23 +50,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify.min.js"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.15.1/ace.js" integrity="sha512-CfVYqNC369iSfGgZbSujTgySaSOMo+zxwXu2s9hNKiWmPGFNpXZn69kJ9tLMfwKGtZk86ZufAN1Q9EVranSAaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    var editor1 = ace.edit("editor1");
-    editor1.setOptions({
-        placeholder: "Type or copy you code here...",
-    })
-    document.getElementById('editor1').style.fontSize='15px';
-    editor1.session.setMode("ace/mode/javascript");
-    var editor2 = ace.edit("editor2");
-    document.getElementById('editor2').style.fontSize='15px';
-    editor2.session.setMode("ace/mode/javascript");
-    var beautify = document.getElementById('beautify');
-    beautify.addEventListener('click',() =>{
-        const options = { indent_size: 4, space_in_empty_paren: true,}
-        let js = editor1.getValue();
-        editor2.setValue(js_beautify(js,options));
-    });
-
-</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" referrerpolicy="no-referrer"></script>
+<script type="module" src="index.js" ></script>
 </body>
 </html>
