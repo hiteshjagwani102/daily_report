@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>HTML Viewer</title>
+</head>
+<body>
+    <!-- header -->
+    <div id="navbar">
+        <nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <link rel="icon" type="image/x-icon" href="./">
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item"  href="#" style="color: aliceblue;">Home</a>
+                    <a class="navbar-item" href="#" style="color: aliceblue;">About Us</a>
+                    <a class="navbar-item" href="#" style="color: aliceblue;">Contact Us</a>
+                </div>
+            </div>
+    </nav>
+    </div>
+
+    <!-- main content -->
+    <section class="section">
+        <div class="container">
+            <div class="converter columns has-text-centered">
+                <!-- input -->
+                <div class="column is-5-desktop is-12 p-0 editor" style="border: 1px solid #4a4a4a;">
+                    <div class="tools_menu_top" class="mb-0" style="height:30px; background-color: #363636">
+                        <div class="pr-3 pt-1">
+                            <p class="is-pulled-left has-text-white pl-3">Input</p>
+                            <ion-icon name="trash-sharp" class="is-pulled-right pl-1" id="clear1" style="color:#9563e6"></ion-icon>
+                            <ion-icon name="copy-sharp" class="is-pulled-right pl-1" id="copy1" style="color:#9563e6"></ion-icon>
+                            <ion-icon name="download-sharp" class="is-pulled-right pl-1" id="download1" style="color:#9563e6"></ion-icon>
+                            <ion-icon name="duplicate-sharp" class="is-pulled-right pl-1" id="upload1" style="color:#9563e6"></ion-icon>
+                            
+                        </div>
+                    </div>
+                    <div  id="input"></div>
+                    <div class="tools_menu_bottom" style="height:30px; background-color: #3d3d3d ;">
+                        <div>
+                            <h1 class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a id="increase1">T</a></h1>
+                            <h1 class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a id="decrease1">T</a></h1>
+                            <p class="is-pulled-left pt-1 pl-2" id="pointer1"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- buttons -->
+                <div class="column is-2">
+                    <div class="container">
+                        <button class="button is-primary mb-5" id="beautify">Beautify HTML</button>
+                    </div>
+                    <div class="container">
+                        <button class="button is-info" id="minify">Minify HTML</button>
+                    </div>
+                </div>
+
+                <!-- output -->
+                <div class="column is-5-desktop is-12 p-0 editor" style="border: 1px solid #4a4a4a;">
+                    <div class="tools_menu_top" class="mb-0" style="height:30px; background-color: #363636;">
+                        <div class="pr-3 pt-1">
+                            <p class="is-pulled-left has-text-white pl-3">Output</p>
+                            <ion-icon name="trash-sharp" class="is-pulled-right pl-1" id="clear2" style="color:#9563e6"></ion-icon>
+                            <ion-icon name="copy-sharp" class="is-pulled-right pl-1" id="copy2" style="color:#9563e6"></ion-icon>
+                            <ion-icon name="download-sharp" class="is-pulled-right pl-1" id="download2" style="color:#9563e6"></ion-icon>
+                            <ion-icon name="duplicate-sharp" class="is-pulled-right pl-1" id="upload2" style="color:#9563e6"></ion-icon>
+                            
+                        </div>
+                    </div>
+                    <div  id="output"></div>
+                    <div class="tools_menu_bottom" style="height:30px; background-color: #3d3d3d ;">
+                        <div>
+                            <h1 class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a id="increase2">T</a></h1>
+                            <h1 class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a id="decrease2">T</a></h1>
+                            <p class="is-pulled-left pt-1 pl-2" id="pointer2"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- links -->
+
+
+    <!-- footer -->
+    
+    <section class="section">
+            <hr style="height:1px; background-color: #363636; margin-bottom: 10px;">
+            <div class="is-pulled-left">
+                <p> All Rights Reserverd </p>
+            </div>
+            <div class="is-pulled-right">
+                <ion-icon name="logo-twitter" style="font-size: 20px;"></ion-icon>
+                <ion-icon name="logo-facebook" style="font-size: 20px;"></ion-icon>
+                <ion-icon name="logo-instagram" style="font-size: 20px;"></ion-icon>
+                <ion-icon name="logo-youtube" style="font-size: 20px;"></ion-icon>
+            </div>
+    </section>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.15.1/ace.js" integrity="sha512-CfVYqNC369iSfGgZbSujTgySaSOMo+zxwXu2s9hNKiWmPGFNpXZn69kJ9tLMfwKGtZk86ZufAN1Q9EVranSAaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
