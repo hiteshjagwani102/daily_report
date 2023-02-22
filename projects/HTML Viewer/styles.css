@@ -30,3 +30,83 @@ body {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+
+.links ,.butts{
+    transition: all .5s ease;
+}
+
+.butts{
+    transition: all .3s ease;
+}
+
+.links:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 2px 20px 2px;
+}
+.butts:hover{
+    transform: translateY(-5px);
+}
+
+#inputFile{
+    display: none;
+}
+
+#inputFileLabel{
+    cursor:pointer
+}
+
+.foot{
+    color:lightgray;
+    font-size: 18px;
+}
+
+.lists:hover{
+    color:rgb(24, 187, 208)
+}
+.log{
+    font-size: 20px;
+    color: whitesmoke;
+}
+.log:hover{
+    color:rgb(24, 187, 208)
+}
+
+.text-gradient {
+    background: radial-gradient(
+      64.18% 64.18% at 71.16% 35.69%,
+      #def9fa 0.89%,
+      #bef3f5 17.23%,
+      #9dedf0 42.04%,
+      #7de7eb 55.12%,
+      #5ce1e6 71.54%,
+      #33bbcf 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .typed-out{
+    overflow: hidden;
+    border-right: .15em solid #33bbcf;
+    white-space: nowrap;
+    animation: 
+    typing 1s steps(20, end) forwards,
+    blink-caret 1s step-end infinite;
+    font-size: 1.6rem;
+    width: 0;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #33bbcf; }
+  }
+  
+
+
+

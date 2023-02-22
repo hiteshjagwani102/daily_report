@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>HTML Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap" rel="stylesheet">    <title>HTML Viewer</title>
 </head>
 <body>
     <!-- header -->
     <div id="navbar">
         <nav class="navbar is-dark">
             <div class="navbar-brand">
-                <link rel="icon" type="image/x-icon" href="./">
+                <img class="mt-2 ml-4 mb-2" src="./assets/Add_a_heading__4_-removebg-preview.png" style="height:50px; width: 140px;" />
             </div>
             <div class="navbar-menu">
                 <div class="navbar-end">
@@ -24,6 +28,34 @@
             </div>
     </nav>
     </div>
+
+     <!-- heading -->
+     <section class="section has-text-centered">
+        <div class="container" style="display: inline-block;">
+            <h1 class="title is-2 has-text-centered m-1" style="color: lightgray; font-family: 'Lobster', cursive;">HTML Formatter</h1>
+            <p class="title is-4 typed-out" style="color: lightgray; font-family: 'Ubuntu', sans-serif;">Format Your HTML Code in a GO.</p>
+        </div>
+    </section>
+
+    <!-- quote -->
+    <section class="section">
+        <div class="container">
+           <div class="columns is-centered has-text-centered">
+                <div class="column is-6 has-text-centered">
+                    <ion-icon name="sparkles-sharp" style="font-size: 30px; margin-bottom: 3px; color: #26a3e2;"></ion-icon>
+                    <p class="title is-5 is-italic has-text-white has-text-left">
+                    Information is a source of learning. But unless it is organized, processed, and available to the right people in a format for decision making, it is a burden, not a benefit.
+                    </p>
+                    <p class=" title is-4 has-text-white has-text-right has-text-weight-bold text-gradient"> - WILLIAM POLLARD</p>
+                </div>
+                <div class="column is-6 has-text-centered">
+                    <img src="./assets/Untitled_design__2_-removebg-preview.png" />
+                </div>
+           </div>
+        </div>
+    </section>
+
+   
 
     <!-- main content -->
     <section class="section">
@@ -55,10 +87,18 @@
                 <!-- buttons -->
                 <div class="column is-2">
                     <div class="container">
-                        <button class="button is-primary mb-5" id="beautify">Beautify HTML</button>
+                        <button class="button is-primary mb-5 butts" id="beautify">Beautify HTML</button>
                     </div>
                     <div class="container">
-                        <button class="button is-info" id="minify">Minify HTML</button>
+                        <button class="button is-info butts" id="minify">Minify HTML</button>
+                    </div>
+                    <div class="container butts mt-6">
+                        <label type="button" id="inputFileLabel"  for="inputFile" style="color: whitesmoke;">
+                        <span  style="background-color:#962ee6; padding-left: 20px; padding-right: 20px; padding-top: 7px; padding-bottom: 7px; border-radius: 4px;">
+                            <ion-icon class="mr-2" name="cloud-upload-outline"></ion-icon>Upload a File
+                        </span>
+                            <input id="inputFile" value="Open" onchange="openCode(this.files)" type="file" accept="file/html"/>
+                        </label>
                     </div>
                 </div>
 
@@ -93,20 +133,118 @@
 
 
     <!-- links -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-3 p-2 m-5 has-text-centered links" style="width:250px; background-color:lightgrey; border-radius: 10px; background: linear-gradient(to bottom, #57B2FF, #0086F8);">
+                    <p class="title is-4">J.S Beautifier</p>
+                    <div>
+                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
+                    </div>
+                    <div>
+                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
+                    </div>
+                </div>
+                <div class="column is-3 p-2 m-5 has-text-centered links" style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to bottom, #eabff5, #d17ce2);">
+                    <p class="title is-4">J.S Beautifier</p>
+                    <div>
+                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
+                    </div>
+                    <div>
+                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
+                    </div>
+                </div>
+                <div class="column is-3 p-2 m-5 has-text-centered links" style=" width:250px; background-color:lightgreen; border-radius: 10px; background: linear-gradient(to bottom, #c2f5bf, #3ceb3f);">
+                    <p class="title is-4">J.S Beautifier</p>
+                    <div>
+                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
+                    </div>
+                    <div>
+                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
+                    </div>
+                </div>
+            </div>
 
+            <div class="columns is-centered">
+                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color:lightgrey; border-radius: 10px; background: linear-gradient(to bottom, #f1acbd, #eb3065);">
+                    <p class="title is-4">J.S Beautifier</p>
+                    <div>
+                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
+                    </div>
+                    <div>
+                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
+                    </div>
+                </div>
+                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to bottom, #b07ee2, #962ee6);">
+                    <p class="title is-4">J.S Beautifier</p>
+                    <div>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, eos.
+                    </div>
+                    <div>
+                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
+                    </div>
+                </div>
+                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color:lightgreen; border-radius: 10px; background: linear-gradient(to bottom, #e5b772, #f8bb23);">
+                    <p class="title is-4">J.S Beautifier</p>
+                    <div>
+                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
+                    </div>
+                    <div>
+                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
+                    </div>
+                </div>
+                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color:lightgreen; border-radius: 10px; background: linear-gradient(to bottom, #7be6db, #26a3e2);">
+                    <p class="title is-4">J.S Beautifier</p>
+                    <div>
+                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
+                    </div>
+                    <div>
+                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- footer -->
     
-    <section class="section">
-            <hr style="height:1px; background-color: #363636; margin-bottom: 10px;">
-            <div class="is-pulled-left">
-                <p> All Rights Reserverd </p>
+    <section class="section mt-20">
+            
+            <div class=" foot columns is-centered">
+                <div class="column is-5">
+                    <img src="./assets/Add_a_heading__3_-removebg-preview.png" alt="logo">
+                </div>
+                <div class="column is-2">
+                    <ul>
+                        <li class="has-text-weight-bold mb-3">Useful Links</li>
+                        <li class="lists">Visit our Website</li>
+                    </ul>
+                </div>
+                <div class="column is-2">
+                    <ul>
+                        <li class="has-text-weight-bold mb-3">About Us</li>
+                        <li class="lists">Privact Policy</li>
+                        <li class="lists">Data Policy</li>
+                        <li class="lists">License</li>
+                    </ul>
+                </div>
+                <div class="column is-2">
+                    <ul>
+                        <li class="has-text-weight-bold mb-3">Support Us</li>
+                        <li class="lists">Buy Us a Coffee</li>
+                        <li class="lists">Follow Us</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="height:1px; background-color: whitesmoke; margin-bottom: 10px;">
+            <div class="is-pulled-left" style="color:whitesmoke">
+                <p>Code Beautify. All Rights Reserverd</p>
             </div>
             <div class="is-pulled-right">
-                <ion-icon name="logo-twitter" style="font-size: 20px;"></ion-icon>
-                <ion-icon name="logo-facebook" style="font-size: 20px;"></ion-icon>
-                <ion-icon name="logo-instagram" style="font-size: 20px;"></ion-icon>
-                <ion-icon name="logo-youtube" style="font-size: 20px;"></ion-icon>
+                <ion-icon class="log" name="logo-twitter"></ion-icon>
+                <ion-icon class="log" name="logo-facebook"></ion-icon>
+                <ion-icon class="log" name="logo-instagram"></ion-icon>
+                <ion-icon class="log" name="logo-youtube"></ion-icon>
             </div>
     </section>
 
@@ -115,6 +253,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.15.1/ace.js" integrity="sha512-CfVYqNC369iSfGgZbSujTgySaSOMo+zxwXu2s9hNKiWmPGFNpXZn69kJ9tLMfwKGtZk86ZufAN1Q9EVranSAaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="http://ajaxorg.github.io/ace-builds/src/ext-modelist.js" type="text/javascript" charset="utf-8"></script>
     <script src="index.js"></script>
 </body>
 </html>
