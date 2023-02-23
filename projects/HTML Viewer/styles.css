@@ -3,12 +3,12 @@
     border-bottom-right-radius: 10px;
     margin-left: 8px;
     margin-right: 8px;
-    padding-right: 60px;
+    padding-right: 20px;
 
 }
 
 body {
-    background-color: #020112;
+    background-color: #000000;
 }
 
 
@@ -31,8 +31,10 @@ body {
     border-bottom-left-radius: 10px;
 }
 
-.links ,.butts{
+
+.links{
     transition: all .5s ease;
+    color: rgb(233, 232, 232);
 }
 
 .butts{
@@ -44,7 +46,7 @@ body {
     box-shadow: 0px 2px 20px 2px;
 }
 .butts:hover{
-    transform: translateY(-5px);
+    transform: translateY(5px);
 }
 
 #inputFile{
@@ -64,8 +66,9 @@ body {
     color:rgb(24, 187, 208)
 }
 .log{
-    font-size: 20px;
+    font-size: 25px;
     color: whitesmoke;
+    padding-left: 4px;
 }
 .log:hover{
     color:rgb(24, 187, 208)
@@ -74,10 +77,10 @@ body {
 .text-gradient {
     background: radial-gradient(
       64.18% 64.18% at 71.16% 35.69%,
-      #def9fa 0.89%,
-      #bef3f5 17.23%,
-      #9dedf0 42.04%,
-      #7de7eb 55.12%,
+      #e092e2 0.89%,
+      #a877cc 17.23%,
+      #815dd0 42.04%,
+      #4354c2 55.12%,
       #5ce1e6 71.54%,
       #33bbcf 100%
     );

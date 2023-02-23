@@ -71,7 +71,7 @@
     })
 
     document.getElementById("download1").addEventListener("click", ()=>{
-      var file = new File([input.getValue()], "sample.js", {type: "text/plain;charset=utf-8"});
+      var file = new File([input.getValue()], "sample.html", {type: "text/plain;charset=utf-8"});
       saveAs(file);
 })
 

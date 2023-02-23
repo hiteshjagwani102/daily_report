@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,137 +8,180 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap" rel="stylesheet">    <title>HTML Viewer</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap" rel="stylesheet">
+    <title>HTML Viewer</title>
 </head>
+
 <body>
     <!-- header -->
     <div id="navbar">
         <nav class="navbar is-dark">
             <div class="navbar-brand">
-                <img class="mt-2 ml-4 mb-2" src="./assets/Add_a_heading__4_-removebg-preview.png" style="height:50px; width: 140px;" />
+                <img class="mt-2 ml-4 mb-2" src="./assets/Add_a_heading__5_-removebg-preview.png"
+                    style="height:50px; width: 140px;" />
+                <a href="" class="navbar-burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
             </div>
-            <div class="navbar-menu">
+            <div class="navbar-menu" style="background-color:#363636; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" id="nav-links">
                 <div class="navbar-end">
-                    <a class="navbar-item"  href="#" style="color: aliceblue;">Home</a>
+                    <a class="navbar-item" href="#" style="color: aliceblue;">Home</a>
                     <a class="navbar-item" href="#" style="color: aliceblue;">About Us</a>
                     <a class="navbar-item" href="#" style="color: aliceblue;">Contact Us</a>
                 </div>
             </div>
-    </nav>
+        </nav>
     </div>
 
-     <!-- heading -->
-     <section class="section has-text-centered">
+    <!-- heading -->
+    <section class="section has-text-centered">
         <div class="container" style="display: inline-block;">
-            <h1 class="title is-2 has-text-centered m-1" style="color: lightgray; font-family: 'Lobster', cursive;">HTML Formatter</h1>
-            <p class="title is-4 typed-out" style="color: lightgray; font-family: 'Ubuntu', sans-serif;">Format Your HTML Code in a GO.</p>
+            <h1 class="title is-2 has-text-centered m-1" style="color: lightgray; font-family: 'Lobster', cursive;"><lord-icon
+                src="https://cdn.lordicon.com/amtoqvrj.json"
+                trigger="hover"
+                style="width:60px;height:60px">
+            </lord-icon>HTML
+                Viewer</h1>
+            <p class="title is-4 typed-out" style="color: lightgray; font-family: 'Ubuntu', sans-serif;">Format And View
+                Your HTML Code In a Go...</p>
         </div>
     </section>
+
 
     <!-- quote -->
     <section class="section">
         <div class="container">
-           <div class="columns is-centered has-text-centered">
+            <div class="columns is-centered has-text-centered">
                 <div class="column is-6 has-text-centered">
-                    <ion-icon name="sparkles-sharp" style="font-size: 30px; margin-bottom: 3px; color: #26a3e2;"></ion-icon>
+                    <ion-icon name="sparkles-sharp" style="font-size: 30px; margin-bottom: 3px; color: #26a3e2;">
+                    </ion-icon>
                     <p class="title is-5 is-italic has-text-white has-text-left">
-                    Information is a source of learning. But unless it is organized, processed, and available to the right people in a format for decision making, it is a burden, not a benefit.
+                        Information is a source of learning. But unless it is organized, processed, and available to the
+                        right people in a format for decision making, it is a burden, not a benefit.
                     </p>
-                    <p class=" title is-4 has-text-white has-text-right has-text-weight-bold text-gradient"> - WILLIAM POLLARD</p>
+                    <p class=" title is-4 has-text-white has-text-right has-text-weight-bold text-gradient"> - WILLIAM
+                        POLLARD</p>
                 </div>
                 <div class="column is-6 has-text-centered">
-                    <img src="./assets/Untitled_design__2_-removebg-preview.png" />
+                    <lord-icon
+    src="https://cdn.lordicon.com/qkmmvfdj.json"
+    trigger="hover"
+    style="width:250px;height:250px">
+</lord-icon>
                 </div>
-           </div>
+            </div>
         </div>
     </section>
 
-   
 
     <!-- main content -->
-    <section class="section">
-        <div class="container">
-            <div class="converter columns has-text-centered">
+    <section>
+        <div>
+            <div class="converter columns has-text-centered is-centered">
                 <!-- input -->
-                <div class="column is-5-desktop is-12 p-0 editor" style="border: 1px solid #4a4a4a;">
-                    <div class="tools_menu_top" class="mb-0" style="height:30px; background-color: #363636">
-                        <div class="pr-3 pt-1">
-                            <p class="is-pulled-left has-text-white pl-3">Input</p>
-                            <ion-icon name="trash-sharp" class="is-pulled-right pl-1" id="clear1" style="color:#9563e6"></ion-icon>
-                            <ion-icon name="copy-sharp" class="is-pulled-right pl-1" id="copy1" style="color:#9563e6"></ion-icon>
-                            <ion-icon name="download-sharp" class="is-pulled-right pl-1" id="download1" style="color:#9563e6"></ion-icon>
-                            <ion-icon name="duplicate-sharp" class="is-pulled-right pl-1" id="upload1" style="color:#9563e6"></ion-icon>
-                            
+                <div class="column is-5-desktop is-12 m-5">
+                    <div class="p-0 editor" style="border: 1px solid #4a4a4a;">
+                        <div class="tools_menu_top" class="mb-0" style="height:30px; background-color: #363636">
+                            <div class="pr-3 pt-1">
+                                <p class="is-pulled-left has-text-white pl-3">Input</p>
+                            </div>
                         </div>
-                    </div>
-                    <div  id="input"></div>
-                    <div class="tools_menu_bottom" style="height:30px; background-color: #3d3d3d ;">
-                        <div>
-                            <h1 class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a id="increase1">T</a></h1>
-                            <h1 class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a id="decrease1">T</a></h1>
-                            <p class="is-pulled-left pt-1 pl-2" id="pointer1"></p>
-                            
+                        <div id="input"></div>
+                        <div class="tools_menu_bottom" style="height:30px; background-color: #3d3d3d ;">
+                            <div>
+                                <h1 class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a
+                                        id="increase1">T</a></h1>
+                                <h1 class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a
+                                        id="decrease1">T</a></h1>
+                                <p class="is-pulled-left pt-1 pl-2 ml-3" id="pointer1" style="color: whitesmoke;">Ln: 1 Col: 0</p>
+
+                            </div>
                         </div>
+
                     </div>
+
+                        <!-- buttons -->
+                        <div style="margin-bottom: 100px;">
+                            <button class="button is-pulled-right is-primary is-small m-3 butts" id="beautify">
+                                Beautify HTML</button>
+                            <button class="button is-pulled-right is-primary is-small m-3 butts" id="viewer">
+                                    Run/View</button>
+                            <button class="button is-pulled-right is-danger is-small m-3 butts" id="clear1">Clear</button>
+                            <button class="button is-pulled-left is-info is-small m-3 butts" id="minify">Minify
+                                HTML</button>
+                            <label type="button" id="inputFileLabel" for="inputFile"
+                                class="is-pulled-right m-3 mt-4 butts" style="color: whitesmoke; font-size: 12px;">
+                                <span
+                                    style="background-color:#962ee6; padding-left: 15px; padding-right: 15px; padding-top: 7px; padding-bottom: 6px; border-radius: 2px;">
+                                    <ion-icon class="mr-2" name="cloud-upload-outline"></ion-icon>Upload a File
+                                </span>
+                                <input id="inputFile" value="Open" onchange="openCode(this.files)" type="file"
+                                    accept="file/html" />
+                            </label>
+                        </div>
+                    
+
                 </div>
 
-                <!-- buttons -->
-                <div class="column is-2">
-                    <div class="container">
-                        <button class="button is-primary mb-5 butts" id="beautify">Beautify HTML</button>
-                    </div>
-                    <div class="container">
-                        <button class="button is-info butts" id="minify">Minify HTML</button>
-                    </div>
-                    <div class="container butts mt-6">
-                        <label type="button" id="inputFileLabel"  for="inputFile" style="color: whitesmoke;">
-                        <span  style="background-color:#962ee6; padding-left: 20px; padding-right: 20px; padding-top: 7px; padding-bottom: 7px; border-radius: 4px;">
-                            <ion-icon class="mr-2" name="cloud-upload-outline"></ion-icon>Upload a File
-                        </span>
-                            <input id="inputFile" value="Open" onchange="openCode(this.files)" type="file" accept="file/html"/>
-                        </label>
-                    </div>
-                </div>
+
+                
+
 
                 <!-- output -->
-                <div class="column is-5-desktop is-12 p-0 editor" style="border: 1px solid #4a4a4a;">
-                    <div class="tools_menu_top" class="mb-0" style="height:30px; background-color: #363636;">
-                        <div class="pr-3 pt-1">
-                            <p class="is-pulled-left has-text-white pl-3">Output</p>
-                            <ion-icon name="trash-sharp" class="is-pulled-right pl-1" id="clear2" style="color:#9563e6"></ion-icon>
-                            <ion-icon name="copy-sharp" class="is-pulled-right pl-1" id="copy2" style="color:#9563e6"></ion-icon>
-                            <ion-icon name="download-sharp" class="is-pulled-right pl-1" id="download2" style="color:#9563e6"></ion-icon>
-                            <ion-icon name="duplicate-sharp" class="is-pulled-right pl-1" id="upload2" style="color:#9563e6"></ion-icon>
-                            
+                <div class="column is-5-desktop is-12 m-5">
+                    <div class="p-0 editor" style="border: 1px solid #4a4a4a;">
+                        <div class="tools_menu_top" class="mb-0" style="height:30px; background-color: #363636;">
+                            <div class="pr-3 pt-1">
+                                <p class="is-pulled-left has-text-white pl-3">Output</p>
+
+                            </div>
+                        </div>
+                        <iframe id="myiframe" style="height:600px; width:100%; display: none; background-color: white;"></iframe>
+                        <div id="output" frameborder="0"></div>
+                        <div class="tools_menu_bottom" style="height:30px; background-color: #3d3d3d ;">
+                            <div>
+                                <h1 class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a
+                                        id="increase2">T</a></h1>
+                                <h1 class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a
+                                        id="decrease2">T</a></h1>
+                                <p class="is-pulled-left pt-1 pl-2" id="pointer2"></p>
+
+                            </div>
                         </div>
                     </div>
-                    <div  id="output"></div>
-                    <div class="tools_menu_bottom" style="height:30px; background-color: #3d3d3d ;">
-                        <div>
-                            <h1 class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a id="increase2">T</a></h1>
-                            <h1 class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a id="decrease2">T</a></h1>
-                            <p class="is-pulled-left pt-1 pl-2" id="pointer2"></p>
+
+                        <!-- output buttons -->
+                        <div style="margin-bottom: 100px;">
                             
+                            <button class="button is-pulled-right is-danger is-small m-3 butts" id="reset2">Reset</button>
+                            <button class="button is-pulled-right is-info is-small m-3 butts" id="download2">Download</button>
+                            <button class="button is-pulled-right is-info is-small m-3 butts" id="copy2">Copy</button>
+                        
                         </div>
-                    </div>
+                    
                 </div>
 
             </div>
         </div>
     </section>
+
+    
 
 
 
 
     <!-- links -->
     <section class="section">
-        <div class="container">
+        <div class="container" style="width: 250px;">
             <div class="columns is-centered">
-                <div class="column is-3 p-2 m-5 has-text-centered links" style="width:250px; background-color:lightgrey; border-radius: 10px; background: linear-gradient(to bottom, #57B2FF, #0086F8);">
-                    <p class="title is-4">J.S Beautifier</p>
+                <div class="column is-3 p-2 m-5 has-text-centered links"
+                    style="width:250px; border-radius: 10px; background: linear-gradient(to right, #b06ab3, #4568dc);">
+                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
                     <div>
                         Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
                     </div>
@@ -145,8 +189,9 @@
                         <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
                     </div>
                 </div>
-                <div class="column is-3 p-2 m-5 has-text-centered links" style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to bottom, #eabff5, #d17ce2);">
-                    <p class="title is-4">J.S Beautifier</p>
+                <div class="column is-3 p-2 m-5 has-text-centered links"
+                    style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to right, #4568dc, #b06ab3);">
+                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
                     <div>
                         Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
                     </div>
@@ -154,8 +199,9 @@
                         <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
                     </div>
                 </div>
-                <div class="column is-3 p-2 m-5 has-text-centered links" style=" width:250px; background-color:lightgreen; border-radius: 10px; background: linear-gradient(to bottom, #c2f5bf, #3ceb3f);">
-                    <p class="title is-4">J.S Beautifier</p>
+                <div class="column is-3 p-2 m-5 has-text-centered links"
+                    style="width:250px; border-radius: 10px; background: linear-gradient(to right, #b06ab3, #4568dc);">
+                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
                     <div>
                         Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
                     </div>
@@ -165,9 +211,10 @@
                 </div>
             </div>
 
-            <div class="columns is-centered">
-                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color:lightgrey; border-radius: 10px; background: linear-gradient(to bottom, #f1acbd, #eb3065);">
-                    <p class="title is-4">J.S Beautifier</p>
+            <div class="columns is-centered mt-2">
+                <div class="column is-3 p-2 m-5 has-text-centered links"
+                    style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to right, #4568dc, #b06ab3);">
+                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
                     <div>
                         Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
                     </div>
@@ -175,17 +222,9 @@
                         <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
                     </div>
                 </div>
-                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to bottom, #b07ee2, #962ee6);">
-                    <p class="title is-4">J.S Beautifier</p>
-                    <div>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, eos.
-                    </div>
-                    <div>
-                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
-                    </div>
-                </div>
-                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color:lightgreen; border-radius: 10px; background: linear-gradient(to bottom, #e5b772, #f8bb23);">
-                    <p class="title is-4">J.S Beautifier</p>
+                <div class="column is-3 p-2 m-5 has-text-centered links"
+                    style="width:250px; border-radius: 10px; background: linear-gradient(to right, #b06ab3, #4568dc);">
+                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
                     <div>
                         Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
                     </div>
@@ -193,8 +232,10 @@
                         <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
                     </div>
                 </div>
-                <div class="column is-3 p-2 m-4 has-text-centered links" style="width:250px; background-color:lightgreen; border-radius: 10px; background: linear-gradient(to bottom, #7be6db, #26a3e2);">
-                    <p class="title is-4">J.S Beautifier</p>
+                
+                <div class="column is-3 p-2 m-5 has-text-centered links"
+                    style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to right, #4568dc, #b06ab3);">
+                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
                     <div>
                         Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
                     </div>
@@ -207,53 +248,60 @@
     </section>
 
     <!-- footer -->
-    
+
     <section class="section mt-20">
-            
-            <div class=" foot columns is-centered">
-                <div class="column is-5">
-                    <img src="./assets/Add_a_heading__3_-removebg-preview.png" alt="logo">
-                </div>
-                <div class="column is-2">
-                    <ul>
-                        <li class="has-text-weight-bold mb-3">Useful Links</li>
-                        <li class="lists">Visit our Website</li>
-                    </ul>
-                </div>
-                <div class="column is-2">
-                    <ul>
-                        <li class="has-text-weight-bold mb-3">About Us</li>
-                        <li class="lists">Privact Policy</li>
-                        <li class="lists">Data Policy</li>
-                        <li class="lists">License</li>
-                    </ul>
-                </div>
-                <div class="column is-2">
-                    <ul>
-                        <li class="has-text-weight-bold mb-3">Support Us</li>
-                        <li class="lists">Buy Us a Coffee</li>
-                        <li class="lists">Follow Us</li>
-                    </ul>
-                </div>
+
+        <div class=" foot columns is-centered has-text-centered">
+            <div class="column is-5">
+                <img src="./assets/Copy_of_Add_a_heading-removebg-preview.png" alt="logo">
             </div>
-            <hr style="height:1px; background-color: whitesmoke; margin-bottom: 10px;">
-            <div class="is-pulled-left" style="color:whitesmoke">
-                <p>Code Beautify. All Rights Reserverd</p>
+            <div class="column is-2">
+                <ul>
+                    <li class="has-text-weight-bold mb-3">Useful Links</li>
+                    <li class="lists">Visit our Website</li>
+                </ul>
             </div>
-            <div class="is-pulled-right">
-                <ion-icon class="log" name="logo-twitter"></ion-icon>
-                <ion-icon class="log" name="logo-facebook"></ion-icon>
-                <ion-icon class="log" name="logo-instagram"></ion-icon>
-                <ion-icon class="log" name="logo-youtube"></ion-icon>
+            <div class="column is-2">
+                <ul>
+                    <li class="has-text-weight-bold mb-3">About Us</li>
+                    <li class="lists">Privact Policy</li>
+                    <li class="lists">Data Policy</li>
+                    <li class="lists">License</li>
+                </ul>
             </div>
+            <div class="column is-2">
+                <ul>
+                    <li class="has-text-weight-bold mb-3">Support Us</li>
+                    <li class="lists">Buy Us a Coffee</li>
+                    <li class="lists">Follow Us</li>
+                </ul>
+            </div>
+        </div>
+        <hr style="height:1px; background-color: whitesmoke; margin-bottom: 10px;">
+        <div class="is-pulled-left" style="color:whitesmoke">
+            <p>Code Beautify. All Rights Reserverd</p>
+        </div>
+        <div class="is-pulled-right">
+            <ion-icon class="log" name="logo-twitter"></ion-icon>
+            <ion-icon class="log" name="logo-facebook"></ion-icon>
+            <ion-icon class="log" name="logo-instagram"></ion-icon>
+            <ion-icon class="log" name="logo-youtube"></ion-icon>
+        </div>
     </section>
 
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.15.1/ace.js" integrity="sha512-CfVYqNC369iSfGgZbSujTgySaSOMo+zxwXu2s9hNKiWmPGFNpXZn69kJ9tLMfwKGtZk86ZufAN1Q9EVranSAaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.15.1/ace.js"
+        integrity="sha512-CfVYqNC369iSfGgZbSujTgySaSOMo+zxwXu2s9hNKiWmPGFNpXZn69kJ9tLMfwKGtZk86ZufAN1Q9EVranSAaA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="http://ajaxorg.github.io/ace-builds/src/ext-modelist.js" type="text/javascript" charset="utf-8"></script>
-    <script src="index.js"></script>
+    <script src="http://ajaxorg.github.io/ace-builds/src/ext-modelist.js" type="text/javascript" charset="utf-8">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.js"></script>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" referrerpolicy="no-referrer"></script>
+    <script type="module" src="index.js"></script>
 </body>
+
 </html>
