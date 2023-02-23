@@ -40,14 +40,14 @@
 
     <!-- heading -->
     <section class="section">
-        <span class="container" style="display: inline-block">
+        <span class="container">
             <h1 class="title is-2 m-1 has-text-centered" style="color: lightgray; font-family: 'Lobster', cursive;"><lord-icon
                 src="https://cdn.lordicon.com/amtoqvrj.json"
                 trigger="hover"
                 style="width:60px;height:60px">
             </lord-icon>HTML
                 Viewer</h1>
-            <p class="title is-5 typed-out" style="width:min-content ;color: lightgray; font-family: 'Ubuntu', sans-serif;">Format And View
+            <p class="title is-5 typed-out has-text-centered" style="width:min-content ;color: lightgray; font-family: 'Ubuntu', sans-serif;">Format And View
                 Your HTML Code In a Go...</p>
             </span>
     </section>
@@ -120,13 +120,16 @@
                                     style="background-color:#962ee6; padding-right: 15px; padding-left: 15px; padding-top: 7px; padding-bottom: 6px; border-radius: 2px;">
                                     <ion-icon class="mr-2" name="cloud-upload-outline"></ion-icon>Upload a File
                                 </span>
-                                <input id="inputFile" value="Open" onchange="openCode(this.files)" type="file"
-                                    accept="file/html" />
+                                <input type="file" id="inputFile" value="Open" />
+                                
                             </label>
+
+                            
                         </div>
                     
 
                 </div>
+                
 
 
                 
@@ -169,6 +172,9 @@
             </div>
         </div>
     </section>
+
+
+    
 
     
 
@@ -296,12 +302,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="http://ajaxorg.github.io/ace-builds/src/ext-modelist.js" type="text/javascript" charset="utf-8">
-    </script>
+    <script src="http://ajaxorg.github.io/ace-builds/src/ext-modelist.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.js"></script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" referrerpolicy="no-referrer"></script>
     <script type="module" src="index.js"></script>
+
 </body>
 
 </html>

@@ -88,18 +88,22 @@ output.session.setMode("ace/mode/html");
 
 
 // upload
-function openCode(files) {
-    var file = files[0]
+var inputFile = document.getElementById('inputFile')
+inputFile.addEventListener('change',handleFiles,false);
+function handleFiles() {
+    const fileList = this.files
+    var file = fileList[0];
     if (!file) return;
     var modelist = ace.require("ace/ext/modelist")
     var modeName = modelist.getModeForPath(file.name).mode 
     input.session.setMode(modeName)
-    reader = new FileReader();
+    var reader = new FileReader();
     reader.onload = function() {
         input.session.setValue(reader.result)
+        
     }  
     reader.readAsText(file) 
-}
+} 
 
 
 //viewer
