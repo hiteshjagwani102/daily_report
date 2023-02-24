@@ -16,6 +16,7 @@ input.setTheme("ace/theme/ambiance")
 var size1 = 15;
 document.getElementById('input').style.fontSize=`${size1}px`;
 input.session.setMode("ace/mode/html");
+input.session.setUseWrapMode(true);
 
 //clear
 var clear1 = document.getElementById("clear1");
@@ -24,6 +25,13 @@ var clear1 = document.getElementById("clear1");
     document.getElementById('output').style.display = 'block';
         input.session.setValue("");
     })
+    
+
+//sample
+var sample = document.getElementById('sample');
+sample.addEventListener('click',() =>{
+    input.session.setValue('<section class="section"><div class="container"><div class="columns is-centered has-text-centered"><div class="column is-6 has-text-centered"><ion-icon name="sparkles-sharp" style="font-size: 30px; margin-bottom: 3px; color: #26a3e2;"></ion-icon><p class="title is-5 is-italic has-text-white has-text-left">Information is a source of learning. But unless it is organized, processed, and available to theright people in a format for decision making, it is a burden, not a benefit.</p><p class=" title is-4 has-text-white has-text-right has-text-weight-bold text-gradient"> - WILLIAMPOLLARD</p></div><div class="column is-6 has-text-centered"><lord-icon src="https://cdn.lordicon.com/qkmmvfdj.json" trigger="hover" style="width:250px;height:250px"></lord-icon></div></div></div></section>')
+})
 
 //copy from input
 var copy2 = document.getElementById("copy2");
@@ -85,6 +93,7 @@ output.setTheme("ace/theme/ambiance")
 var size2 = 15;
 document.getElementById('output').style.fontSize=`${size2}px`;
 output.session.setMode("ace/mode/html");
+output.session.setUseWrapMode(true);
 
 
 // upload
@@ -130,96 +139,8 @@ document.getElementById("download2").addEventListener("click", ()=>{
 
 
 //Find Missing Tag
-var _pj;
 
-function _pj_snippets(container) {
-  function in_es6(left, right) {
-    if (right instanceof Array || typeof right === "string") {
-      return right.indexOf(left) > -1;
-    } else {
-      if (right instanceof Map || right instanceof Set || right instanceof WeakMap || right instanceof WeakSet) {
-        return right.has(left);
-      } else {
-        return left in right;
-      }
-    }
-  }
 
-  container["in_es6"] = in_es6;
-  return container;
-}
 
-_pj = {};
-
-_pj_snippets(_pj);
-
-function autoComplete(s) {
-  var j, line, linesOfCode, n, selfClosedTags, stack, tag;
-  linesOfCode = s.split("\n");
-  selfClosedTags = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
-  n = linesOfCode.length;
-  stack = [];
-
-  for (var i = 0, _pj_a = n; i < _pj_a; i += 1) {
-    j = 0;
-    line = linesOfCode[i];
-
-    while (j < linesOfCode[i].length) {
-      if (j + 1 < line.length && line[j] === "<" && line[j + 1] === "/") {
-        tag = [];
-        j += 2;
-
-        while (j < line.length && "a" <= line[j] && line[j] <= "z") {
-          tag.push(line[j]);
-          j += 1;
-        }
-
-        while (j < line.length && line[j] !== ">") {
-          j += 1;
-        }
-
-        if (stack.slice(-1)[0] !== tag) {
-          tag = stack.slice(-1)[0];
-          return "</" + tag.toString() + ">";
-        }
-
-        stack.pop();
-      } else {
-        if (j + 1 < line.length && line[j] === "<" && line[j] === "!") {
-          continue;
-        } else {
-          if (line[j] === "<") {
-            tag = [];
-            j += 1;
-
-            while (j < line.length && "a" <= line[j] && line[j] <= "z") {
-              tag.push(line[j]);
-              j += 1;
-            }
-
-            while (j < line.length && line[j] !== ">") {
-              j += 1;
-            }
-
-            if (!_pj.in_es6(tag.toString(), selfClosedTags)) {
-              stack.push(tag);
-            }
-          }
-        }
-      }
-
-      j += 1;
-    }
-  }
-
-  if (stack) {
-    tag = stack.pop();
-    return "</" + tag.toString() + ">";
-  }
-
-  return -1;
-}
-
-console.log(autoComplete("<html>Hello world</html>"));
 
 
