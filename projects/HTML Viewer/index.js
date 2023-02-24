@@ -129,3 +129,97 @@ document.getElementById("download2").addEventListener("click", ()=>{
 })
 
 
+//Find Missing Tag
+var _pj;
+
+function _pj_snippets(container) {
+  function in_es6(left, right) {
+    if (right instanceof Array || typeof right === "string") {
+      return right.indexOf(left) > -1;
+    } else {
+      if (right instanceof Map || right instanceof Set || right instanceof WeakMap || right instanceof WeakSet) {
+        return right.has(left);
+      } else {
+        return left in right;
+      }
+    }
+  }
+
+  container["in_es6"] = in_es6;
+  return container;
+}
+
+_pj = {};
+
+_pj_snippets(_pj);
+
+function autoComplete(s) {
+  var j, line, linesOfCode, n, selfClosedTags, stack, tag;
+  linesOfCode = s.split("\n");
+  selfClosedTags = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
+  n = linesOfCode.length;
+  stack = [];
+
+  for (var i = 0, _pj_a = n; i < _pj_a; i += 1) {
+    j = 0;
+    line = linesOfCode[i];
+
+    while (j < linesOfCode[i].length) {
+      if (j + 1 < line.length && line[j] === "<" && line[j + 1] === "/") {
+        tag = [];
+        j += 2;
+
+        while (j < line.length && "a" <= line[j] && line[j] <= "z") {
+          tag.push(line[j]);
+          j += 1;
+        }
+
+        while (j < line.length && line[j] !== ">") {
+          j += 1;
+        }
+
+        if (stack.slice(-1)[0] !== tag) {
+          tag = stack.slice(-1)[0];
+          return "</" + tag.toString() + ">";
+        }
+
+        stack.pop();
+      } else {
+        if (j + 1 < line.length && line[j] === "<" && line[j] === "!") {
+          continue;
+        } else {
+          if (line[j] === "<") {
+            tag = [];
+            j += 1;
+
+            while (j < line.length && "a" <= line[j] && line[j] <= "z") {
+              tag.push(line[j]);
+              j += 1;
+            }
+
+            while (j < line.length && line[j] !== ">") {
+              j += 1;
+            }
+
+            if (!_pj.in_es6(tag.toString(), selfClosedTags)) {
+              stack.push(tag);
+            }
+          }
+        }
+      }
+
+      j += 1;
+    }
+  }
+
+  if (stack) {
+    tag = stack.pop();
+    return "</" + tag.toString() + ">";
+  }
+
+  return -1;
+}
+
+console.log(autoComplete("<html>Hello world</html>"));
+
+

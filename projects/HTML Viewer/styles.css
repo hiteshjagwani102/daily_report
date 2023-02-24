@@ -14,7 +14,7 @@ body {
 
 #input ,#output{ 
     position:relative;
-    height: 600px;
+    height: 400px;
 }
 
 .editor {
