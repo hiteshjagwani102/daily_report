@@ -147,12 +147,13 @@ viewer.addEventListener('click',()=>{
     document.getElementById('myiframe').srcdoc = input.getValue();
 })
 
-//output-reset
+//reset
 var reset = document.getElementById('reset2');
 reset.addEventListener('click',()=>{
     document.getElementById('myiframe').style.display = 'none';
     document.getElementById('output').style.display = 'block';
     output.setValue() = "";
+    input.setValue() = "";
 })
 
 //output-download
