@@ -152,8 +152,9 @@ var reset = document.getElementById('reset2');
 reset.addEventListener('click',()=>{
     document.getElementById('myiframe').style.display = 'none';
     document.getElementById('output').style.display = 'block';
-    output.setValue() = "";
-    input.setValue() = "";
+    input.session.setValue() = "";
+    output.session.setValue() = "";
+    
 })
 
 //output-download
