@@ -152,8 +152,9 @@ var reset = document.getElementById('reset2');
 reset.addEventListener('click',()=>{
     document.getElementById('myiframe').style.display = 'none';
     document.getElementById('output').style.display = 'block';
-    input.session.setValue() = "";
-    output.session.setValue() = "";
+    output.session.setValue("");
+    input.session.setValue("");
+    
     
 })
 
