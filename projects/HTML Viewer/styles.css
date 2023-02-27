@@ -36,6 +36,9 @@ body {
     transition: all .5s ease;
     color: rgb(233, 232, 232);
 }
+.lists {
+    color: lightgray
+}
 
 .butts{
     transition: all .3s ease;
@@ -110,6 +113,11 @@ body {
     50% { border-color: #33bbcf; }
   }
   
+
+  input, input:focus, input:hover, input:active {
+    outline: none;
+    box-shadow:none;
+}
 
 
 

@@ -41,11 +41,7 @@
     <!-- heading -->
     <section class="section m-0 p-0">
         <span class="container m-0">
-            <h1 class="title is-2 m-1 has-text-centered" style="color: lightgray; font-family: 'Lobster', cursive;"><lord-icon
-                src="https://cdn.lordicon.com/amtoqvrj.json"
-                trigger="hover"
-                style="width:60px;height:60px">
-            </lord-icon>HTML
+            <h1 class="title is-2 m-1 has-text-centered" style="color: lightgray; font-family: 'Lobster', cursive;">HTML
                 Viewer</h1>
             <!-- <p class="title is-5 typed-out has-text-centered" style="width:min-content ;color: lightgray; font-family: 'Ubuntu', sans-serif;">Format And View
                 Your HTML Code In a Go...</p>
@@ -64,7 +60,8 @@
                         <div class="tools_menu_top" class="mb-0" style="height:40px; background-color: #363636">
                             <div class="pr-3 pt-1">
                                 <p class="is-pulled-left has-text-white pl-3">Input</p>
-                                <button class="button is-small is-light is-pulled-right" id="sample">Sample</button>
+                                
+                                <button class="button is-small is-light is-pulled-right mt-1" id="sample" style="height:20px">Sample</button>
                             </div>
                         </div>
                         <div id="input"></div>
@@ -75,7 +72,12 @@
                                 <h1 class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a
                                         id="decrease1">T</a></h1>
                                 <p class="is-pulled-left pt-1 pl-2 ml-3" id="pointer1" style="color: whitesmoke;">Ln: 1 Col: 0</p>
-                                <span type="text" id="isMissing" style="color: whitesmoke; background-color: #3d3d3d; border: none;"></span>
+                                <div>
+                                    <label for="url-input" style="color: lightgray; font-size: 10px;">Enter URL:</label>
+                                    <input type="text" id= "url-input" style="background-color: lightgray; font-size: 13px; border-radius: 2px; border: none; margin-top: 5px;">
+                                    <button class="button mt-2 is-small is-info" id="fetch-button" style="height:15px; width: 70px;font-size: 10px;">Fetch HTML</button>
+                                </div>
+                                <!-- <span type="text" id="isMissing" style="color: whitesmoke; background-color: #3d3d3d; border: none;"></span> -->
 
                             </div>
                         </div>
@@ -91,7 +93,7 @@
                             <button class="button is-pulled-right is-danger is-small m-3 butts" id="clear1">Clear</button>
                             <button class="button is-pulled-left is-info is-small m-3 butts" id="minify">Minify
                                 HTML</button>
-                                <button class="button is-pulled-left is-primary is-small m-3 butts" id="missingTag">Check</button>
+                                <!-- <button class="button is-pulled-left is-primary is-small m-3 butts" id="missingTag">Check</button> -->
                             <label type="button" id="inputFileLabel" for="inputFile"
                                 class="is-pulled-left m-3 mt-4 butts" style="color: whitesmoke; font-size: 12px;">
                                 <span
@@ -104,13 +106,6 @@
 
                             
                         </div>
-                        <div style="margin-bottom: 150px;">
-                                
-                            
-                            
-                            
-                        </div>
-                    
 
                 </div>
                 
@@ -160,10 +155,10 @@
 
     
     <!-- quote -->
-    <section class="section">
+    <!-- <section class="section">
         <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-6 has-text-centered">
+            <div class="is-centered has-text-centered">
+                <div class="has-text-centered">
                     <ion-icon name="sparkles-sharp" style="font-size: 30px; margin-bottom: 3px; color: #26a3e2;">
                     </ion-icon>
                     <p class="title is-5 is-italic has-text-white has-text-left">
@@ -173,21 +168,128 @@
                     <p class=" title is-4 has-text-white has-text-right has-text-weight-bold text-gradient"> - WILLIAM
                         POLLARD</p>
                 </div>
-                <div class="column is-6 has-text-centered">
-                    <lord-icon
-    src="https://cdn.lordicon.com/qkmmvfdj.json"
-    trigger="hover"
-    style="width:250px;height:250px">
-</lord-icon>
-                </div>
             </div>
         </div>
+    </section> -->
+
+
+    <h1 class="title is-3 m-3 has-text-centered" style="color: lightgray; font-family: 'Lobster', cursive;">About our Tool</h1>
+    <div class="conatiner">
+
+
+    <!-- about content -->
+    <section class="section">
+       
+        <div class="columns" style="color:lightgray">
+            <div class="column is-6">
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="logo-html5" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">HTML Formatter</h1>
+                        <p>This tool can be particularly useful for cleaning up messy or poorly formatted HTML code, making it easier to read and edit. It can also help ensure that your code is properly indented and structured, which can make it easier to maintain and debug in the future.</p>
+                    </div>
+                </div>
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="flash-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">Light Speed</h1>
+                        <p>HTML Formatter is a fast and efficient tool for formatting your HTML data, providing near-instant results for developers. By utilizing advanced JavaScript libraries, this tool is able to parse and format your HTML data on the client-side in your web browser, without the need for any server-side processing or external dependencies.</p>
+                    </div>
+                </div>
+
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="document-lock-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">Secure Formatting</h1>
+                        <p>One of the key features of this online HTML formatter tool is that it prioritizes the security and privacy of developers' HTML data. To ensure that your HTML code remains secure, this tool processes the data on your device in the browser using JavaScript libraries, without sending any data to the server for formatting.</p>
+                    </div>
+                </div>
+
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="layers-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">No External Software Needed</h1>
+                        <p>With this online HTML formatting tool, there's no need to install any software on your computer or worry about taking up valuable storage space. As an online tool, it can be accessed through your web browser, making it a convenient and hassle-free option for developers.</p>
+                    </div>
+                </div>
+
+                
+
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="finger-print-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">No Registration Required</h1>
+                        <p>This HTML formatting tool is completely free and doesn't require any registration or sign-up. It's designed to be easy to use, with a user-friendly interface that lets you get started right away. Simply open the HTML formatter and start using it to format your code in just a few clicks. This makes it a great choice for developers who need to format HTML data quickly and efficiently, without having to deal with the hassle of registration or account setup.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6 m-2">
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="globe-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">Works on all latest Browsers and Devices</h1>
+                        <p>This online HTML formatting tool is a web-based development tool that can be accessed through any modern web browser, including Chrome, Firefox, Edge, Safari, and more. It is designed to work seamlessly on a variety of operating systems, including Windows, Linux, Mac/OSX, Android, and IOS, without requiring any additional software to be installed.</p>
+                    </div>
+                </div>
+
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="document-attach-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">Upload HTML File and URL</h1>
+                        <p>With this HTML formatting tool, developers have the freedom to choose from multiple options for inputting their HTML data, including copy-pasting or manually typing it in. In addition, this tool offers the convenience of being able to upload an HTML file directly from your device, simply by clicking the upload button. For even greater flexibility, developers can also take advantage of the upload URL functionality, which allows them to enter the URL of an external server to fetch HTML data for formatting</p>
+                    </div>
+                </div>
+
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="file-tray-stacked-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">Validates the HTML data</h1>
+                        <p>This HTML formatting tool includes a built-in validator that checks the validity of HTML files uploaded by users. If any errors are detected, the tool displays them on the screen, allowing users to correct them before formatting. This helps ensure that the HTML data is not only properly formatted but also adheres to the latest standards and best practices, improving the overall quality and reliability of the code.</p>
+                    </div>
+                </div>
+
+                <div class="columns m-4">
+                    <div class="column is-3 has-text-centered">
+                        <ion-icon name="eye-sharp" style="font-size: 90px;"></ion-icon>
+                    </div>
+                    <div class="column is-9">
+                        <h1 class="title is-5" style="color:lightgray">Viewing Options</h1>
+                        <p>This HTML formatting tool provides users with three viewing options to choose from:<br>
+
+                            HTML Beautify - This option displays your HTML data in a clean and easy-to-read format, making it easier to review and analyze.<br>
+                            
+                            Normal HTML View - This option allows you to view your HTML data as it would appear in a web browser, with all tags and elements rendered in their proper positions and styles.<br>
+                            
+                            HTML Minify - This option removes all unnecessary whitespace and comments from your HTML code, reducing the overall file size and improving the load times of your web pages.</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
     </section>
 
 
-
     <!-- links -->
-    <section class="section">
+    <!-- <section class="section">
         <div class="container" style="width: 250px;">
             <div class="columns is-centered">
                 <div class="column is-3 p-2 m-5 has-text-centered links"
@@ -256,7 +358,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- footer -->
 
@@ -269,13 +371,13 @@
             <div class="column is-2">
                 <ul>
                     <li class="has-text-weight-bold mb-3">Useful Links</li>
-                    <li class="lists">Visit our Website</li>
+                    <li><a class="lists" href="https://codebeautify.org/">Visit our Website</a></li>
                 </ul>
             </div>
             <div class="column is-2">
                 <ul>
                     <li class="has-text-weight-bold mb-3">About Us</li>
-                    <li class="lists">Privact Policy</li>
+                    <li class="lists">Privacy Policy</li>
                     <li class="lists">Data Policy</li>
                     <li class="lists">License</li>
                 </ul>
@@ -309,7 +411,6 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajaxorg.github.io/ace-builds/src/ext-modelist.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.js"></script>
-    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" referrerpolicy="no-referrer"></script>
     <script type="module" src="index.js"></script>
 
