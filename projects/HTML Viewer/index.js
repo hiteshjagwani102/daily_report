@@ -137,8 +137,70 @@ document.getElementById("download2").addEventListener("click", ()=>{
     saveAs(file);
 })
 
+var missing = document.getElementById('missingTag')
+missing.addEventListener('click',() =>{
+    let htmlCode = input.getValue();
+    document.getElementById("isMissing").innerText = findMissingEndTag(htmlCode);
+    // console.log(findMissingEndTag(htmlCode));
+})
+
 
 //Find Missing Tag
+function findMissingEndTag(htmlCode) {
+  // Define an array to store the open tags
+  const stack = [];
+
+  // Split the HTML code into lines and iterate over each line
+  htmlCode.trim().split('\n').forEach(line => {
+    // Iterate over each character in the line
+    for (let i = 0; i < line.length; i++) {
+      // Check if the current character is a '<' symbol
+      if (line[i] === '<') {
+        // Check if the next character is a '/' symbol
+        if (i + 1 < line.length && line[i + 1] === '/') {
+          // Extract the tag name from the end tag
+          const tagName = [];
+          i += 2;
+          while (i < line.length && line[i] !== '>') {
+            tagName.push(line[i]);
+            i++;
+          }
+
+          // Check if the tag is at the top of the stack
+          if (stack.length > 0 && stack[stack.length - 1] === tagName.join('')) {
+            stack.pop();
+          } else {
+            return `Missing end tag </${tagName.join('')}>`;
+          }
+        } else {
+          // Check if the current tag is a self-closing tag
+          const selfClosingTags = ['area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
+          const isSelfClosingTag = selfClosingTags.includes(line.slice(i + 1).split(' ')[0]);
+          if (!isSelfClosingTag) {
+            // Extract the tag name from the start tag
+            const tagName = [];
+            i++;
+            while (i < line.length && line[i] !== '>' && line[i] !== ' ') {
+              tagName.push(line[i]);
+              i++;
+            }
+
+            // Add the tag to the stack
+            stack.push(tagName.join(''));
+          }
+        }
+      }
+    }
+  });
+
+  // Check if there are any tags left in the stack
+  if (stack.length > 0) {
+    return `Missing end tag </${stack[stack.length - 1]}>`;
+  } else {
+    return 'All tags are balanced';
+  }
+}
+
 
 
 
