@@ -24,6 +24,7 @@ var clear1 = document.getElementById("clear1");
         document.getElementById('myiframe').style.display = 'none';
     document.getElementById('output').style.display = 'block';
         input.session.setValue("");
+    document.getElementById('isMissing').innerText = "";
     })
     
 
