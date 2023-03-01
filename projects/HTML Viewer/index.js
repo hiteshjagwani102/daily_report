@@ -230,6 +230,76 @@ document.getElementById("download2").addEventListener("click", ()=>{
 
 
 
+// const htmlCode = `
+// <html>
+//   <head>
+//     <title>My Website</title>
+//     <link rel="stylesheet" href="style.css">
+//   </head>
+//   <body>
+//     <h1>Welcome to my website</h1>
+//     <p>This is a paragraph.</p>
+//     <ul>
+//       <li>Item 1</li>
+//       <li>Item 2</li>
+//     </ul>
+//   </body>
+// </html>
+// `;
+
+// const openingTagPattern = /<([a-z0-9_]+)/gi;
+// const closingTagPattern = /<\/([a-z0-9_]+)/gi;
+
+// const tags = [];
+
+// let match;
+// let line = 1;
+// let lastIndex = 0;
+// while ((match = openingTagPattern.exec(htmlCode)) !== null) {
+//   let index = match.index;
+//   let tagName = match[1];
+//   let tag = {
+//     type: "opening",
+//     name: tagName,
+//     index: index,
+//     line: line
+//   };
+//   tags.push(tag);
+//   if (index - lastIndex > 1) {
+//     line++;
+//   }
+//   lastIndex = index;
+// }
+
+// line = 1;
+// lastIndex = 0;
+// while ((match = closingTagPattern.exec(htmlCode)) !== null) {
+//   let index = match.index;
+//   let tagName = match[1];
+//   let tag = {
+//     type: "closing",
+//     name: tagName,
+//     index: index,
+//     line: line
+//   };
+//   tags.push(tag);
+//   if (index - lastIndex > 1) {
+//     line++;
+//   }
+//   lastIndex = index;
+// }
+
+// tags.sort((a, b) => a.index - b.index);
+
+// tags.forEach((tag) => {
+//   let tagString = tag.type === "opening" ? `<${tag.name}>` : `</${tag.name}>`;
+//   console.log(`Line ${tag.line}: ${tagString}`);
+// });
+
+
+
+
+
 
 
 
