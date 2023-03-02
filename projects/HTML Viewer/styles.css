@@ -2,16 +2,36 @@
 :root {
     --background: black;
     --font-color: lightgrey;
+    --title-color: lightgrey;
+    --toolbox-top: #363636;
+    --toolbox-bottom:#3d3d3d;
+    --line : lightgrey;
+    
     
 
 }
 
-[data-theme="dark"]{
+[data-theme="light"]{
     --background: white;
-    --font-color: black;
+    --font-color: darkslategrey;
+    --title-color: darkslategrey;
+    --toolbox-top: grey;
+    --toolbox-bottom: lightgrey;
+    --line: grey;
 
 }
 
+.headin {
+    color: var(--title-color) !important;
+}
+
+.content {
+    color: var(--font-color) !important;
+}
+
+.line {
+    background-color: var(--line) !important;
+}
 
 
 
@@ -25,7 +45,7 @@
 }
 
 body {
-    background-color: #000000;
+    background-color: var(--background);
 }
 
 
@@ -41,12 +61,15 @@ body {
 .tools_menu_top {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    background-color: var(--toolbox-top);
 }
 
 .tools_menu_bottom {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    background-color: var(--toolbox-bottom);
 }
+
 
 
 .links{
@@ -54,11 +77,11 @@ body {
     color: rgb(233, 232, 232);
 }
 .lists {
-    color: lightgray
+    color: var(--font-color)
 }
 
 .butts{
-    transition: all .3s ease;
+    transition:all .3s ease;
 }
 
 .links:hover{
@@ -66,7 +89,7 @@ body {
     box-shadow: 0px 2px 20px 2px;
 }
 .butts:hover{
-    transform: translateY(5px);
+    transform: translateY(2px);
 }
 
 #inputFile{
@@ -120,7 +143,7 @@ p {
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px;
+    width: 36px;
     height: 20px;
   }
   
@@ -165,9 +188,9 @@ p {
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(15px);
-    -ms-transform: translateX(15px);
-    transform: translateX(15px);
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
   }
   
   /* Rounded sliders */

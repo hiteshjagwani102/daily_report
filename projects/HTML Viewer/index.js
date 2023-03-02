@@ -164,137 +164,50 @@ document.getElementById("download2").addEventListener("click", ()=>{
     saveAs(file);
 })
 
-// var missing = document.getElementById('missingTag')
-// missing.addEventListener('click',() =>{
-//     let htmlCode = input.getValue();
-//     document.getElementById("isMissing").innerText = findMissingEndTag(htmlCode);
-//     // console.log(findMissingEndTag(htmlCode));
-// })
-
-
-// //Find Missing Tag
-// function findMissingEndTag(htmlCode) {
-//   // Define an array to store the open tags
-//   const stack = [];
-
-//   // Split the HTML code into lines and iterate over each line
-//   htmlCode.trim().split('\n').forEach(line => {
-//     // Iterate over each character in the line
-//     for (let i = 0; i < line.length; i++) {
-//       // Check if the current character is a '<' symbol
-//       if (line[i] === '<') {
-//         // Check if the next character is a '/' symbol
-//         if (i + 1 < line.length && line[i + 1] === '/') {
-//           // Extract the tag name from the end tag
-//           const tagName = [];
-//           i += 2;
-//           while (i < line.length && line[i] !== '>') {
-//             tagName.push(line[i]);
-//             i++;
-//           }
-
-//           // Check if the tag is at the top of the stack
-//           if (stack.length > 0 && stack[stack.length - 1] === tagName.join('')) {
-//             stack.pop();
-//           } else {
-//             return `Missing end tag </${tagName.join('')}>`;
-//           }
-//         } else {
-//           // Check if the current tag is a self-closing tag
-//           const selfClosingTags = ['area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
-//           const isSelfClosingTag = selfClosingTags.includes(line.slice(i + 1).split(' ')[0]);
-//           if (!isSelfClosingTag) {
-//             // Extract the tag name from the start tag
-//             const tagName = [];
-//             i++;
-//             while (i < line.length && line[i] !== '>' && line[i] !== ' ') {
-//               tagName.push(line[i]);
-//               i++;
-//             }
-
-//             // Add the tag to the stack
-//             stack.push(tagName.join(''));
-//           }
-//         }
-//       }
-//     }
-//   });
-
-//   // Check if there are any tags left in the stack
-//   if (stack.length > 0) {
-//     return `Missing end tag </${stack[stack.length - 1]}>`;
-//   } else {
-//     return 'All tags are balanced';
-//   }
-// }
 
 
 
-// const htmlCode = `
-// <html>
-//   <head>
-//     <title>My Website</title>
-//     <link rel="stylesheet" href="style.css">
-//   </head>
-//   <body>
-//     <h1>Welcome to my website</h1>
-//     <p>This is a paragraph.</p>
-//     <ul>
-//       <li>Item 1</li>
-//       <li>Item 2</li>
-//     </ul>
-//   </body>
-// </html>
-// `;
 
-// const openingTagPattern = /<([a-z0-9_]+)/gi;
-// const closingTagPattern = /<\/([a-z0-9_]+)/gi;
 
-// const tags = [];
+//light them dark theme
+const toggleSwitch = document.querySelector('input[type="checkbox"]')
+toggleSwitch.addEventListener('change',()=> {
+    if(event.target.checked){
+        document.documentElement.setAttribute('data-theme','light');
+        localStorage.setItem('theme','light');
+        lightMode();
+        
+    }else{
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme','dark');
+        darkMode();
+    }
+})
 
-// let match;
-// let line = 1;
-// let lastIndex = 0;
-// while ((match = openingTagPattern.exec(htmlCode)) !== null) {
-//   let index = match.index;
-//   let tagName = match[1];
-//   let tag = {
-//     type: "opening",
-//     name: tagName,
-//     index: index,
-//     line: line
-//   };
-//   tags.push(tag);
-//   if (index - lastIndex > 1) {
-//     line++;
-//   }
-//   lastIndex = index;
-// }
+function lightMode(){
+    input.setTheme("ace/theme/chrome");
+    output.setTheme("ace/theme/chrome");
+    var mode = document.getElementById('theme');
+    mode.textContent = 'Light';
+}
 
-// line = 1;
-// lastIndex = 0;
-// while ((match = closingTagPattern.exec(htmlCode)) !== null) {
-//   let index = match.index;
-//   let tagName = match[1];
-//   let tag = {
-//     type: "closing",
-//     name: tagName,
-//     index: index,
-//     line: line
-//   };
-//   tags.push(tag);
-//   if (index - lastIndex > 1) {
-//     line++;
-//   }
-//   lastIndex = index;
-// }
+function darkMode(){
+    input.setTheme("ace/theme/ambiance");
+    output.setTheme("ace/theme/ambiance");
+    var mode = document.getElementById('theme');
+    mode.textContent = 'Dark';
+}
 
-// tags.sort((a, b) => a.index - b.index);
+const currentTheme = localStorage.getItem('theme');
+if(currentTheme){
+    document.documentElement.setAttribute('data-theme', currentTheme);
 
-// tags.forEach((tag) => {
-//   let tagString = tag.type === "opening" ? `<${tag.name}>` : `</${tag.name}>`;
-//   console.log(`Line ${tag.line}: ${tagString}`);
-// });
+    if(currentTheme === 'light') {
+        toggleSwitch.checked = true;
+        lightMode();
+    }
+}
+
 
 
 
