@@ -125,6 +125,11 @@
                             </label>
                                 
                                 <button class="button is-small is-light is-pulled-right mt-1 butts" id="sample" style="height:20px">Sample</button>
+                                <p style="color: white;">
+                                    <span>Size: </span>
+                                    <span id="size1">0</span>
+                                    <span> B</span>
+                                </p>
                             </div>
                         </div>
                         <div id="input"></div>
@@ -147,19 +152,25 @@
 
                     </div>
 
-                        <!-- buttons -->
-                        <div style="margin-bottom: 150px; box-sizing: border-box;">
+                        <!--input buttons -->
+                        <div style="margin-bottom: 30px; height: 30px; box-sizing: border-box;">
                             <button class="button is-pulled-right is-primary is-small m-3 butts" id="beautify">
                                 Beautify HTML</button>
                             <button class="button is-pulled-right is-primary is-small m-3 butts" id="viewer">
                                     Run/View</button>
                             <button class="button is-pulled-right is-danger is-small m-3 butts" id="clear1">Clear</button>
-                            <button class="button is-pulled-right is-info is-small m-3 butts" id="minify">Minify
-                                HTML</button>
+                            
                                 <!-- <button class="button is-pulled-left is-primary is-small m-3 butts" id="missingTag">Check</button> -->
                             
 
                             
+                        </div>
+                        <div style="margin-bottom: 150px; height:40px;">
+                            
+                            <button class="button is-pulled-right is-info is-small m-2 butts" id="minify">Minify
+                                HTML</button>
+                            <span id="conversion" class="is-pulled-right m-2 p-1" style="color: rgb(27, 216, 27)"></span>
+                                 
                         </div>
 
                 </div>
@@ -175,6 +186,11 @@
                         <div class="tools_menu_top" class="mb-0" style="height:40px;">
                             <div class="pr-3 pt-1">
                                 <p class="is-pulled-left has-text-white pl-3">Output</p>
+                                <p style='color: white;'>
+                                    <span>Size: </span>
+                                    <span id="size2">0</span>
+                                    <span> B</span>
+                                </p>
 
                             </div>
                         </div>
@@ -207,25 +223,6 @@
         </div>
     </section>
 
-
-    
-    <!-- quote -->
-    <!-- <section class="section">
-        <div class="container">
-            <div class="is-centered has-text-centered">
-                <div class="has-text-centered">
-                    <ion-icon name="sparkles-sharp" style="font-size: 30px; margin-bottom: 3px; color: #26a3e2;">
-                    </ion-icon>
-                    <p class="title is-5 is-italic has-text-white has-text-left">
-                        Information is a source of learning. But unless it is organized, processed, and available to the
-                        right people in a format for decision making, it is a burden, not a benefit.
-                    </p>
-                    <p class=" title is-4 has-text-white has-text-right has-text-weight-bold text-gradient"> - WILLIAM
-                        POLLARD</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 
     <h2 class="title is-3 m-3 has-text-centered headin">HTML Viewer Online</h2>
@@ -361,77 +358,6 @@
     </section>
 
 
-    <!-- links -->
-    <!-- <section class="section">
-        <div class="container" style="width: 250px;">
-            <div class="columns is-centered">
-                <div class="column is-3 p-2 m-5 has-text-centered links"
-                    style="width:250px; border-radius: 10px; background: linear-gradient(to right, #b06ab3, #4568dc);">
-                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
-                    <div>
-                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
-                    </div>
-                    <div>
-                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
-                    </div>
-                </div>
-                <div class="column is-3 p-2 m-5 has-text-centered links"
-                    style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to right, #4568dc, #b06ab3);">
-                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
-                    <div>
-                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
-                    </div>
-                    <div>
-                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
-                    </div>
-                </div>
-                <div class="column is-3 p-2 m-5 has-text-centered links"
-                    style="width:250px; border-radius: 10px; background: linear-gradient(to right, #b06ab3, #4568dc);">
-                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
-                    <div>
-                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
-                    </div>
-                    <div>
-                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
-                    </div>
-                </div>
-            </div>
-
-            <div class="columns is-centered mt-2">
-                <div class="column is-3 p-2 m-5 has-text-centered links"
-                    style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to right, #4568dc, #b06ab3);">
-                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
-                    <div>
-                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
-                    </div>
-                    <div>
-                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
-                    </div>
-                </div>
-                <div class="column is-3 p-2 m-5 has-text-centered links"
-                    style="width:250px; border-radius: 10px; background: linear-gradient(to right, #b06ab3, #4568dc);">
-                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
-                    <div>
-                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
-                    </div>
-                    <div>
-                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
-                    </div>
-                </div>
-                
-                <div class="column is-3 p-2 m-5 has-text-centered links"
-                    style="width:250px; background-color: lightpink; border-radius: 10px; background: linear-gradient(to right, #4568dc, #b06ab3);">
-                    <p class="title is-4" style="color:rgb(233, 232, 232)">J.S Beautifier</p>
-                    <div>
-                        Lorem ipsum dolor sit<br> amet, consectetur adipisicing elit. Voluptate, magnam?
-                    </div>
-                    <div>
-                        <ion-icon name="return-up-forward-outline" class="p-4" style="font-size: 40px;"></ion-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- footer -->
 

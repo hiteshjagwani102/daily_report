@@ -7,6 +7,12 @@ burgerIcon.addEventListener('click', () =>{
     event.preventDefault();
 })
 
+//size
+const byte = (str) => {
+    let size = new Blob([str]).size;
+    return size;
+ }
+
 // input_config
 var input = ace.edit("input");
 input.setOptions({
@@ -33,6 +39,7 @@ var clear1 = document.getElementById("clear1");
 var sample = document.getElementById('sample');
 sample.addEventListener('click',() =>{
     input.session.setValue('<section class="section"><div class="container"><div class="columns is-centered has-text-centered"><div class="column is-6 has-text-centered"><ion-icon name="sparkles-sharp" style="font-size: 30px; margin-bottom: 3px; color: #26a3e2;"></ion-icon><p class="title is-5 is-italic has-text-white has-text-left">Information is a source of learning. But unless it is organized, processed, and available to theright people in a format for decision making, it is a burden, not a benefit.</p><p class=" title is-4 has-text-white has-text-right has-text-weight-bold text-gradient"> - WILLIAMPOLLARD</p></div><div class="column is-6 has-text-centered"><lord-icon src="https://cdn.lordicon.com/qkmmvfdj.json" trigger="hover" style="width:250px;height:250px"></lord-icon></div></div></div></section>')
+    
 })
 
 //copy from input
@@ -60,12 +67,20 @@ decreaseFont1.addEventListener('click',()=>{
 
 //pointer Position
 var pointer1 = document.getElementById("pointer1");
+var size1 = document.getElementById('size1');
+var conversion = document.getElementById('conversion');
 input.session.on('change',()=>{
     
+    const options = { indent_size: 0,eol: ""}
     let row = input.selection.getCursor().row;
     let col = input.selection.getCursor().column;
     
     pointer1.innerHTML = `Ln: ${row+1} Col: ${col}`;
+    size1.innerHTML = byte(input.getValue());
+    let initial = byte(input.getValue());
+    let final = byte(html_beautify(input.getValue(),options))
+    if(initial==0 || final==0) conversion.innerText = "";
+    else conversion.innerText = initial + " kb"+ " --> " + final + " kb"; 
 
 })
 
@@ -76,6 +91,7 @@ beautify.addEventListener('click',() =>{
     const options = {indent_size: 4}
     let html = input.getValue();
     output.setValue(html_beautify(html,options));
+    
 });
 
 //minify HTML
@@ -86,6 +102,7 @@ var minify = document.getElementById('minify');
         const options = { indent_size: 0,eol: ""}
         let html = input.getValue();
         output.setValue(html_beautify(html,options));
+        conversion.innerText = "minified ✓"
     });
 
 //upload through URL
@@ -137,6 +154,15 @@ function handleFiles() {
     }  
     reader.readAsText(file) 
 } 
+
+
+//Output_size
+var size2 = document.getElementById('size2');
+output.session.on('change',()=>{
+    
+    size2.innerHTML = byte(output.getValue());
+
+})
 
 
 //viewer
@@ -207,6 +233,9 @@ if(currentTheme){
         lightMode();
     }
 }
+
+
+
 
 
 
