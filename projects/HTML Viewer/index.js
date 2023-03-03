@@ -70,6 +70,9 @@ var pointer1 = document.getElementById("pointer1");
 var size1 = document.getElementById('size1');
 var conversion1 = document.getElementById('conversion1');
 var conversion2 = document.getElementById('conversion2');
+var percentage1 = document.getElementById('percentage1');
+var percentage2 = document.getElementById('percentage2');
+
 input.session.on('change',()=>{
     
     const options1 = {indent_size: 4}
@@ -82,12 +85,33 @@ input.session.on('change',()=>{
     let initial = byte(input.getValue());
     let final1 = byte(html_beautify(input.getValue(),options1));
     let final2 = byte(html_beautify(input.getValue(),options2));
-    let percentage1 = (((final1-initial)/initial)*100).toFixed(2);
-    let percentage2 = (((final2-initial)/initial)*100).toFixed(2);
-    if(initial==0 || final1==0) conversion1.innerText = "";
-    else conversion1.innerText = (initial/1000).toFixed(2) + " kb"+ " --> " + (final1/1000).toFixed(2) + " kb"+"  ("+percentage1+"%)"; 
-    if(initial==0 || final2==0) conversion2.innerText = "";
-    else conversion2.innerText = (initial/1000).toFixed(2) + " kb"+ " --> " + (final2/1000).toFixed(2) + " kb"+"  ("+percentage2+"%)"; 
+    let percent1 = (((final1-initial)/initial)*100).toFixed(2);
+    let percent2 = (((final2-initial)/initial)*100).toFixed(2);
+    if(percent1>0){
+        percentage1.style.color = '#ed0c22';
+    }
+    else percentage1.style.color = '#0cf232';
+    if(percent2>0){
+        percentage2.style.color = '#ed0c22';
+    }
+    else percentage2.style.color = '#0cf232';
+    if(initial==0 || final1==0){
+        conversion1.innerText = "";
+        percentage1.innerText = "";
+    }
+    else{
+        conversion1.innerText = (initial/1000).toFixed(2) + " kb"+ " --> " + (final1/1000).toFixed(2) + " kb";
+        percentage1.innerText = "("+ percent1 +"%)";
+    } 
+    if(initial==0 || final2==0){
+        conversion2.innerText = "";
+        percentage2.innerText="";
+    }
+    else{
+        conversion2.innerText = (initial/1000).toFixed(2) + " kb"+ " --> " + (final2/1000).toFixed(2) + " kb";
+        percentage2.innerText = "("+ percent2 +"%)";
+
+    }
 
 })
 
