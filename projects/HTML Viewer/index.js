@@ -68,19 +68,26 @@ decreaseFont1.addEventListener('click',()=>{
 //pointer Position
 var pointer1 = document.getElementById("pointer1");
 var size1 = document.getElementById('size1');
-var conversion = document.getElementById('conversion');
+var conversion1 = document.getElementById('conversion1');
+var conversion2 = document.getElementById('conversion2');
 input.session.on('change',()=>{
     
-    const options = { indent_size: 0,eol: ""}
+    const options1 = {indent_size: 4}
+    const options2 = { indent_size: 0,eol: ""}
     let row = input.selection.getCursor().row;
     let col = input.selection.getCursor().column;
     
     pointer1.innerHTML = `Ln: ${row+1} Col: ${col}`;
     size1.innerHTML = byte(input.getValue());
     let initial = byte(input.getValue());
-    let final = byte(html_beautify(input.getValue(),options))
-    if(initial==0 || final==0) conversion.innerText = "";
-    else conversion.innerText = initial + " kb"+ " --> " + final + " kb"; 
+    let final1 = byte(html_beautify(input.getValue(),options1));
+    let final2 = byte(html_beautify(input.getValue(),options2));
+    let percentage1 = (((final1-initial)/initial)*100).toFixed(2);
+    let percentage2 = (((final2-initial)/initial)*100).toFixed(2);
+    if(initial==0 || final1==0) conversion1.innerText = "";
+    else conversion1.innerText = (initial/1000).toFixed(2) + " kb"+ " --> " + (final1/1000).toFixed(2) + " kb"+"  ("+percentage1+"%)"; 
+    if(initial==0 || final2==0) conversion2.innerText = "";
+    else conversion2.innerText = (initial/1000).toFixed(2) + " kb"+ " --> " + (final2/1000).toFixed(2) + " kb"+"  ("+percentage2+"%)"; 
 
 })
 
