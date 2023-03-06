@@ -154,11 +154,7 @@
                                 <p class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a
                                         id="decrease1">T</a></p>
                                 <p class="is-pulled-left pt-1 pl-2 ml-3 mb-0 content" id="pointer1">Ln: 1 Col: 0</p>
-                                <div>
-                                    <label class="content" for="url-input" style=" font-size: 10px;">Enter URL:</label>
-                                    <input type="text" id= "url-input" style="background-color: white; font-size: 13px; border-radius: 2px; border: none; margin-top: 5px;">
-                                    <button class="button mt-2 is-small is-info" id="fetch-button" style="height:15px; width: 70px;font-size: 10px;">Fetch HTML</button>
-                                </div>
+                                
                                 <!-- <span type="text" id="isMissing" style="color: whitesmoke; background-color: #3d3d3d; border: none;"></span> -->
 
                             </div>
@@ -190,6 +186,18 @@
                                 <button class="button is-primary is-small m-2 mt-3 butts" id="viewer">
                                     Run/View</button>
                             <button class="button is-danger is-small m-2 mt-3 butts" id="clear1">Clear</button>
+
+                            <button class="button is-link is-small m-2 mt-3 butts" id="url">Upload URL</button>
+
+                            <div class="modal">
+                                <div class="modal-background"></div>
+                                    <div class="modal-content content py-5 px-5">
+                                        <label class="content" for="url-input" style=" font-size: 12px;">Enter URL:</label>
+                                <input type="text" id= "url-input" style="background-color: white; font-size: 13px; border-radius: 2px; border: none; margin-top: 5px; margin-left: 3px;">
+                                <button class="button ml-2 mt-1 is-small is-info" id="fetch-button" style="height:20px; width: 70px;font-size: 10px;">Fetch HTML</button>
+                                    </div>
+                                
+                            </div>
 
                             
                         </div>

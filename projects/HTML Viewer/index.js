@@ -175,6 +175,7 @@ const fetchButton = document.getElementById('fetch-button');
         .catch(error => {
           console.error('Error fetching HTML:', error);
         });
+        document.querySelector('.modal').classList.remove("is-active");
     });
 
 
@@ -318,6 +319,20 @@ layout3.addEventListener('click',()=>{
     document.getElementById('myiframe').style.height = "600px"
 
 })
+
+//modal
+const url = document.getElementById("url");
+const modalBg = document.querySelector(".modal-background");
+const modal = document.querySelector(".modal");
+
+url.addEventListener('click',()=>{
+    modal.classList.add('is-active');
+});
+
+modalBg.addEventListener('click',()=>{
+    modal.classList.remove('is-active');
+});
+
 
 
 

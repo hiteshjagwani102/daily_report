@@ -33,6 +33,9 @@
     background-color: var(--line) !important;
 }
 
+.popup {
+    background-color: var(--background);
+}
 
 
 .navbar {
