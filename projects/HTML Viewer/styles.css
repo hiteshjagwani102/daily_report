@@ -140,21 +140,21 @@ p {
 
 
 /* The switch - the box around the slider */
-.switch {
+ .switch {
     position: relative;
     display: inline-block;
     width: 36px;
     height: 20px;
   }
   
-  /* Hide default HTML checkbox */
+
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
   
-  /* The slider */
+
   .slider {
     position: absolute;
     cursor: pointer;
@@ -193,14 +193,22 @@ p {
     transform: translateX(12px);
   }
   
-  /* Rounded sliders */
+
   .slider.round {
     border-radius: 34px;
   }
   
   .slider.round:before {
     border-radius: 50%;
+  } 
+
+  .layout_button:hover{
+    color:#29f013 !important;
   }
+
+
+
+
 
 
 

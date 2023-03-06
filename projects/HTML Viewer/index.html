@@ -84,31 +84,45 @@
 
     <!-- heading-->
     <section class="section m-0 p-0 has-text-centered">
-        <span class="container m-0">
-            <h1 class="headin title is-2 m-1 has-text-centered">HTML
-                Viewer</h1>
-            <!-- <p class="title is-5 typed-out has-text-centered" style="width:min-content ;color: lightgray; font-family: 'Ubuntu', sans-serif;">Format And View
-                Your HTML Code In a Go...</p> -->
-        </span>
-        <div class="toggle-icon has-text-centered mt-5">
-            <span class="content" id="theme">Dark</span>
-            <span class="content mr-2"> Mode</span>
+        <div class="container" style="display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <span class="headin title is-2 mt-1">HTML
+                Viewer</span>
+                <span class="toggle-icon" style="display:flex; justify-content: center; align-items: center; margin-left: 80px;">
+                    <span class="content mr-2 mb-0" id="theme">Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+
+                <span class="has-text-centered ml-5">
+                    <button id="layout1" class="button is-dark is-small p-2 layout_button" style="border-radius: 5px;"><span class="material-symbols-outlined">
+                        view_stream
+                        </span></button>
+                    <button id="layout2" class="button is-dark is-small p-2 ml-1 layout_button" style="border-radius: 5px;"><span class="material-symbols-outlined">
+                        view_column_2
+                        </span></button>
+                    <button id="layout3" class="button is-dark is-small p-2 ml-1 layout_button"style="border-radius: 5px;"><span class="material-symbols-outlined">
+                        check_box_outline_blank
+                        </span></button>
+                </span>
+            </div>
+
             
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
+        
+
     </section>
+
+    
 
 
 
     <!-- main content -->
     <section>
         <div>
-            <div class="converter columns has-text-centered is-centered">
+            <div id="main_content" class="converter columns has-text-centered is-centered ml-1 mr-1" style="flex-wrap: wrap;">
                 <!-- input -->
-                <div class="column is-5-desktop is-12 m-5">
+                <div id="inputEditor" class="column has-text-centered is-5-desktop is-12 m-5">
                     <div class="p-0 editor" style="border: 1px solid #4a4a4a;">
                         <div class="tools_menu_top" class="mb-0" style="height:40px;">
                             <div class="pr-3 pt-1">
@@ -139,7 +153,7 @@
                                         id="increase1">T</a></p>
                                 <p class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a
                                         id="decrease1">T</a></p>
-                                <p class="is-pulled-left pt-1 pl-2 ml-3 content" id="pointer1">Ln: 1 Col: 0</p>
+                                <p class="is-pulled-left pt-1 pl-2 ml-3 mb-0 content" id="pointer1">Ln: 1 Col: 0</p>
                                 <div>
                                     <label class="content" for="url-input" style=" font-size: 10px;">Enter URL:</label>
                                     <input type="text" id= "url-input" style="background-color: white; font-size: 13px; border-radius: 2px; border: none; margin-top: 5px;">
@@ -153,40 +167,32 @@
                     </div>
 
                         <!--input buttons -->
-                        <div style="margin-bottom: 30px; height: 30px; box-sizing: border-box;">
+                        <div style=" display:flex; flex-wrap: wrap; margin-bottom: 10px; height: auto;">
                             
-                            <button class="button is-pulled-right is-primary is-small m-2 mt-3 butts" id="viewer">
-                                    Run/View</button>
-                            <button class="button is-pulled-right is-danger is-small m-2 mt-3 butts" id="clear1">Clear</button>
+                            
                             
                                 <!-- <button class="button is-pulled-left is-primary is-small m-3 butts" id="missingTag">Check</button> -->
-                            
+                                
+                                <span class="is-pulled-right m-2 mt-3 butts" style="border:1px solid #00d1b2; border-radius: 3px; height: 31px; text-align: left; word-break: break-all;">
+                                    <button class="button is-primary is-small m-0" id="beautify">
+                                        Beautify HTML</button>
+                                        <span class="is-pulled-right p-1 mr-1" id="percentage1" style="font-size: 12px;"></span>
+                                <span id="conversion1" class="p-1 content" style="font-size: 12px;"></span>
+                                </span>
+
+                                <span class="is-pulled-left m-2 mt-3 butts" style="border:1px solid #3e8ed0; border-radius: 3px; height:31px; text-align: right; word-break: break-all;">
+                                    <button class="button is-info is-small m-0" id="minify">Minify
+                                        HTML</button>
+                                        <span class="p-1 mr-1" id="percentage2" style="font-size: 12px;"></span>
+                                    <span id="conversion2" class="is-pulled-right p-1 content" style="font-size: 12px;"></span>
+                                </span>
+
+                                <button class="button is-primary is-small m-2 mt-3 butts" id="viewer">
+                                    Run/View</button>
+                            <button class="button is-danger is-small m-2 mt-3 butts" id="clear1">Clear</button>
 
                             
                         </div>
-                        <div style="margin-bottom: 150px;">
-                        <div class="m-2" style=" height:50px;">
-                            
-                            <span class="is-pulled-right butts" style="border:1px solid #00d1b2; border-radius: 3px;">
-                                <button class="button is-pulled-right is-primary is-small m-0" id="beautify">
-                                    Beautify HTML</button>
-                                    <span class="is-pulled-right p-1 mr-1" id="percentage1" style="font-size: 12px;"></span>
-                                <span id="conversion1" class="is-pulled-right p-1 content" style="font-size: 12px;"></span>
-                                </span>
-                            
-                                 
-                        </div>
-                        <div class="m-2" style=" height:50px;">
-                            
-                            <span class="is-pulled-right butts" style="border:1px solid #3e8ed0; border-radius: 3px;">
-                                <button class="button is-pulled-right is-info is-small m-0" id="minify">Minify
-                                    HTML</button>
-                                    <span class="is-pulled-right p-1 mr-1" id="percentage2" style="font-size: 12px;"></span>
-                                <span id="conversion2" class="is-pulled-right p-1 content" style="font-size: 12px;"></span>
-                            </span>
-                                 
-                        </div>
-                    </div>
 
                 </div>
                 
@@ -196,7 +202,7 @@
 
 
                 <!-- output -->
-                <div class="column is-5-desktop is-12 m-5">
+                <div id="outputEditor" class="column is-5-desktop is-12 m-5">
                     <div class="p-0 editor" style="border: 1px solid #4a4a4a;">
                         <div class="tools_menu_top" class="mb-0" style="height:40px;">
                             <div class="pr-3 pt-1">
@@ -210,8 +216,8 @@
                             </div>
                         </div>
                         <iframe id="myiframe" style="height:400px; width:100%; display: none; background-color: white;"></iframe>
-                        <div id="output" frameborder="0"></div>
-                        <div class="tools_menu_bottom" style="height:30px;;">
+                        <div id="output"></div>
+                        <div class="tools_menu_bottom" style="height:30px;">
                             <div>
                                 <p class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a
                                         id="increase2">T</a></p>
@@ -226,9 +232,9 @@
                         <!-- output buttons -->
                         <div style="margin-bottom: 150px;">
                             
-                            <button class="button is-pulled-right is-danger is-small m-3 butts" id="reset2">Reset</button>
-                            <button class="button is-pulled-right is-info is-small m-3 butts" id="download2">Download</button>
-                            <button class="button is-pulled-right is-info is-small m-3 butts" id="copy2">Copy</button>
+                            <button class="button is-pulled-left is-danger is-small m-3 butts" id="reset2">Reset</button>
+                            <button class="button is-pulled-left is-info is-small m-3 butts" id="download2">Download</button>
+                            <button class="button is-pulled-left is-info is-small m-3 butts" id="copy2">Copy</button>
                         
                         </div>
                     

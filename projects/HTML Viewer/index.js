@@ -116,6 +116,7 @@ input.session.on('change',()=>{
 })
 
 //beautify HTML
+var beautify = document.getElementById('beautify');
 beautify.addEventListener('click',() =>{
     document.getElementById('myiframe').style.display = 'none';
     document.getElementById('output').style.display = 'block';
@@ -125,6 +126,19 @@ beautify.addEventListener('click',() =>{
     
 });
 
+// beautify.addEventListener("mouseover",()=>{
+//     document.getElementById("conversion1").style.display = "inline";
+//     document.getElementById("percentage1").style.display = "inline";
+// })
+// beautify.addEventListener("mouseout",()=>{
+//     document.getElementById("conversion1").style.display = "none";
+//     document.getElementById("percentage1").style.display = "none";
+// })
+
+
+
+
+
 //minify HTML
 var minify = document.getElementById('minify');
     minify.addEventListener('click',() =>{
@@ -133,8 +147,17 @@ var minify = document.getElementById('minify');
         const options = { indent_size: 0,eol: ""}
         let html = input.getValue();
         output.setValue(html_beautify(html,options));
-        conversion.innerText = "minified ✓"
+        conversion2.innerText = "minified ✓"
     });
+
+    // minify.addEventListener("mouseover",()=>{
+    //     document.getElementById("conversion2").style.display = "inline";
+    //     document.getElementById("percentage2").style.display = "inline";
+    // })
+    // minify.addEventListener("mouseout",()=>{
+    //     document.getElementById("conversion2").style.display = "none";
+    //     document.getElementById("percentage2").style.display = "none";
+    // })
 
 //upload through URL
 const fetchButton = document.getElementById('fetch-button');
@@ -245,14 +268,14 @@ function lightMode(){
     input.setTheme("ace/theme/chrome");
     output.setTheme("ace/theme/chrome");
     var mode = document.getElementById('theme');
-    mode.textContent = 'Light';
+    mode.textContent = 'Light Mode';
 }
 
 function darkMode(){
     input.setTheme("ace/theme/ambiance");
     output.setTheme("ace/theme/ambiance");
     var mode = document.getElementById('theme');
-    mode.textContent = 'Dark';
+    mode.textContent = 'Dark Mode';
 }
 
 const currentTheme = localStorage.getItem('theme');
@@ -264,6 +287,38 @@ if(currentTheme){
         lightMode();
     }
 }
+
+var layout1 = document.getElementById("layout1");
+layout1.addEventListener("click",() =>{
+    document.getElementById('inputEditor').style.display = 'block';
+    document.getElementById("main_content").classList.remove("columns");
+    document.getElementById('inputEditor').style.width = "95%"
+    document.getElementById('input').style.height = "400px"
+    document.getElementById('outputEditor').style.width = "95%"
+    document.getElementById('output').style.height = "400px"
+    document.getElementById('myiframe').style.height = "400px"
+})
+
+var layout2 = document.getElementById("layout2");
+layout2.addEventListener("click",() =>{
+    document.getElementById('inputEditor').style.display = 'block';
+    document.getElementById("main_content").classList.add("columns");
+    document.getElementById('inputEditor').removeAttribute("style")
+    document.getElementById('input').style.height = "400px"
+    document.getElementById('outputEditor').removeAttribute("style")
+    document.getElementById('output').style.height = "400px"
+    document.getElementById('myiframe').style.height = "400px"
+})
+
+var layout3 = document.getElementById('layout3');
+layout3.addEventListener('click',()=>{
+    document.getElementById('inputEditor').style.display = 'none';
+    document.getElementById('outputEditor').style.width = "95%";
+    document.getElementById('output').style.height = "600px"
+    document.getElementById('myiframe').style.height = "600px"
+
+})
+
 
 
 
