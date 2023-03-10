@@ -2,10 +2,10 @@
 const burgerIcon = document.querySelector('#burger');
 const navbarMenu = document.querySelector('#nav-links');
 
-burgerIcon.addEventListener('click', () =>{
-    navbarMenu.classList.toggle('is-active');
-    event.preventDefault();
-})
+// burgerIcon.addEventListener('click', () =>{
+//     navbarMenu.classList.toggle('is-active');
+//     event.preventDefault();
+// })
 
 //size
 const byte = (str) => {
@@ -251,17 +251,23 @@ document.getElementById("download2").addEventListener("click", ()=>{
 
 
 //light them dark theme
-const toggleSwitch = document.querySelector('input[type="checkbox"]')
-toggleSwitch.addEventListener('change',()=> {
-    if(event.target.checked){
+const logo = document.getElementById("main_logo")
+const toggleSwitch = document.querySelector('#theme_icon')
+const icon = document.querySelector("#t_icon")
+toggleSwitch.addEventListener('click',()=> {
+    if(icon.innerText=='dark_mode'){
         document.documentElement.setAttribute('data-theme','light');
         localStorage.setItem('theme','light');
         lightMode();
+        
+        
         
     }else{
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme','dark');
         darkMode();
+        
+        
     }
 })
 
@@ -269,14 +275,18 @@ function lightMode(){
     input.setTheme("ace/theme/chrome");
     output.setTheme("ace/theme/chrome");
     var mode = document.getElementById('theme');
-    mode.textContent = 'Light Mode';
+    // mode.textContent = 'Light Mode';
+    logo.src = "./assets/logo.png"
+    icon.innerText='light_mode'
 }
 
 function darkMode(){
     input.setTheme("ace/theme/ambiance");
     output.setTheme("ace/theme/ambiance");
     var mode = document.getElementById('theme');
-    mode.textContent = 'Dark Mode';
+    // mode.textContent = 'Dark Mode';
+    logo.src = "./assets/Add_a_heading__5_-removebg-preview.png"
+    icon.innerText='dark_mode'
 }
 
 const currentTheme = localStorage.getItem('theme');

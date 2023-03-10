@@ -1,4 +1,5 @@
 
+*{scroll-behavior: smooth;}
 :root {
     --background: black;
     --font-color: lightgrey;
@@ -19,6 +20,12 @@
     --toolbox-bottom: lightgrey;
     --line: grey;
 
+}
+
+.layout_button{
+    background-color: var(--toolbox-top) !important;
+    color: whitesmoke !important;
+    border: none !important;  
 }
 
 .headin {
@@ -136,6 +143,7 @@ body {
   'opsz' 48
 }
 
+
 p {
     color: lightgray;
 }
@@ -208,6 +216,90 @@ p {
   .layout_button:hover{
     color:#29f013 !important;
   }
+  #nav_menu{
+    display: flex;
+    flex-direction: row;
+    margin-top: 22px;
+    margin-left: auto; 
+    margin-right: 20px;
+  }
+  #nav_menu_small{
+    display: none;
+    flex-direction: row;
+    margin-top: 22px;
+    margin-left: auto; 
+    margin-right: 20px;
+  }
+
+  #title{
+        margin-left: 40%;
+  }
+
+  @media screen and (max-width:800px) {
+    #layouts {
+        display:none;
+    }
+    #title{
+        margin-left: 30%;
+    }
+    #nav_menu{
+        display:none;
+    }
+    #nav_menu_small{
+        display: flex;
+    }
+  }
+
+
+  /* Dropdown Button */
+.dropbtn1 {
+  font-size: 16px;
+  color: white;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  right:0;
+  background-color:var(--background);
+  border-radius: 5px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px gray;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content1 a {
+  color: var(--font-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content1 a:hover {background-color:lightgray;}
+
+/* Show the dropdown menu on hover */
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+
+.nav_anchor {
+     color: var(--font-color);
+     font-size: 15px;
+}
+
+.nav_anchor:hover {
+    color: #41a4f4;
+}
+
 
 
 
