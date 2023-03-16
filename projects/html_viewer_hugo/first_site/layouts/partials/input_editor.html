@@ -1,0 +1,81 @@
+<div id="inputEditor" class="column has-text-centered is-5-desktop is-12 m-5">
+    <div class="p-0 editor" style="border: 1px solid #4a4a4a;">
+        <div class="tools_menu_top" class="mb-0" style="height:40px;">
+            <div class="pr-3 pt-1">
+                <p class="is-pulled-left has-text-white pl-3">Input</p>
+
+                <label type="button" id="inputFileLabel" for="inputFile"
+                class="is-pulled-right m-2 butts" style="color: whitesmoke; font-size: 11px;">
+                <span
+                    style="background-color:#962ee6; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; border-radius: 2px;">
+                    Upload a File
+                </span>
+                <input type="file" id="inputFile" value="Open" />
+                
+            </label>
+                
+                <button class="button is-small is-light is-pulled-right mt-1 butts" id="sample" style="height:20px">Sample</button>
+                <p style="color: white;">
+                    <span>Size: </span>
+                    <span id="size1">0</span>
+                    <span> B</span>
+                </p>
+            </div>
+        </div>
+        <div id="input"></div>
+        <div class="tools_menu_bottom" style="height:30px;">
+            <div>
+                <p class="title is-5 is-pulled-right has-text-weight-bold p-1 pr-2 m-0"><a
+                        id="increase1">T</a></p>
+                <p class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a
+                        id="decrease1">T</a></p>
+                <p class="is-pulled-left pt-1 pl-2 ml-3 mb-0 content" id="pointer1">Ln: 1 Col: 0</p>
+                
+                <!-- <span type="text" id="isMissing" style="color: whitesmoke; background-color: #3d3d3d; border: none;"></span> -->
+
+            </div>
+        </div>
+
+    </div>
+
+        <!--input buttons -->
+        <div style=" display:flex; flex-wrap: wrap; margin-bottom: 10px; height: auto;">
+            
+            
+            
+                <!-- <button class="button is-pulled-left is-primary is-small m-3 butts" id="missingTag">Check</button> -->
+                
+                <span class="is-pulled-right m-2 mt-3 butts" style="border:1px solid #00d1b2; border-radius: 3px; height: 31px; text-align: left; word-break: break-all;">
+                    <button class="button is-primary is-small m-0" id="beautify">
+                        Beautify HTML</button>
+                        <span class="is-pulled-right p-1 mr-1" id="percentage1" style="font-size: 12px;"></span>
+                <span id="conversion1" class="p-1 content" style="font-size: 12px;"></span>
+                </span>
+
+                <span class="is-pulled-left m-2 mt-3 butts" style="border:1px solid #3e8ed0; border-radius: 3px; height:31px; text-align: right; word-break: break-all;">
+                    <button class="button is-info is-small m-0" id="minify">Minify
+                        HTML</button>
+                        <span class="p-1 mr-1" id="percentage2" style="font-size: 12px;"></span>
+                    <span id="conversion2" class="is-pulled-right p-1 content" style="font-size: 12px;"></span>
+                </span>
+
+                <button class="button is-primary is-small m-2 mt-3 butts" id="viewer">
+                    Run/View</button>
+            <button class="button is-danger is-small m-2 mt-3 butts" id="clear1">Clear</button>
+
+            <button class="button is-link is-small m-2 mt-3 butts" id="url">Upload URL</button>
+
+            <div class="modal">
+                <div class="modal-background"></div>
+                    <div class="modal-content content py-5 px-5">
+                        <label class="content" for="url-input" style=" font-size: 12px;">Enter URL:</label>
+                <input type="text" id= "url-input" style="background-color: white; font-size: 13px; border-radius: 2px; border: none; margin-top: 5px; margin-left: 3px;">
+                <button class="button ml-2 mt-1 is-small is-info" id="fetch-button" style="height:20px; width: 70px;font-size: 10px;">Fetch HTML</button>
+                    </div>
+                
+            </div>
+
+            
+        </div>
+
+</div>

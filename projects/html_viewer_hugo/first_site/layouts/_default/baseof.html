@@ -1,0 +1,33 @@
+<html lang="en">
+{{partial "head.html" . }}
+<body>
+    {{partial "header.html" . }}
+
+    {{partial "heading.html" . }}
+
+    <section id="hero">
+        <div>
+            <div id="main_content" class="converter columns has-text-centered is-centered ml-1 mr-1" style="flex-wrap: wrap;">
+                <!-- input -->
+                {{partial "input_editor" . }}
+            
+                <!-- output -->
+                {{partial "output_editor" . }}
+            </div>
+        </div>
+    </section>
+
+
+                
+            <h2 class="title is-3 m-3 has-text-centered headin">HTML Viewer Online</h2>
+                <!-- about content -->
+                {{partial "content.html" . }}
+
+            </div>
+        
+    
+
+    {{partial "footer.html" . }}
+    {{ partial "bottom_script" . }}
+</body>
+</html>
