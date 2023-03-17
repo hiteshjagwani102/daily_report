@@ -240,7 +240,7 @@ reset.addEventListener('click',()=>{
     
 })
 
-//output-download
+// output-download
 document.getElementById("download2").addEventListener("click", ()=>{
     var file = new File([output.getValue()], "sample.html", {type: "text/html;charset=utf-8"});
     saveAs(file);
@@ -343,3 +343,19 @@ url.addEventListener('click',()=>{
 modalBg.addEventListener('click',()=>{
     modal.classList.remove('is-active');
 });
+
+//autorun
+var auto = document.getElementById('autorun');
+auto.addEventListener('click',event =>{
+    if(event.target.checked){
+        document.getElementById('output').style.display = "none";
+        document.getElementById('myiframe').style.display = "block"
+        input.session.on('change',()=>{
+            document.getElementById('myiframe').srcdoc = input.getValue();
+        })
+    }
+    else{
+        document.getElementById('output').style.display = "block";
+        document.getElementById('myiframe').style.display = "none"
+    }
+})
