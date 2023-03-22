@@ -87,9 +87,6 @@
             <div class="container" style="display:flex">
                 <img id="main_logo" class="mt-2 ml-2 mb-2" src="./assets/Add_a_heading__5_-removebg-preview.png"
                     style="height:60px; width: 170px;" />
-                    <a id="theme_icon"><span class="material-symbols-outlined content" id="t_icon" style="margin-top: 26px; margin-left: 3px; font-size: 20px;">
-                        dark_mode
-                        </span></a>
                     <div id="nav_menu">
                         <a class="nav_anchor" href="#hero" style="margin-left: 20px;">HOME</a>
                         <a class="nav_anchor" href="#cont" style="margin-left: 20px;">ABOUT US</a>
@@ -117,10 +114,17 @@
         </nav>
     </div>
 
+    
+
+
     <!-- heading-->
     <section id="heading" class="section m-0 p-0 has-text-centered">
         <div class="container" style="display:flex; flex-wrap: wrap; align-items: center;">
             <h1 id="title" class="headin title is-2 mt-1">HTML Viewer</h1>
+            <a id="theme_icon"><span class="material-symbols-outlined content" id="t_icon" style=" margin-left: 5px; font-size: 30px;">
+                dark_mode
+                </span></a>
+                
                 <!-- <span class="toggle-icon" style="display:flex; justify-content: center; align-items: center; margin-left: 80px;">
                     <span class="content mr-2 mb-0" id="theme">Dark Mode</span>
                     <label class="switch">
@@ -171,7 +175,7 @@
                                 <input type="file" id="inputFile" value="Open" />
                                 
                             </label>
-                                
+                            
                                 <button class="button is-small is-light is-pulled-right mt-1 butts" id="sample" style="height:20px">Sample</button>
                                 <p style="color: white;">
                                     <span>Size: </span>
@@ -188,6 +192,10 @@
                                 <p class="title is-6 is-pulled-right has-text-weight-bold p-1 m-0"><a
                                         id="decrease1">T</a></p>
                                 <p class="is-pulled-left pt-1 pl-2 ml-3 mb-0 content" id="pointer1">Ln: 1 Col: 0</p>
+                                <span class="mt-0">
+                                    <input type="checkbox" id="autorun" name="autorun">
+                                    <label class="content" for="autorun">Auto-run</label>
+                                </span>
                                 
                                 <!-- <span type="text" id="isMissing" style="color: whitesmoke; background-color: #3d3d3d; border: none;"></span> -->
 
@@ -217,11 +225,11 @@
                                     <span id="conversion2" class="is-pulled-right p-1 content" style="font-size: 12px;"></span>
                                 </span>
 
-                                <button class="button is-primary is-small m-2 mt-3 butts" id="viewer">
-                                    Run/View</button>
-                            <button class="button is-danger is-small m-2 mt-3 butts" id="clear1">Clear</button>
+                            <button class="is-pulled-left button is-small is-danger m-2 mt-3 butts" id="clear1">Clear</button>
 
-                            <button class="button is-link is-small m-2 mt-3 butts" id="url">Upload URL</button>
+                            <button class="is-pulled-left is-small is-link button m-2 mt-3 butts" id="url">Upload URL</button>
+                            <button class="btn" id="viewer">
+                                Run/View</button>
 
                             <div class="modal">
                                 <div class="modal-background"></div>
@@ -242,17 +250,13 @@
 
                 
 
-
                 <!-- output -->
                 <div id="outputEditor" class="column is-5-desktop is-12 m-5">
                     <div class="p-0 editor" style="border: 1px solid #4a4a4a;">
                         <div class="tools_menu_top" class="mb-0" style="height:40px;">
                             <div class="pr-3 pt-1">
                                 <p class="is-pulled-left has-text-white pl-3">Output</p>
-                                <span class="is-pulled-right mt-0">
-                                    <input type="checkbox" id="autorun" name="autorun">
-                                    <label class="content" for="autorun">Auto-run</label>
-                                </span>
+                                
                                 <p style='color: white;'>
                                     <span>Size: </span>
                                     <span id="size2">0</span>
@@ -278,9 +282,9 @@
                         <!-- output buttons -->
                         <div style="margin-bottom: 150px;">
                             
-                            <button class="button is-pulled-left is-danger is-small m-3 butts" id="reset2">Reset</button>
-                            <button class="button is-pulled-left is-info is-small m-3 butts" id="download2">Download</button>
-                            <button class="button is-pulled-left is-info is-small m-3 butts" id="copy2">Copy</button>
+                            <button class="button m-2 mt-3 is-small is-danger butts is-pulled-left" id="reset2">Reset</button>
+                            <button class="button m-2 mt-3 is-small is-primary butts is-pulled-left" id="download2">Download</button>
+                            <button class="button m-2 mt-3 is-small is-info butts is-pulled-left" id="copy2">Copy</button>
                         
                         </div>
                     
@@ -288,7 +292,12 @@
 
             </div>
         </div>
+        
     </section>
+
+    
+
+
 
 
 
@@ -297,7 +306,15 @@
 
 
     <!-- about content -->
-    <section id="cont" class="section">
+    <section id="cont" class="section" style="position: relative;">
+        <div style="position: absolute; 
+                bottom: 20rem; 
+                border-radius: 9999px; 
+                width: 80%;
+                height: 80%;
+                z-index: 0;
+                background: rgba(124, 123, 123, 0.714);
+              filter: blur(750px);"></div>
        
         <div class="columns content">
             <div class="column is-6">
@@ -465,7 +482,9 @@
             <ion-icon class="log" name="logo-instagram"></ion-icon>
             <ion-icon class="log" name="logo-youtube"></ion-icon>
         </div> -->
+        
     </section>
+    
 
 
 
