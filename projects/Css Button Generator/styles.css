@@ -2,8 +2,8 @@
     -webkit-box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
-    height: 400px;
-    width: 400px;
+    height: auto;
+    width: auto;
 }
 
 input[type=color]{
@@ -25,8 +25,27 @@ input[type="color"]::-webkit-color-swatch {
     -webkit-box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
+
+#code-box::-webkit-scrollbar {
+    display: none;
+  }
+
+  .button-box{
+    -webkit-box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 78px -23px rgba(0,0,0,0.75);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.button-box::-webkit-scrollbar {
+    display: none;
+  }
 
 
 
