@@ -71,29 +71,27 @@ function updateButton() {
   });
 
 //   htmlCode.innerText = `<button>${btnText.value}</button>`;
-  cssCode.innerHTML = `button 
-{
-padding: ${hPaddingInput.value}px ${vPaddingInput.value}px;
-border-top-left-radius: ${btLeft.value}px;
-border-top-right-radius: ${btRight.value}px;
-border-bottom-right-radius: ${bbRight.value}px;
-border-bottom-left-radius: ${bbLeft.value}px;
-font-weight: ${fWeight.value};
-font-size: ${fSize.value}px;
-font-family: ${fStyle.value};
-text-transform: ${trList.value};
-color: ${fColor.value};
-border: solid 1px ${brColor.value};
-background-color: ${btnbrColorInput.value};
-width: ${hSizeInput.value}px;
-height: ${vSizeInput.value}px;
-transition: width 0.5s, margin-top 0.5s;
+  cssCode.innerHTML = `button {
+  padding: ${hPaddingInput.value}px ${vPaddingInput.value}px;
+  border-top-left-radius: ${btLeft.value}px;
+  border-top-right-radius: ${btRight.value}px;
+  border-bottom-right-radius: ${bbRight.value}px;
+  border-bottom-left-radius: ${bbLeft.value}px;
+  font-weight: ${fWeight.value};
+  font-size: ${fSize.value}px;
+  font-family: ${fStyle.value};
+  text-transform: ${trList.value};
+  color: ${fColor.value};
+  border: solid 1px ${brColor.value};
+  background-color: ${btnbrColorInput.value};
+  width: ${hSizeInput.value}px;
+  height: ${vSizeInput.value}px;
+  transition: width 0.5s, margin-top 0.5s;
 }
-button:hover
-{
-width: ${widthHoverInput.value}px;
-height: ${upHoverInput.value}px;
-background-color: ${hoverbgColorInput.value};
+button:hover {
+  width: ${widthHoverInput.value}px;
+  height: ${upHoverInput.value}px;
+  background-color: ${hoverbgColorInput.value};
 }
   `;
 
