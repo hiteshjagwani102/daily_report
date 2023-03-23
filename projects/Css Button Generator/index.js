@@ -71,8 +71,7 @@ function updateButton() {
   });
 
 //   htmlCode.innerText = `<button>${btnText.value}</button>`;
-  cssCode.innerHTML = `
-button 
+  cssCode.innerHTML = `button 
 {
 padding: ${hPaddingInput.value}px ${vPaddingInput.value}px;
 border-top-left-radius: ${btLeft.value}px;
@@ -498,9 +497,5 @@ function updateButtonStyles() {
   });
 }
 var codeBox = document.getElementById('code-box');
-var getCode = document.getElementById('get-code').addEventListener('click',()=>{
-    codeBox.style.display = 'block'
-    codeBox.scrollIntoView({behavior: 'smooth'});
 
-})
 
