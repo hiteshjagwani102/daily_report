@@ -7,10 +7,9 @@
 }
 
 input[type=color]{
-	width: 20px;
-	height: 18px;
+	width: 22px;
+	height: 20px;
 	border: none;
-	border-radius: 40px;
 	background: none;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
@@ -18,7 +17,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 }
 input[type="color"]::-webkit-color-swatch {
 	border: solid 1px #000; /*change color of the swatch border here*/
-	border-radius: 40px;
+	
 }
 
 #code-box{
