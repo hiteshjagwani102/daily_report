@@ -3,19 +3,9 @@
 <body>
     {{partial "header.html" . }}
 
-    {{partial "heading.html" . }}
+    {{ block "main" . }}
 
-    <section id="hero">
-        <div>
-            <div id="main_content" class="converter columns has-text-centered is-centered ml-1 mr-1" style="flex-wrap: wrap;">
-                <!-- input -->
-                {{partial "input_editor" . }}
-            
-                <!-- output -->
-                {{partial "output_editor" . }}
-            </div>
-        </div>
-    </section>
+    {{end}}
 
 
                 

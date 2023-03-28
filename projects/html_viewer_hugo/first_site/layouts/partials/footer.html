@@ -24,6 +24,16 @@
                 <li class="lists">Follow Us</li>
             </ul>
         </div>
+        <div class="column is-2">
+            <ul>
+                <li class="has-text-weight-bold headin mb-3">More Tools</li>
+                {{ range .Site.Pages }}
+                <li><a class="lists" href="{{.Permalink}}">{{.Title}}</a></li>   
+                {{end}}
+
+                
+            </ul>
+        </div>
     </div>
     <hr class="line" style="height:1px; margin-bottom: 10px;">
     <div class="is-pulled-left">
