@@ -17,17 +17,11 @@
                 <li><a class="lists" href="terms_and_conditions.html">Terms and Conditions</a></li>
             </ul>
         </div>
-        <div class="column is-2">
-            <ul>
-                <li class="has-text-weight-bold headin mb-3">Support Us</li>
-                <li class="lists">Buy Us a Coffee</li>
-                <li class="lists">Follow Us</li>
-            </ul>
-        </div>
+
         <div class="column is-2">
             <ul>
                 <li class="has-text-weight-bold headin mb-3">More Tools</li>
-                {{ range .Site.Pages }}
+                {{ range .Site.RegularPages}}
                 <li><a class="lists" href="{{.Permalink}}">{{.Title}}</a></li>   
                 {{end}}
 

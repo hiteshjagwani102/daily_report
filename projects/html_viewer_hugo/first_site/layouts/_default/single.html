@@ -1,36 +1,3 @@
 {{ define "main" }}
-<section id="heading" class="section m-0 p-0 has-text-centered">
-    <div class="container" style="display:flex; flex-wrap: wrap; align-items: center;">
-        <h1 id="title" class="headin title is-2 mt-1">{{.Title}}</h1>
-            
-
-            <div id="layouts" class="has-text-centered" style="margin-left: auto; margin-right: 30px;">
-                <button id="layout1" class="button is-small p-2 layout_button" style="border-radius: 5px;"><span class="material-symbols-outlined">
-                    view_stream
-                    </span></button>
-                <button id="layout2" class="button is-small p-2 ml-1 layout_button" style="border-radius: 5px;"><span class="material-symbols-outlined">
-                    view_column_2
-                    </span></button>
-                <button id="layout3" class="button is-small p-2 ml-1 layout_button"style="border-radius: 5px;"><span class="material-symbols-outlined">
-                    check_box_outline_blank
-                    </span></button>
-                </div>
-        </div>
-
-        
-    
-
-</section>
-
-<section id="hero">
-    <div>
-        <div id="main_content" class="converter columns has-text-centered is-centered ml-1 mr-1" style="flex-wrap: wrap;">
-            <!-- input -->
-            {{partial "input_editor" . }}
-        
-            <!-- output -->
-            {{partial "output_editor" . }}
-        </div>
-    </div>
-</section>
+    {{ .Content }}
 {{ end }}
