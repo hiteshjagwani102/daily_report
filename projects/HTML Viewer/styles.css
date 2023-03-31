@@ -1,7 +1,7 @@
 
 *{scroll-behavior: smooth;}
 :root {
-    --background: black;
+    --background: rgb(20, 19, 19);
     --font-color: lightgrey;
     --title-color: lightgrey;
     --toolbox-top: #363636;
@@ -372,6 +372,11 @@ p {
  
  .btn:active {
   --border-width: 3px;
+ }
+
+ .svg-icons {
+  height: 100px;
+  width: 100px;
  }
 
 

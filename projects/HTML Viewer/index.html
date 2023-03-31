@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
     <!--For Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -60,27 +59,85 @@
 </script>
 
 <body>
-    <!-- header -->
-    <!-- <div id="navbar">
-        <nav id="nav" class="navbar is-dark">
-            <div class="navbar-brand">
-                <img class="mt-2 ml-4 mb-2" src="./assets/Add_a_heading__5_-removebg-preview.png"
-                    style="height:50px; width: 140px;" />
-                <a href="" class="navbar-burger" id="burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
-            </div>
-            <div class="navbar-menu" style="background-color:#363636; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" id="nav-links">
-                <div class="navbar-end">
-                    <a class="navbar-item" href="#" style="color: aliceblue;">Home</a>
-                    <a class="navbar-item" href="#" style="color: aliceblue;">About Us</a>
-                    <a class="navbar-item" href="#" style="color: aliceblue;">Contact Us</a>
-                </div>
-            </div>
-        </nav>
-    </div> -->
+    
+
+    <!-- svg sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="is-hidden">
+        <symbol id="lock" viewBox="0 0 54 71">
+            <path class="change" class="change" class="change" d="M46.9999 23.6666H43.6666V17C43.6666 7.79998 36.1999 0.333313 26.9999 0.333313C17.7999 0.333313 10.3333 7.79998 10.3333 17V23.6666H6.99992C3.33325 23.6666 0.333252 26.6666 0.333252 30.3333V63.6666C0.333252 67.3333 3.33325 70.3333 6.99992 70.3333H46.9999C50.6666 70.3333 53.6666 67.3333 53.6666 63.6666V30.3333C53.6666 26.6666 50.6666 23.6666 46.9999 23.6666ZM16.9999 17C16.9999 11.4666 21.4666 6.99998 26.9999 6.99998C32.5333 6.99998 36.9999 11.4666 36.9999 17V23.6666H16.9999V17ZM46.9999 63.6666H6.99992V30.3333H46.9999V63.6666ZM26.9999 53.6666C30.6666 53.6666 33.6666 50.6666 33.6666 47C33.6666 43.3333 30.6666 40.3333 26.9999 40.3333C23.3333 40.3333 20.3333 43.3333 20.3333 47C20.3333 50.6666 23.3333 53.6666 26.9999 53.6666Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol width="49" height="91" id="fast" viewBox="0 0 49 91">
+            <path class="change" d="M0 0V50.05H14.7V91L49 36.4H29.4L44.1 0H0Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="preview" viewBox="0 0 60 64">
+            <path class="change" d="M53.3333 0H6.66667C2.96667 0 0 3.2 0 7.11111V56.8889C0 60.8 2.96667 64 6.66667 64H53.3333C57 64 60 60.8 60 56.8889V7.11111C60 3.2 57.0333 0 53.3333 0ZM53.3333 56.8889H6.66667V14.2222H53.3333V56.8889ZM30 26.6667C36.1333 26.6667 41.6 30.08 44.4667 35.5556C41.6 41.0311 36.1333 44.4444 30 44.4444C23.8667 44.4444 18.4 41.0311 15.5333 35.5556C18.4 30.08 23.8667 26.6667 30 26.6667ZM30 21.3333C20.9 21.3333 13.1333 27.2356 10 35.5556C13.1333 43.8756 20.9 49.7778 30 49.7778C39.1 49.7778 46.8667 43.8756 50 35.5556C46.8667 27.2356 39.1 21.3333 30 21.3333ZM30 40.8889C27.2333 40.8889 25 38.5067 25 35.5556C25 32.6044 27.2333 30.2222 30 30.2222C32.7667 30.2222 35 32.6044 35 35.5556C35 38.5067 32.7667 40.8889 30 40.8889Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="external" viewBox="0 0 61 65">
+            <path class="change" d="M54.0833 0.875H7.41667C3.71667 0.875 0.75 4.075 0.75 7.98611V57.7639C0.75 61.675 3.71667 64.875 7.41667 64.875H54.0833C57.75 64.875 60.75 61.675 60.75 57.7639V7.98611C60.75 4.075 57.7833 0.875 54.0833 0.875ZM54.0833 57.7639H7.41667V15.0972H54.0833V57.7639ZM47.4167 32.875H14.0833V25.7639H47.4167V32.875ZM34.0833 47.0972H14.0833V39.9861H34.0833V47.0972Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="reg" viewBox="0 0 57 54">
+            <path class="change" d="M33.6666 0.333313H20.3333V13.6666H33.6666V0.333313Z" fill="lightgrey"/>
+            <path class="change" d="M13.6666 40.3333H0.333252V53.6666H13.6666V40.3333Z" fill="lightgrey"/>
+            <path class="change" d="M13.6666 20.3333H0.333252V33.6666H13.6666V20.3333Z" fill="lightgrey"/>
+            <path class="change" d="M13.6666 0.333313H0.333252V13.6666H13.6666V0.333313Z" fill="lightgrey"/>
+            <path class="change" d="M53.6666 0.333313H40.3333V13.6666H53.6666V0.333313Z" fill="lightgrey"/>
+            <path class="change" d="M23.6665 46.5333V53.6666H30.6665L50.5998 33.7666L43.5332 26.7L23.6665 46.5333Z" fill="lightgrey"/>
+            <path class="change" d="M33.6666 27.1V20.3333H20.3333V33.6666H27.0999L33.6666 27.1Z" fill="lightgrey"/>
+            <path class="change" d="M56.4999 25.5333L51.7999 20.8333C51.1332 20.1666 50.0999 20.1666 49.4332 20.8333L45.8999 24.3666L52.9666 31.4333L56.4999 27.9C57.1666 27.2333 57.1666 26.2 56.4999 25.5333Z"fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="web" viewBox="0 0 63 63">
+            <path class="change" d="M56.7 0H6.3C2.835 0 0.0315 3.54375 0.0315 7.875L0 55.125C0 59.4563 2.835 63 6.3 63H56.7C60.165 63 63 59.4563 63 55.125V7.875C63 3.54375 60.165 0 56.7 0ZM6.3 19.6875H39.375V33.4688H6.3V19.6875ZM6.3 41.3438H39.375V55.125H6.3V41.3438ZM56.7 55.125H45.675V19.6875H56.7V55.125Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="upload" viewBox="0 0 54 73">
+            <path class="change" d="M33.6666 0.25H6.99992C3.33325 0.25 0.366586 3.5125 0.366586 7.5L0.333252 65.5C0.333252 69.4875 3.29992 72.75 6.96658 72.75H46.9999C50.6666 72.75 53.6666 69.4875 53.6666 65.5V22L33.6666 0.25ZM46.9999 65.5H6.99992V7.5H30.3333V25.625H46.9999V65.5ZM13.6666 47.4113L18.3666 52.5225L23.6666 46.795V61.875H30.3333V46.795L35.6333 52.5588L40.3333 47.4113L27.0333 32.875L13.6666 47.4113Z"fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="fact" viewBox="0 0 71 63">
+            <path class="change" d="M63.1667 0.375H7.83341C4.02925 0.375 0.916748 3.4875 0.916748 7.29167V55.7083C0.916748 59.5125 4.02925 62.625 7.83341 62.625H63.1667C66.9709 62.625 70.0834 59.5125 70.0834 55.7083V7.29167C70.0834 3.4875 66.9709 0.375 63.1667 0.375ZM63.1667 55.7083H7.83341V7.29167H63.1667V55.7083Z" fill="lightgrey"/>
+            <path class="change" fill-rule="evenodd" clip-rule="evenodd" d="M61.1262 26.0358L56.2154 21.125L45.2525 32.0879L40.3762 27.1771L35.5 32.0533L45.2525 41.875L61.1262 26.0358Z" fill="lightgrey"/>
+            <path class="change" d="M28.5834 14.2083H11.2917V21.125H28.5834V14.2083Z" fill="lightgrey"/>
+            <path class="change" d="M28.5834 28.0417H11.2917V34.9584H28.5834V28.0417Z" fill="lightgrey"/>
+            <path class="change" d="M28.5834 41.875H11.2917V48.7917H28.5834V41.875Z" fill="lightgrey" />
+        </symbol>
+
+        <symbol id="eye" viewBox="0 0 69 46">
+            <path class="change" d="M34.5 6.74998C46.3437 6.74998 56.9062 13.0512 62.0625 23.0208C56.9062 32.9904 46.3437 39.2916 34.5 39.2916C22.6563 39.2916 12.0938 32.9904 6.9375 23.0208C12.0938 13.0512 22.6563 6.74998 34.5 6.74998ZM34.5 0.833313C18.875 0.833313 5.53125 10.0337 0.125 23.0208C5.53125 36.0079 18.875 45.2083 34.5 45.2083C50.125 45.2083 63.4687 36.0079 68.875 23.0208C63.4687 10.0337 50.125 0.833313 34.5 0.833313ZM34.5 15.625C38.8125 15.625 42.3125 18.9383 42.3125 23.0208C42.3125 27.1033 38.8125 30.4166 34.5 30.4166C30.1875 30.4166 26.6875 27.1033 26.6875 23.0208C26.6875 18.9383 30.1875 15.625 34.5 15.625ZM34.5 9.70831C26.75 9.70831 20.4375 15.6841 20.4375 23.0208C20.4375 30.3575 26.75 36.3333 34.5 36.3333C42.25 36.3333 48.5625 30.3575 48.5625 23.0208C48.5625 15.6841 42.25 9.70831 34.5 9.70831Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="light" viewBox="0 0 28 26">
+            <path class="change" d="M14 9.45455C16.1 9.45455 17.8182 11.05 17.8182 13C17.8182 14.95 16.1 16.5455 14 16.5455C11.9 16.5455 10.1818 14.95 10.1818 13C10.1818 11.05 11.9 9.45455 14 9.45455ZM14 7.09091C10.4873 7.09091 7.63636 9.73818 7.63636 13C7.63636 16.2618 10.4873 18.9091 14 18.9091C17.5127 18.9091 20.3636 16.2618 20.3636 13C20.3636 9.73818 17.5127 7.09091 14 7.09091ZM1.27273 14.1818H3.81818C4.51818 14.1818 5.09091 13.65 5.09091 13C5.09091 12.35 4.51818 11.8182 3.81818 11.8182H1.27273C0.572727 11.8182 0 12.35 0 13C0 13.65 0.572727 14.1818 1.27273 14.1818ZM24.1818 14.1818H26.7273C27.4273 14.1818 28 13.65 28 13C28 12.35 27.4273 11.8182 26.7273 11.8182H24.1818C23.4818 11.8182 22.9091 12.35 22.9091 13C22.9091 13.65 23.4818 14.1818 24.1818 14.1818ZM12.7273 1.18182V3.54545C12.7273 4.19545 13.3 4.72727 14 4.72727C14.7 4.72727 15.2727 4.19545 15.2727 3.54545V1.18182C15.2727 0.531818 14.7 0 14 0C13.3 0 12.7273 0.531818 12.7273 1.18182ZM12.7273 22.4545V24.8182C12.7273 25.4682 13.3 26 14 26C14.7 26 15.2727 25.4682 15.2727 24.8182V22.4545C15.2727 21.8045 14.7 21.2727 14 21.2727C13.3 21.2727 12.7273 21.8045 12.7273 22.4545ZM6.35091 4.23091C5.85455 3.77 5.04 3.77 4.55636 4.23091C4.06 4.69182 4.06 5.44818 4.55636 5.89727L5.90545 7.15C6.40182 7.61091 7.21636 7.61091 7.7 7.15C8.18364 6.68909 8.19636 5.93273 7.7 5.48364L6.35091 4.23091ZM22.0945 18.85C21.5982 18.3891 20.7836 18.3891 20.3 18.85C19.8036 19.3109 19.8036 20.0673 20.3 20.5164L21.6491 21.7691C22.1455 22.23 22.96 22.23 23.4436 21.7691C23.94 21.3082 23.94 20.5518 23.4436 20.1027L22.0945 18.85ZM23.4436 5.89727C23.94 5.43636 23.94 4.68 23.4436 4.23091C22.9473 3.77 22.1327 3.77 21.6491 4.23091L20.3 5.48364C19.8036 5.94455 19.8036 6.70091 20.3 7.15C20.7964 7.59909 21.6109 7.61091 22.0945 7.15L23.4436 5.89727ZM7.7 20.5164C8.19636 20.0555 8.19636 19.2991 7.7 18.85C7.20364 18.3891 6.38909 18.3891 5.90545 18.85L4.55636 20.1027C4.06 20.5636 4.06 21.32 4.55636 21.7691C5.05273 22.2182 5.86727 22.23 6.35091 21.7691L7.7 20.5164Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="dark" viewBox="0 0 28 26">
+            <path class="change" d="M10.7839 4.37556C10.5039 5.3 10.3639 6.26778 10.3639 7.25C10.3639 13.1433 15.5283 17.9389 21.875 17.9389C22.9328 17.9389 23.975 17.8089 24.9706 17.5489C23.3528 21.2467 19.4328 23.8611 14.875 23.8611C8.87056 23.8611 3.98611 19.3256 3.98611 13.75C3.98611 9.51778 6.80167 5.87778 10.7839 4.37556ZM14.875 0.75C7.14389 0.75 0.875 6.57111 0.875 13.75C0.875 20.9289 7.14389 26.75 14.875 26.75C22.6061 26.75 28.875 20.9289 28.875 13.75C28.875 13.0856 28.8128 12.4211 28.7194 11.7856C27.195 13.7644 24.7061 15.05 21.875 15.05C17.2394 15.05 13.475 11.5544 13.475 7.25C13.475 4.63556 14.8594 2.31 16.9906 0.894444C16.3061 0.807778 15.5906 0.75 14.875 0.75Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="menu" viewBox="0 0 21 18">
+            <path class="change" d="M0 18H21V15H0V18ZM0 10.5H21V7.5H0V10.5ZM0 0V3H21V0H0Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="view_stream" viewBox="0 0 18 14">
+            <path d="M0 2V12C0 13.1 0.9 14 2 14H16C17.1 14 18 13.1 18 12V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2ZM16 12H2V8H16V12ZM2 6V2H16V6H2Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="view_column" viewBox="0 0 18 18">
+            <path d="M11.25 18C10.85 18 10.5 17.85 10.2 17.55C9.9 17.25 9.75 16.9 9.75 16.5V1.5C9.75 1.1 9.9 0.75 10.2 0.45C10.5 0.15 10.85 0 11.25 0H16.5C16.9 0 17.25 0.15 17.55 0.45C17.85 0.75 18 1.1 18 1.5V16.5C18 16.9 17.85 17.25 17.55 17.55C17.25 17.85 16.9 18 16.5 18H11.25ZM11.25 1.5V16.5H16.5V1.5H11.25ZM1.5 18C1.1 18 0.75 17.85 0.45 17.55C0.15 17.25 0 16.9 0 16.5V1.5C0 1.1 0.15 0.75 0.45 0.45C0.75 0.15 1.1 0 1.5 0H6.75C7.15 0 7.5 0.15 7.8 0.45C8.1 0.75 8.25 1.1 8.25 1.5V16.5C8.25 16.9 8.1 17.25 7.8 17.55C7.5 17.85 7.15 18 6.75 18H1.5ZM1.5 1.5V16.5H6.75V1.5H1.5Z" fill="lightgrey"/>
+        </symbol>
+
+        <symbol id="rectangle" viewBox="0 0 18 18">
+            <path d="M1.5 18C1.1 18 0.75 17.85 0.45 17.55C0.15 17.25 0 16.9 0 16.5V1.5C0 1.1 0.15 0.75 0.45 0.45C0.75 0.15 1.1 0 1.5 0H16.5C16.9 0 17.25 0.15 17.55 0.45C17.85 0.75 18 1.1 18 1.5V16.5C18 16.9 17.85 17.25 17.55 17.55C17.25 17.85 16.9 18 16.5 18H1.5ZM1.5 16.5H16.5V1.5H1.5V16.5Z" fill="lightgrey"/>
+        </symbol>
+
+        
+    </svg> 
+        
+
 
     <div>
         <nav>
@@ -97,9 +154,11 @@
 
                     <div id="nav_menu_small" class="dropdown1">
                         <a class="dropbtn1 content">
-                            <span class="material-symbols-outlined">
-                                menu
-                            </span>
+                            <svg style="width:21px; height:18px">
+                                <use xlink:href="#menu">
+                                     
+                                </use>
+                            </svg>
                         </a>
                         <div class="dropdown-content1">
                             <a href="#hero">HOME</a>
@@ -121,9 +180,11 @@
     <section id="heading" class="section m-0 p-0 has-text-centered">
         <div class="container" style="display:flex; flex-wrap: wrap; align-items: center;">
             <h1 id="title" class="headin title is-2 mt-1">HTML Viewer</h1>
-            <a id="theme_icon"><span class="material-symbols-outlined content" id="t_icon" style=" margin-left: 5px; font-size: 30px;">
-                dark_mode
-                </span></a>
+            <a class="ml-2" id="theme_icon">
+                <svg style="height:26px; width:24px">
+                    <use id="t_icon" xlink:href="#dark"></use>
+                </svg>
+                </a>
                 
                 <!-- <span class="toggle-icon" style="display:flex; justify-content: center; align-items: center; margin-left: 80px;">
                     <span class="content mr-2 mb-0" id="theme">Dark Mode</span>
@@ -134,15 +195,17 @@
                 </span> -->
 
                 <div id="layouts" class="has-text-centered" style="margin-left: auto; margin-right: 30px;">
-                    <button id="layout1" class="button is-small p-2 layout_button" style="border-radius: 5px;"><span class="material-symbols-outlined">
-                        view_stream
-                        </span></button>
-                    <button id="layout2" class="button is-small p-2 ml-1 layout_button" style="border-radius: 5px;"><span class="material-symbols-outlined">
-                        view_column_2
-                        </span></button>
-                    <button id="layout3" class="button is-small p-2 ml-1 layout_button"style="border-radius: 5px;"><span class="material-symbols-outlined">
-                        check_box_outline_blank
-                        </span></button>
+                    <button id="layout1" class="button is-small p-2 layout_button" style="border-radius: 5px;">
+                        <svg style="height: 14px; width:18px">
+                            <use xlink:href="#view_stream"></use>
+                        </svg>
+                    </button>
+                    <button id="layout2" class="button is-small p-2 ml-1 layout_button" style="border-radius: 5px;"><svg style="height: 18px; width:18px">
+                        <use xlink:href="#view_column"></use>
+                    </svg></button>
+                    <button id="layout3" class="button is-small p-2 ml-1 layout_button"style="border-radius: 5px;"><svg style="height: 18px; width:18px">
+                        <use xlink:href="#rectangle"></use>
+                    </svg></button>
                     </div>
             </div>
 
@@ -305,24 +368,26 @@
     <div class="conatiner">
 
 
+
+
     <!-- about content -->
     <section id="cont" class="section" style="position: relative;">
-        <div style="position: absolute; 
+        <!-- <div style="position: absolute; 
                 bottom: 20rem; 
                 border-radius: 9999px; 
                 width: 80%;
                 height: 80%;
                 z-index: 0;
                 background: rgba(124, 123, 123, 0.714);
-              filter: blur(750px);"></div>
+              filter: blur(750px);"></div> -->
        
         <div class="columns content">
             <div class="column is-6">
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            preview
-                        </span>
+                        <svg style="height:64px; width:60px;">
+                            <use xlink:href="#preview"></use>
+                        </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">HTML Viewer</p>
@@ -331,9 +396,9 @@
                 </div>
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            flash_on
-                            </span>
+                        <svg style="height:91px; width:49px;">
+                            <use xlink:href="#fast"></use>
+                        </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">Light Speed</p>
@@ -341,11 +406,13 @@
                     </div>
                 </div>
 
+                
+
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            lock
-                            </span>
+                         <svg style="width:54px; height:71px">
+                            <use xlink:href="#lock"></use>
+                         </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">Secure Formatting</p>
@@ -355,9 +422,9 @@
 
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            wysiwyg
-                            </span>
+                        <svg style="width:61px; height:65px">
+                            <use xlink:href="#external"></use>
+                         </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">No External Software Needed</p>
@@ -369,9 +436,9 @@
 
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            app_registration
-                            </span>
+                        <svg style="width:57px; height:57px">
+                            <use xlink:href="#reg"></use>
+                         </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">No Registration Required</p>
@@ -382,9 +449,9 @@
             <div class="column is-6 m-2">
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            web
-                            </span>
+                        <svg style="width:63px; height:63px">
+                            <use xlink:href="#web"></use>
+                         </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">Works on all latest Browsers and Devices</p>
@@ -394,9 +461,9 @@
 
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            upload_file
-                            </span>
+                        <svg style="width:54px; height:73px">
+                            <use xlink:href="#upload"></use>
+                         </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">Upload HTML File and URL</p>
@@ -406,9 +473,9 @@
 
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            fact_check
-                            </span>
+                        <svg style="width:71px; height:63px">
+                            <use xlink:href="#fact"></use>
+                         </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">Validates the HTML data</p>
@@ -418,9 +485,9 @@
 
                 <div class="columns m-4">
                     <div class="column is-3 has-text-centered">
-                        <span class="material-symbols-outlined" style="font-size: 90px;">
-                            visibility
-                            </span>
+                        <svg style="width:69px; height:46px">
+                            <use xlink:href="#eye"></use>
+                         </svg>
                     </div>
                     <div class="column is-9">
                         <p class="title is-5 headin">Viewing Options</p>
