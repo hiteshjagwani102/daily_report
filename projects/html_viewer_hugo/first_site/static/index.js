@@ -23,7 +23,7 @@ var size1 = 15;
 document.getElementById('input').style.fontSize=`${size1}px`;
 input.session.setMode("ace/mode/html");
 input.session.setUseWrapMode(true);
-input.setShowPrintMargin(false);
+
 //clear
 var clear1 = document.getElementById("clear1");
     clear1.addEventListener('click',()=>{
@@ -184,13 +184,12 @@ var output = ace.edit("output");
 output.setOptions({
     placeholder: "Type or copy you code here...",
 })
-output.setTheme("ace/theme/ambiance")
+output.setTheme("ace/theme/ambiance");
 
 var size2 = 15;
 document.getElementById('output').style.fontSize=`${size2}px`;
 output.session.setMode("ace/mode/html");
 output.session.setUseWrapMode(true);
-output.setShowPrintMargin(false);
 
 
 // upload
@@ -240,7 +239,7 @@ reset.addEventListener('click',()=>{
     
 })
 
-// output-download
+//output-download
 document.getElementById("download2").addEventListener("click", ()=>{
     var file = new File([output.getValue()], "sample.html", {type: "text/html;charset=utf-8"});
     saveAs(file);
@@ -253,10 +252,10 @@ document.getElementById("download2").addEventListener("click", ()=>{
 
 //light them dark theme
 const logo = document.getElementById("main_logo")
-const toggleSwitch = document.querySelector('.theme_icon')
-const icon = document.querySelector(".t_icon")
+const toggleSwitch = document.querySelector('#theme_icon')
+const icon = document.querySelector("#t_icon")
 toggleSwitch.addEventListener('click',()=> {
-    if(icon.innerText=='dark_mode'){
+    if(icon.getAttribute('xlink:href')=='#dark'){
         document.documentElement.setAttribute('data-theme','light');
         localStorage.setItem('theme','light');
         lightMode();
@@ -276,18 +275,27 @@ function lightMode(){
     input.setTheme("ace/theme/chrome");
     output.setTheme("ace/theme/chrome");
     var mode = document.getElementById('theme');
+    var sym = document.getElementsByClassName('change');
     // mode.textContent = 'Light Mode';
     logo.src = "/logo.png"
-    icon.innerText='light_mode'
+    icon.setAttribute('xlink:href','#light');
+    for(let i=0;i<sym.length;i++){
+        sym[i].setAttribute("fill", "darkslategrey");
+    }
+
 }
 
 function darkMode(){
     input.setTheme("ace/theme/ambiance");
     output.setTheme("ace/theme/ambiance");
     var mode = document.getElementById('theme');
+    var sym = document.getElementsByClassName('change');
     // mode.textContent = 'Dark Mode';
     logo.src = "/Add_a_heading__5_-removebg-preview.png"
-    icon.innerText='dark_mode'
+    icon.setAttribute('xlink:href','#dark');
+    for(let i=0;i<sym.length;i++){
+        sym[i].setAttribute("fill", "lightgrey");
+    }
 }
 
 const currentTheme = localStorage.getItem('theme');

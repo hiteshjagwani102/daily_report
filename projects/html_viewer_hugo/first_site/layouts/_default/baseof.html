@@ -1,14 +1,15 @@
 <html lang="en">
 {{partial "head.html" . }}
 <body>
+    {{partial "svg.html" . }}
     {{partial "header.html" . }}
-
+    
     {{ block "main" . }}
 
     {{end}}
     
 
     {{partial "footer.html" . }}
-    {{ partial "bottom_script" . }}
+    {{ partial "bottom_script.html" . }}
 </body>
 </html>
