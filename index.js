@@ -5,3 +5,4 @@ burgerIcon.addEventListener('click', () =>{
     navbarMenu.classList.toggle('is-active');
     event.preventDefault();
 })
+

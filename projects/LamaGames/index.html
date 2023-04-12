@@ -5,33 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="/styles.css"></link>
+    <link rel="stylesheet" href="./styles.css"></link>
     <title>LamaGames</title>
 </head>
 <body class="pt-2" style="background-color:rgb(222, 240, 245)">
-    <h1 class="title is-3 has-text-centered mb-1">LAMA GAMES</h1>
-    <div style="display: flex; flex-direction: row; justify-content: center;">
-        <div style="font-size: medium;"><a style="color:black"><span style="font-size: 20px;">✯A</span>CTION</a></div>
-        <div style="margin-left: 12px; font-size: medium;"><a style="color:black"><span style="font-size: 20px;">✯A</span>DVENTURE</a></div>
-        <div style="margin-left: 12px; font-size: medium;"><a style="color:black"><span style="font-size: 20px;">✯P</span>UZZLE</a></div>
-        <div style="margin-left: 12px; font-size: medium;"><a style="color:black"><span style="font-size: 20px;">✯S</span>TRATEGY</a></div>
-        <div style="margin-left: 12px; font-size: medium;"><a style="color:black"><span style="font-size: 20px;">✯R</span>ACING</a></div>
+    <div style="display: flex; flex-direction: row; justify-content: center; align-content: center;">
+        <div style="margin-right: 10px; margin-top: 10px;">
+            <div class="cube-loader">
+                <div class="cube-top"></div>
+                <div class="cube-wrapper">
+                  <span style="--i:0" class="cube-span"></span>
+                  <span style="--i:1" class="cube-span"></span>
+                  <span style="--i:2" class="cube-span"></span>
+                  <span style="--i:3" class="cube-span"></span>
+                </div>
+              </div>
+        </div>
+        <h1 class="title is-3 has-text-centered mb-1" style="color: black;"><span style="color:rgb(228, 100, 100); font-size: 40px; transform: rotate(10deg); display: inline-block;">L</span><span style="color:rgb(84, 84, 228); font-size: 25px; transform: rotate(-10deg); display: inline-block;">A</span><span style="color:rgb(80, 225, 80); font-size: 35px; transform: rotate(10deg); display: inline-block;">M</span><span style="color: rgb(203, 75, 220); font-size: 25px; transform: rotate(-10deg); display: inline-block;">A</span> GAMES</h1>
+        <svg style="margin-top: 10px; margin-left:10px" width="30" height="20" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.4501 32C5.4501 32 3.74176 31.2833 2.3251 29.85C0.908431 28.4167 0.166764 26.6833 0.100098 24.65C0.100098 24.35 0.116764 24.05 0.150098 23.75C0.183431 23.45 0.233431 23.15 0.300098 22.85L4.5001 6.05C4.96676 4.25 5.91676 2.79167 7.3501 1.675C8.78343 0.558333 10.4168 0 12.2501 0H31.7501C33.5834 0 35.2168 0.558333 36.6501 1.675C38.0834 2.79167 39.0334 4.25 39.5001 6.05L43.7001 22.85C43.7668 23.15 43.8251 23.4583 43.8751 23.775C43.9251 24.0917 43.9501 24.4 43.9501 24.7C43.9501 26.7333 43.2251 28.4583 41.7751 29.875C40.3251 31.2917 38.5834 32 36.5501 32C35.1501 32 33.8501 31.6333 32.6501 30.9C31.4501 30.1667 30.5501 29.1667 29.9501 27.9L28.5501 25C28.3834 24.6667 28.1334 24.4167 27.8001 24.25C27.4668 24.0833 27.1168 24 26.7501 24H17.2501C16.8834 24 16.5334 24.0833 16.2001 24.25C15.8668 24.4167 15.6168 24.6667 15.4501 25L14.0501 27.9C13.4501 29.1667 12.5501 30.1667 11.3501 30.9C10.1501 31.6333 8.8501 32 7.4501 32ZM7.58325 29C8.39448 29 9.14455 28.7838 9.83345 28.3513C10.5223 27.9189 11.0445 27.3351 11.4001 26.6L12.8001 23.75C13.2334 22.8833 13.8418 22.2083 14.6251 21.725C15.4084 21.2417 16.2834 21 17.2501 21H26.7501C27.7168 21 28.5918 21.25 29.3751 21.75C30.1584 22.25 30.7834 22.9167 31.2501 23.75L32.6501 26.6C33.0057 27.3351 33.5279 27.9189 34.2168 28.3513C34.9057 28.7838 35.6544 29 36.4629 29C37.6544 29 38.6834 28.5917 39.5501 27.775C40.4168 26.9583 40.8668 25.95 40.9001 24.75C40.9001 24.6167 40.8501 24.2167 40.7501 23.55L36.5501 6.8C36.2834 5.7 35.7101 4.79167 34.8301 4.075C33.9501 3.35833 32.9234 3 31.7501 3H12.2501C11.0933 3 10.0708 3.35 9.1825 4.05C8.29423 4.75 7.71677 5.66667 7.4501 6.8L3.2501 23.55C3.21676 23.6833 3.16676 24.0667 3.1001 24.7C3.1001 25.9162 3.53773 26.9369 4.413 27.7621C5.2883 28.5874 6.34505 29 7.58325 29ZM25.0088 13.5C25.4363 13.5 25.7918 13.3554 26.0751 13.0663C26.3584 12.7771 26.5001 12.4187 26.5001 11.9913C26.5001 11.5638 26.3555 11.2083 26.0664 10.925C25.7772 10.6417 25.4188 10.5 24.9914 10.5C24.5639 10.5 24.2084 10.6446 23.9251 10.9337C23.6418 11.2229 23.5001 11.5813 23.5001 12.0087C23.5001 12.4362 23.6447 12.7917 23.9338 13.075C24.223 13.3583 24.5814 13.5 25.0088 13.5ZM29.0088 9.5C29.4363 9.5 29.7918 9.35542 30.0751 9.06625C30.3584 8.77705 30.5001 8.41872 30.5001 7.99125C30.5001 7.56375 30.3555 7.20833 30.0664 6.925C29.7772 6.64167 29.4188 6.5 28.9914 6.5C28.5639 6.5 28.2084 6.64458 27.9251 6.93375C27.6418 7.22295 27.5001 7.58128 27.5001 8.00875C27.5001 8.43625 27.6447 8.79167 27.9338 9.075C28.223 9.35833 28.5814 9.5 29.0088 9.5ZM29.0088 17.5C29.4363 17.5 29.7918 17.3554 30.0751 17.0663C30.3584 16.7771 30.5001 16.4187 30.5001 15.9913C30.5001 15.5638 30.3555 15.2083 30.0664 14.925C29.7772 14.6417 29.4188 14.5 28.9914 14.5C28.5639 14.5 28.2084 14.6446 27.9251 14.9337C27.6418 15.2229 27.5001 15.5813 27.5001 16.0087C27.5001 16.4362 27.6447 16.7917 27.9338 17.075C28.223 17.3583 28.5814 17.5 29.0088 17.5ZM33.0088 13.5C33.4364 13.5 33.7918 13.3554 34.0751 13.0663C34.3584 12.7771 34.5001 12.4187 34.5001 11.9913C34.5001 11.5638 34.3555 11.2083 34.0664 10.925C33.7772 10.6417 33.4188 10.5 32.9914 10.5C32.5639 10.5 32.2084 10.6446 31.9251 10.9337C31.6418 11.2229 31.5001 11.5813 31.5001 12.0087C31.5001 12.4362 31.6447 12.7917 31.9338 13.075C32.223 13.3583 32.5814 13.5 33.0088 13.5ZM15.0059 16.75C15.3687 16.75 15.6668 16.6319 15.9001 16.3958C16.1334 16.1597 16.2501 15.8611 16.2501 15.5V13.25H18.5001C18.8612 13.25 19.1598 13.1314 19.3959 12.8942C19.632 12.657 19.7501 12.357 19.7501 11.9942C19.7501 11.6314 19.632 11.3333 19.3959 11.1C19.1598 10.8667 18.8612 10.75 18.5001 10.75H16.2501V8.5C16.2501 8.1389 16.1315 7.84028 15.8943 7.60415C15.6571 7.36805 15.3571 7.25 14.9943 7.25C14.6315 7.25 14.3334 7.36805 14.1001 7.60415C13.8668 7.84028 13.7501 8.1389 13.7501 8.5V10.75H11.5001C11.139 10.75 10.8404 10.8686 10.6042 11.1058C10.3681 11.343 10.2501 11.643 10.2501 12.0058C10.2501 12.3686 10.3681 12.6667 10.6042 12.9C10.8404 13.1333 11.139 13.25 11.5001 13.25H13.7501V15.5C13.7501 15.8611 13.8687 16.1597 14.1059 16.3958C14.3431 16.6319 14.6431 16.75 15.0059 16.75Z" fill="black"/>
+            </svg>
+            
+
+
     </div>
+    <div style="display: flex; flex-direction: row; justify-content: center;">
+        <button class="glow-on-hover"><a href="#action" style="color:black"><span style="font-size: 20px;">✯A</span>CTION</a></button>
+        <button class="glow-on-hover"><a href="#adventure" style="color:black"><span style="font-size: 20px;">✯A</span>DVENTURE</a></button>
+        <button class="glow-on-hover"><a href="#puzzle" style="color:black"><span style="font-size: 20px;">✯P</span>UZZLE</a></button>
+        <button class="glow-on-hover"><a href="#strategy" style="color:black"><span style="font-size: 20px;">✯S</span>TRATEGY</a></button>
+        <button class="glow-on-hover"><a href="#racing" style="color:black"><span style="font-size: 20px;">✯R</span>ACING</a></button>
+    </div>
+
+
+    <div class="pacman">
+        <div class="pacman-top"></div>
+        <div class="pacman-bottom"></div>
+        <div class="feed"></div>
+        </div>
+
+
+        <div class="akuaku">
+            <div class="feather"></div>
+            <div class="feather"></div>
+            <div class="feather"></div>
+            <div class="feather"></div>
+            <div class="body"></div>
+            <div class="eyebrows"></div>
+            <div class="eyebrows"></div>
+            <div class="eye"></div>
+            <div class="eye"></div>
+            <div class="nose"></div>
+            <div class="lip"></div>
+            <div class="lip"></div>
+            <div class="beard"></div>
+            <div class="beard"></div>
+          </div>
+    
+    
 
     <section id="action" class="section">
         <div class="container holder" style="padding:15px; border-radius: 10px; border: 1px solid rgb(117, 116, 116);">
-            <h1 class="subtitle has-text-centered" style="margin: 0;">Action</h1>
-            <hr style='background-color: rgb(80, 80, 80); margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
+            <h1 class="subtitle has-text-centered m-0" style="color: black;">Action</h1>
+            <hr style='background-color: black; margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
 
             <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px;">
                     <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
-                    <a style="color: black; text-align: center;">Play</a>
+                    <a href="./games/eastermerge.html" style="color: black; text-align: center;">Play</a>
                 </div>
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px;  margin-left: 15px;">
-                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
-                    <a style="color: black; text-align: center;">Play</a>
+                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/killthevirus200.webp"/>
+                    <a href="./games/killthevirus.html" style="color: black; text-align: center;">Play</a>
                 </div>
+                <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px;  margin-left: 15px;">
+                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/killthevirus200.webp"/>
+                    <a href="./games/killthevirus.html" style="color: black; text-align: center;">Play</a>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -39,16 +90,16 @@
 
     <section id="adventure" class="section">
         <div class="container holder" style="padding:15px; border-radius: 10px; border: 1px solid rgb(117, 116, 116);">
-            <h1 class="subtitle has-text-centered m-0">Adventure</h1>
-            <hr style='background-color: rgb(80, 80, 80); margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
+            <h1 class="subtitle has-text-centered m-0" style="color: black;">Adventure</h1>
+            <hr style='background-color: black; margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
             <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px;">
-                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
-                    <a style="color: black; text-align: center;">Play</a>
+                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/praquehiddenobjects200.webp"/>
+                    <a href="./games/pragurhidden.html" style="color: black; text-align: center;">Play</a>
                 </div>
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px; margin-left: 15px;">
-                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
-                    <a style="color: black; text-align: center;">Play</a>
+                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/pyramidoflove200.webp"/>
+                    <a href="./games/pyramidoflove.html" style="color: black; text-align: center;">Play</a>
                 </div>
             </div>
         </div>
@@ -57,17 +108,18 @@
 
     <section id="puzzle" class="section">
         <div class="container holder" style="padding:15px; border-radius: 10px; border: 1px solid rgb(117, 116, 116);">
-            <h1 class="subtitle has-text-centered m-0">Puzzle</h1>
-            <hr style='background-color: rgb(80, 80, 80); margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
+            <h1 class="subtitle has-text-centered m-0" style="color: black;">Puzzle</h1>
+            <hr style='background-color: black; margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
             <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px;">
-                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
-                    <a style="color: black; text-align: center;">Play</a>
+                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/slidepuzzle200.webp"/>
+                    <a href="./games/slidepuzzle.html" style="color: black; text-align: center;">Play</a>
                 </div>
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px; margin-left: 15px;">
-                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
-                    <a style="color: black; text-align: center;">Play</a>
+                    <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/daily-hitori-200.webp" />
+                    <a href="./games/dailyhitori.html" style="color: black; text-align: center;">Play</a>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -75,8 +127,8 @@
 
     <section id="strategy" class="section">
         <div class="container holder" style="padding:15px; border-radius: 10px; border: 1px solid rgb(117, 116, 116);">
-            <h1 class="subtitle has-text-centered m-0">Strategy</h1>
-            <hr style='background-color: rgb(80, 80, 80); margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
+            <h1 class="subtitle has-text-centered m-0" style="color: black;">Strategy</h1>
+            <hr style='background-color: black; margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
             <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px;">
                     <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
@@ -93,8 +145,8 @@
 
     <section id="racing" class="section">
         <div class="container  holder" style="padding:15px; border-radius: 10px; border: 1px solid rgb(117, 116, 116);">
-            <h1 class="subtitle has-text-centered m-0">Racing</h1>
-            <hr style='background-color: rgb(80, 80, 80); margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
+            <h1 class="subtitle has-text-centered m-0" style="color: black;">Racing</h1>
+            <hr style='background-color: black; margin-top: 4px; width:20%; margin: auto; margin-bottom: 30px; margin-top: 5px;'>
             <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
                 <div style="background-color: white; display: flex; flex-direction: column;  border-radius: 10px; margin: 5px;">
                     <img style="height: 150px; width: 150px; border-top-right-radius: 10px; border-top-left-radius: 10px;" src="./images/eastermerge200.webp"/>
