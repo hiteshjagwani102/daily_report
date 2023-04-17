@@ -17,7 +17,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .holder {
@@ -664,6 +664,15 @@ to right,
   transform: translate(-50%, 50%);
   opacity: 1;
  }
+
+ .hover-item {
+  transition: 0.3s;
+}
+.hover-item:hover {
+  transform: translate(0, -10px);
+}
+
+
 
   
   
