@@ -29,6 +29,12 @@ transition:ease 1s;
 min-height:50vh;
 }
 
+.holder:hover{
+  -webkit-box-shadow: 11px 0px 35px 20px rgba(168, 122, 237, 0.75);
+-moz-box-shadow: 11px 0px 35px 20px rgba(168, 122, 237, 0.75);
+box-shadow: 11px 0px 35px 20px rgba(168, 122, 237, 0.75);
+}
+
 .show{
     opacity:1;
     min-height: 50vh;
