@@ -59,12 +59,9 @@ const draw = (e) => {
         count = 0;
         sum = 0;
         final_Sum = 0;
-        ans = 100
-        let color = 255-7*(100-ans);
         return;
     }
     document.getElementById('message').innerText = "";
-
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);
     ctx.lineWidth = lineWidth;
@@ -87,14 +84,9 @@ const draw = (e) => {
         isPainting = false;
         document.getElementById('message').innerText = `Accuracy = ${ans.toFixed(2)}`;
     }
-    if(count>800){
+    if(count>300){
         isPainting = false;
         document.getElementById('message').innerText = "You are too slow";
-
-    }
-    if(ans<50){
-        isPainting = false;
-        document.getElementById('message').innerText = "Not a circle";
 
     }
     
@@ -120,9 +112,19 @@ canvas.addEventListener('mouseup',(e)=>{
     ctx.stroke();
     ctx.beginPath();
     audio.load();
+    document.getElementById('message').innerText = `Accuracy = ${ans.toFixed(2)}`;
+    ans=100;
+
 
 });
 
 
 canvas.addEventListener('mousemove',draw);
+
+canvas.addEventListener('mousemove', function(event) {
+    draw(event);
+    
+  });
+
+  
 
