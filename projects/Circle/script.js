@@ -68,9 +68,9 @@ const draw = (e) => {
     ctx.lineCap = 'round';
     ctx.lineTo(e.clientX,e.clientY);
     ctx.stroke();
-    ctx.strokeStyle = `rgb(${(sum)*20},${255-12*(sum)},0)`;
+    ctx.strokeStyle = `rgb(0,${255-12*(sum)},${(sum)*20})`;
     // ctx.shadowBlur = 10;
-    ctx.shadowColor = `rgb(${(sum)*20},${255-12*(sum)},0)`;
+    ctx.shadowColor = `rgb(0,${255-12*(sum)},${(sum)*20})`;
     currDist = getDistance(e.clientX,e.clientY,midX,midY);
     sum=Math.abs((radius-currDist)/radius)*100;
     console.log(radius+" "+currDist);
@@ -111,7 +111,6 @@ canvas.addEventListener('mouseup',(e)=>{
     isPainting= false;
     ctx.stroke();
     ctx.beginPath();
-    audio.load();
     document.getElementById('message').innerText = `Accuracy = ${ans.toFixed(2)}`;
     ans=100;
 
@@ -121,10 +120,7 @@ canvas.addEventListener('mouseup',(e)=>{
 
 canvas.addEventListener('mousemove',draw);
 
-canvas.addEventListener('mousemove', function(event) {
-    draw(event);
-    
-  });
+
 
   
 
