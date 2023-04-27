@@ -14,11 +14,11 @@ const checkBox = document.getElementById('check');
     })
     const modalBg = document.querySelector(".modal-background");
     const modal = document.querySelector(".modal");
-let minutes = 0;
+let minutes = 1;
     let timer = document.getElementById('timer');
     
 //timer
-let seconds = 5;
+let seconds = 0;
 
 document.getElementById('restart').addEventListener('click',()=>{
     modal.classList.remove('is-active');
