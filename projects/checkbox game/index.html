@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>CheckBox Game</title>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-background"></div>
+            <div class="modal-content content py-5 px-5 has-text-centered" >
+                <h1 id="final" class="subtitle is-2 has-text-centered has-text-weight-bold" style="color: blueviolet;"></h1>
+                <h1 id="speed" class="subtitle is-4 has-text-centered has-text-weight-bold" style="color: rgb(49, 239, 28);"></h1>
+                <button id="restart" class="button mt-5 ml-2 is-small is-rounded is-info has-text-weight-bold">Try again</button>
+            </div>
+        
+    </div>
+    <h1 class="title has-text-centered has-text-weight-bold" style="color:
+    #00d1b2  ;">CheckBox Game</h1>
+
+
+    <div class="has-text-centered has-text-weight-bold;" style="color: 
+    #00d1b2 ; margin-bottom: 15px;">
+        <label class="mr-1 has-text-weight-bold" for="timer">Duration:</label>
+  <select id="timer" name="timer" id="cars" style="background-color: rgb(239, 236, 236);height: 30px; width: 85px; border-radius: 20px;">
+    <option value="1" selected="selected">1 minute</option>
+    <option value="2">2 minutes</option>
+    <option value="3">3 minutes</option>
+    <option value="4">4 minutes</option>
+  </select>
+  <div style="display: flex; flex-direction: row; justify-content: center;">
+    <h1 id="time" class="subtitle is-4 mt-5 has-text-centered has-text-weight-bold" style="color: whitesmoke;">01:00</h1>
+    <button id="begin" class="button mt-5 ml-2 is-small is-rounded is-info has-text-weight-bold">Let's Begin</button>
+  </div>
+    </div>
+    
+
+    <div id="game-area" style="padding:20px; height:50vh; width: 50vw; border: 5px solid rgb(95, 37, 219); margin:auto; margin-top: 50px; border-radius: 10px; position: relative">
+        <input id="check"  type="checkBox">
+    </div> 
+    <h1 id="points" class="subtitle is-4 has-text-centered has-text-weight-bold" style="margin-top: 40px; color: rgb(194, 29, 219);">Score: 0</h1>
+    <script src="./script.js"></script>
+</body>
+</html>
