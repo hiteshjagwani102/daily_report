@@ -4,6 +4,8 @@ console.log(width);
 let count = 0;
 const checkBox = document.getElementById('check');
     checkBox.addEventListener('click',() =>{
+        var delayInMilliseconds = 100; //1 second
+    setTimeout(function() {
         var top = Math.random()*height *0.8;
         var left = Math.random()*width *0.8;
         checkBox.style.marginTop = `${top}px`;
@@ -11,6 +13,8 @@ const checkBox = document.getElementById('check');
         checkBox.checked = false;
         count++;
         document.getElementById('points').innerHTML=`Score: ${count}`;
+    }, delayInMilliseconds);
+
     })
     const modalBg = document.querySelector(".modal-background");
     const modal = document.querySelector(".modal");
