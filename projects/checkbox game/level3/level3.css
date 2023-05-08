@@ -1,0 +1,33 @@
+:root {
+    --x0 : 0px;
+    --y0 : 0px;
+    --x50 : 20px;
+    --y50 : 0px;
+    --x100: 0px;
+    --y100 : 0px;
+    --speed : 2.5s;
+  }
+
+
+
+body{
+    background-color:black;
+    min-height: 100vh;
+}
+
+
+.check { 
+    margin: 10px;
+    animation-name: floating;
+    animation-duration: var(--speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+
+}
+ 
+@keyframes floating { 
+    0% { transform: translate(var(--x0),  var(--y0)); }
+    50%  { transform: translate(var(--x50), var(--y50)); }
+    100%   { transform: translate(var(--x100), var(--y100)); }
+}

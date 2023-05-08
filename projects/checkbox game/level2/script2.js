@@ -7,10 +7,6 @@ first.style.marginTop =`${height/2}px`
 var val = 0;
 var score = 0;
 
-const doOnClick =(e) =>{
-    
-
-}
 
 
 
