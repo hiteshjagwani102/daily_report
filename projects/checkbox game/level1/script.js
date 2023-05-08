@@ -12,7 +12,7 @@ const checkBox = document.getElementById('check');
         checkBox.style.marginLeft = `${left}px`;
         checkBox.checked = false;
         count++;
-        document.getElementById('points').innerHTML=`Score: ${count}`;
+        document.getElementById('points').innerHTML=`Current Score: ${count}`;
     }, delayInMilliseconds);
 
     })
@@ -47,12 +47,7 @@ const makeIteration = () => {
     if(seconds>9) document.getElementById('time').innerHTML = `0${minutes}:${seconds}`;
     else document.getElementById('time').innerHTML = `0${minutes}:0${seconds}`;
     seconds -= 1;
-    timer.addEventListener('change',()=>{
-        minutes = timer.value;
-        seconds=0;
-        document.getElementById('time').innerHTML = `0${minutes}:00`;
-        return;
-    })
+
     setTimeout(makeIteration, 1000); // 1 second waiting
   }
   
@@ -60,6 +55,10 @@ const makeIteration = () => {
 }
 document.getElementById('begin').addEventListener('click',()=>{
     setTimeout(makeIteration, 1000); // 1 second waiting
+    count = 0;
+    document.getElementById('points').innerHTML=`Current Score: ${count}`;
+
+
 })
 
 

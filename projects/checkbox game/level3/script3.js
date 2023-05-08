@@ -1,5 +1,6 @@
 var score = 0;
 let root = document.documentElement;
+var target = 60;
 
 
 
@@ -14,10 +15,11 @@ document.querySelectorAll('.check').forEach((el)=>{
         }
     else{
         score--;
-
-    }if(score%20==0){
-        var prev = root.style.getPropertyValue('--speed')
-        root.style.setProperty('--speed',`${--speed-0.5}s`)
+    
+        
+    }if(score==30){
+        
+        root.style.setProperty('--speed',`${1.5}s`)
     }
     if(score==20){
         root.style.setProperty('--x50','0px');
@@ -27,6 +29,7 @@ document.querySelectorAll('.check').forEach((el)=>{
         root.style.setProperty('--x50','20px');
         root.style.setProperty('--y50','20px');
     }
+        console.log(prev);
     document.getElementById('score').innerText= `Current Score: ${score}`;
         
     })
@@ -38,3 +41,34 @@ if(score==10){
 root.style.setProperty('--x50','0px');
 root.style.setProperty('--y50','20px');
 }
+
+
+let minutes = 1;
+    let timer = document.getElementById('timer');
+    
+//timer
+let seconds = 0;
+
+
+
+
+const makeIteration = () => {
+    if(minutes == 0 && seconds==0){
+        if(score==target)
+        return;
+    }
+  if (seconds >= 0)  {
+    if(seconds==0){
+        minutes--;
+        seconds=59;
+      }
+    if(seconds>9) document.getElementById('time').innerHTML = `0${minutes}:${seconds}`;
+    else document.getElementById('time').innerHTML = `0${minutes}:0${seconds}`;
+    seconds -= 1;
+
+    setTimeout(makeIteration, 1000); // 1 second waiting
+  }
+  
+  
+}
+setTimeout(makeIteration, 1000); // 1 second waiting

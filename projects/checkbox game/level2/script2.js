@@ -18,6 +18,12 @@ document.querySelectorAll('.check').forEach((el)=>{
     el.style.marginBottom= `5px`
     
     el.addEventListener('click',()=>{
+    let maxVal = 0xFFFFFF; // 16777215
+    let randomNumber = Math.random() * maxVal; 
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randColor = randomNumber.padStart(6, 0); 
+    console.log(randColor);
         if(el.checked){
             score++;
             val+=22;
@@ -26,7 +32,7 @@ document.querySelectorAll('.check').forEach((el)=>{
             var sign = Math.floor(Math.random()*10);
             if(sign%2==0) el.nextElementSibling.style.transform = `translateX(${-Math.random()*50}px)`;
             else el.nextElementSibling.style.transform = `translateX(${+Math.random()*50}px)`;
-
+            el.style.setProperty('accent-color',`#${randColor}`);
             
         }
     else{

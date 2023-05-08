@@ -2,3 +2,11 @@ body{
     background-color:black;
     min-height: 100vh;
 }
+
+.check{
+    margin-left: 0px;
+    margin-top: 5px;
+    height: 40px;
+    width: fit-content;
+    accent-color: rgb(58, 18, 202);
+}
