@@ -2,10 +2,16 @@ const height = document.querySelector('#game-area').offsetHeight-50;
 const width = document.querySelector('#game-area').offsetWidth-50;
 console.log(width);
 let count = 0;
+var target = 50;
 const checkBox = document.getElementById('check');
     checkBox.addEventListener('click',() =>{
+        if(count==target-1){
+            modal.classList.add('is-active');
+            document.getElementById('next-level').classList.remove('is-hidden');
+            return;
+        }
         var delayInMilliseconds = 100; //1 second
-    setTimeout(function() {
+        setTimeout(function() {
         var top = Math.random()*height *0.8;
         var left = Math.random()*width *0.8;
         checkBox.style.marginTop = `${top}px`;
@@ -15,9 +21,12 @@ const checkBox = document.getElementById('check');
         document.getElementById('points').innerHTML=`Current Score: ${count}`;
     }, delayInMilliseconds);
 
+    
+
     })
     const modalBg = document.querySelector(".modal-background");
     const modal = document.querySelector(".modal");
+    const modal2 = document.querySelector("#modal2");
 let minutes = 1;
     let timer = document.getElementById('timer');
     
@@ -25,18 +34,16 @@ let minutes = 1;
 let seconds = 0;
 
 document.getElementById('restart').addEventListener('click',()=>{
-    modal.classList.remove('is-active');
-    minutes = timer.value;
-    seconds = 0;
-    document.getElementById('time').innerHTML = `0${minutes}:00`;
+    location.reload();
 })
 
 
 const makeIteration = () => {
+    
     if(minutes == 0 && seconds==0){
-        document.getElementById('final').innerHTML= `Final Score: ${count}`
-        document.getElementById('speed').innerHTML=`Your speed is ${count/timer.value} clicks/minute`
+        document.getElementById('final').innerHTML= `Sorry, please try again`
         modal.classList.add('is-active');
+        document.getElementById('restart').classList.remove('is-hidden');
         return;
     }
   if (seconds >= 0)  {

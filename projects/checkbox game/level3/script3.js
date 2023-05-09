@@ -1,6 +1,8 @@
 var score = 0;
 let root = document.documentElement;
 var target = 60;
+var minutes = 1;
+var seconds = 0;
 
 
 
@@ -10,6 +12,11 @@ document.querySelectorAll('.check').forEach((el)=>{
 
     
     el.addEventListener('click',()=>{
+        if(score==target-1){
+            modal.classList.add('is-active');
+            document.getElementById('next-level').classList.remove('is-hidden');
+            return;
+        }
         if(el.checked){
             score++;            
         }
@@ -71,4 +78,8 @@ const makeIteration = () => {
   
   
 }
+document.getElementById('restart').addEventListener('click',()=>{
+    location.reload();
+})
+
 setTimeout(makeIteration, 1000); // 1 second waiting
