@@ -1,9 +1,24 @@
-var score = 0;
-let root = document.documentElement;
-var target = 60;
-var minutes = 1;
-var seconds = 0;
+const timer = ms => new Promise(res => setTimeout(res, ms))
+async function load () {
+    for(var i=1;i<=25;i++){
+        var check = document.getElementById(`check${i}`);
+        check.style.animationName = 'floating';
+        await timer(100);
+    }
+}
 
+let minutes = 1;
+let score = 0;
+let target = 2;
+
+    
+//timer
+let seconds = 0;
+
+load();
+
+const modalBg = document.querySelector(".modal-background");
+const modal = document.querySelector(".modal");
 
 
 
@@ -17,52 +32,29 @@ document.querySelectorAll('.check').forEach((el)=>{
             document.getElementById('next-level').classList.remove('is-hidden');
             return;
         }
+
         if(el.checked){
             score++;            
         }
-    else{
+        else{
         score--;
-    
-        
-    }if(score==30){
-        
-        root.style.setProperty('--speed',`${1.5}s`)
-    }
-    if(score==20){
-        root.style.setProperty('--x50','0px');
-        root.style.setProperty('--y50','20px');
-    }
-    if(score==40){
-        root.style.setProperty('--x50','20px');
-        root.style.setProperty('--y50','20px');
-    }
-        console.log(prev);
-    document.getElementById('score').innerText= `Current Score: ${score}`;
-        
+        }
+
+        document.getElementById('score').innerText= `Current Score: ${score}`;
+
+            
     })
-    // el.addEventListener('click',doOnClick);
     
 })
 
-if(score==10){
-root.style.setProperty('--x50','0px');
-root.style.setProperty('--y50','20px');
-}
-
-
-let minutes = 1;
-    
-//timer
-let seconds = 0;
-
-
-
-
 const makeIteration = () => {
     if(minutes == 0 && seconds==0){
-        if(score==target)
+        document.getElementById('final').innerHTML= `Sorry, please try again`
+        modal.classList.add('is-active');
+        document.getElementById('restart').classList.remove('is-hidden');
         return;
     }
+    
   if (seconds >= 0)  {
     if(seconds==0){
         minutes--;
@@ -74,11 +66,10 @@ const makeIteration = () => {
 
     setTimeout(makeIteration, 1000); // 1 second waiting
   }
-  
-  
 }
+
 document.getElementById('restart').addEventListener('click',()=>{
     location.reload();
 })
 
-setTimeout(makeIteration, 1000); // 1 second waiting
+setTimeout(makeIteration, 1000);
