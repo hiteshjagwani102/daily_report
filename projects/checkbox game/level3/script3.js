@@ -2,10 +2,11 @@ var score = 0;
 let root = document.documentElement;
 var target = 60;
 var minutes = 1;
-var seconds = 0;
+var seconds = 30;
 
 
-
+const modalBg = document.querySelector(".modal-background");
+const modal = document.querySelector(".modal");
 
 
 document.querySelectorAll('.check').forEach((el)=>{
@@ -24,7 +25,10 @@ document.querySelectorAll('.check').forEach((el)=>{
         score--;
     
         
-    }if(score==30){
+    }
+    
+
+    if(score==30){
         
         root.style.setProperty('--speed',`${1.5}s`)
     }
@@ -36,7 +40,6 @@ document.querySelectorAll('.check').forEach((el)=>{
         root.style.setProperty('--x50','20px');
         root.style.setProperty('--y50','20px');
     }
-        console.log(prev);
     document.getElementById('score').innerText= `Current Score: ${score}`;
         
     })
@@ -50,17 +53,16 @@ root.style.setProperty('--y50','20px');
 }
 
 
-let minutes = 1;
-    
-//timer
-let seconds = 0;
+
 
 
 
 
 const makeIteration = () => {
     if(minutes == 0 && seconds==0){
-        if(score==target)
+        document.getElementById('final').innerHTML= `Sorry, please try again`
+        modal.classList.add('is-active');
+        document.getElementById('restart').classList.remove('is-hidden');
         return;
     }
   if (seconds >= 0)  {
