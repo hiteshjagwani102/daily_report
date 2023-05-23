@@ -12,7 +12,7 @@ function embedVideo() {
   var videoLink = document.getElementById('video-link').value;
   var videoId = extractVideoId(videoLink);
 
-  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1";
+  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?" + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
 
   var playerContainer = document.getElementById('player-container');
   playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0" allowfullscreen></iframe>';
