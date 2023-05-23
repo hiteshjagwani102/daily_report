@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Video Embed</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1 class="title has-text-bold" style="color: lightgray;">YouTube Video Loop</h1>
+  <div id="video-container">
+    <input type="text" id="video-link" style="width: 400px; height: 30px; background-color: lightgray;" placeholder="Enter YouTube link">
+    <button class="button is-small is-link" onclick="embedVideo()">Embed</button>
+  </div>
+
+  <div id="holder" style="height:315px; width: 560px; background-color: black; border-radius: 10px;">.</div>
+  <div id="player-container" ></div>
+
+    <div class="values" style="margin: 0;">
+        <span id="range1">
+            0
+        </span>
+        <span> &dash; </span>
+        <span id="range2" >
+            100
+        </span>
+    </div>
+    <div class="container">
+        <div class="slider-track"></div>
+        <input type="range" min="0" max="1000" value="0" id="slider-1" oninput="slideOne()">
+        <input type="range" min="0" max="1000" value="1000" id="slider-2" oninput="slideTwo()">
+    </div>
+
+    <div style="display: flex; flex-direction: row;">
+        <button id="pause" class="button is-small is-info ml-2 mr-2">▶</button>
+        <button id="stop" class="button is-small is-danger ml-2 mr-2">⬜</button>
+        <button id="restart" class="button is-small is-info ml-2 mr-2">↺</button>
+    </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
