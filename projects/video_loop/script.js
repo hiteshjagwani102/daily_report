@@ -126,7 +126,6 @@ function embedVideo() {
       displayLinks(links);
     }
 
-
 }
 
 function extractVideoId(videoLink) {
@@ -149,6 +148,10 @@ function onPlayerReady(event) {
   let min = Math.floor(sliderTwo.value*player.getDuration()/60000);
   let sec = Math.floor(((sliderTwo.value*duration/1000)-(min*60)));
   displayValTwo.textContent = min+`:`+sec;
+  displayValOne.textContent='0:0';
+  sliderOne.value = 0;
+  sliderTwo.value = 1000;
+  fillColor()
   document.getElementById('pause').innerHTML = "| |";
 
 }
