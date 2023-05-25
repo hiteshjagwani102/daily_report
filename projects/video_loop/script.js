@@ -5,11 +5,48 @@ var endTime = 0;
 var started = false;
 var duration = 0;
 
+const linkInput = document.getElementById('link-input');
+const linkList = document.getElementById('link-list');
 
 
+function displayLinks(links) {
+  linkList.innerHTML = '';
 
-function embedVideo() {
-  var videoLink = document.getElementById('video-link').value;
+  links.forEach((linkItem) => {
+    const { link, thumbnail } = linkItem;
+
+    const linkWrapper = document.createElement('div');
+    linkWrapper.classList.add('link-item');
+
+    const thumbnailImage = document.createElement('img');
+    thumbnailImage.classList.add('thumbnail-item')
+    thumbnailImage.src = thumbnail;
+    thumbnailImage.alt = 'Thumbnail';
+    thumbnailImage.setAttribute('data-link', link);
+
+    linkWrapper.appendChild(thumbnailImage);
+    linkList.appendChild(linkWrapper);
+  });
+  }
+
+  function getThumbnailUrl(videoId) {
+    return `https://img.youtube.com/vi/${videoId}/default.jpg`;
+  }
+
+  linkList.addEventListener('click', (e) => {
+    if (e.target.matches('.link-item img')) {
+      e.preventDefault();
+      const clickedLink = e.target.getAttribute('data-link');
+      videoLink = clickedLink;
+      embedVideo2();
+    }
+  });
+
+  let storedLinks = localStorage.getItem('youtubeLinks');
+  storedLinks = storedLinks ? JSON.parse(storedLinks) : [];
+  displayLinks(storedLinks);
+
+function embedVideo2(){
   var videoId = extractVideoId(videoLink);
 
   var embedUrl = "https://www.youtube.com/embed/" + videoId + "?" + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
@@ -26,8 +63,73 @@ function embedVideo() {
     }
   });
 
+    const link = videoLink;
+
+    if (link.trim() !== '') {
+
+      const videoDetails = {
+        link: link,
+        thumbnail: getThumbnailUrl(videoId)
+      };
+
+      let links = localStorage.getItem('youtubeLinks');
+      links = links ? JSON.parse(links) : [];
+
+      links.unshift(videoDetails);
+
+      if (links.length > 3) {
+        links = links.slice(0, 3);
+      }
+
+      localStorage.setItem('youtubeLinks', JSON.stringify(links));
+      displayLinks(links);
+    }
+}
+
+
+function embedVideo() {
+  videoLink = document.getElementById('video-link').value;
+  var videoId = extractVideoId(videoLink);
+
+  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?" + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
+
+  var playerContainer = document.getElementById('player-container');
+  playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0" allowfullscreen></iframe>';
+  document.getElementById('holder').style.display = "none";
+
+  var playerIframe = document.getElementById('player');
+  player = new YT.Player(playerIframe, {
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+
+    const link = videoLink;
+
+    if (link.trim() !== '') {
+
+      const videoDetails = {
+        link: link,
+        thumbnail: getThumbnailUrl(videoId)
+      };
+
+      let links = localStorage.getItem('youtubeLinks');
+      links = links ? JSON.parse(links) : [];
+
+      links.unshift(videoDetails);
+
+      if (links.length > 3) {
+        links = links.slice(0, 3);
+      }
+
+      localStorage.setItem('youtubeLinks', JSON.stringify(links));
+      displayLinks(links);
+    }
+
 
 }
+
 
 function extractVideoId(videoLink) {
   var videoId = "";
@@ -158,5 +260,12 @@ document.getElementById('stop').addEventListener('click',()=>{
 document.getElementById('restart').addEventListener('click',()=>{
   player.seekTo(sliderOne.value/1000*player.getDuration());
 })
+
+
+
+
+
+
+
 
 

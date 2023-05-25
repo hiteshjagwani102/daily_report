@@ -52,7 +52,7 @@
     font-family: "Poppins",sans-serif;
 }
 body{
-    height: 100vh;
+    height: 130vh;
     display: -ms-grid;
     display: grid;
     background-color: #312f2f;
@@ -155,4 +155,13 @@ input[type="range"]:active::-webkit-slider-thumb{
     left: 0;
     right: 0;
 }
+
+.link-item{
+  color: white;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 10px;
+}
+
+
   
