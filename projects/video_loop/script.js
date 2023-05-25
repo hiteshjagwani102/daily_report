@@ -47,10 +47,9 @@ function displayLinks(links) {
   displayLinks(storedLinks);
 
 function embedVideo2(){
-  var videoId = extractVideoId(videoLink);
+    var videoId = extractVideoId(videoLink);
 
-  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?" + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
-
+    var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
   var playerContainer = document.getElementById('player-container');
   playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0" allowfullscreen></iframe>';
   document.getElementById('holder').style.display = "none";
@@ -88,10 +87,10 @@ function embedVideo2(){
 
 
 function embedVideo() {
-  videoLink = document.getElementById('video-link').value;
+  var videoLink = document.getElementById('video-link').value;
   var videoId = extractVideoId(videoLink);
 
-  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?" + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
+  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
 
   var playerContainer = document.getElementById('player-container');
   playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0" allowfullscreen></iframe>';
@@ -105,7 +104,7 @@ function embedVideo() {
     }
   });
 
-    const link = videoLink;
+  const link = videoLink;
 
     if (link.trim() !== '') {
 
@@ -129,7 +128,6 @@ function embedVideo() {
 
 
 }
-
 
 function extractVideoId(videoLink) {
   var videoId = "";
@@ -260,6 +258,18 @@ document.getElementById('stop').addEventListener('click',()=>{
 document.getElementById('restart').addEventListener('click',()=>{
   player.seekTo(sliderOne.value/1000*player.getDuration());
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
