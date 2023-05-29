@@ -13,7 +13,7 @@ function displayLinks(links) {
   linkList.innerHTML = '';
 
   links.forEach((linkItem) => {
-    const { link, thumbnail } = linkItem;
+    const { link, thumbnail, title } = linkItem;
 
     const linkWrapper = document.createElement('div');
     linkWrapper.classList.add('link-item');
@@ -24,13 +24,28 @@ function displayLinks(links) {
     thumbnailImage.alt = 'Thumbnail';
     thumbnailImage.setAttribute('data-link', link);
 
+    const titles = document.createElement('p');
+    titles.setAttribute('data-link', link);
+    titles.classList.add('head')
+    titles.innerHTML = title
+
     linkWrapper.appendChild(thumbnailImage);
+    linkWrapper.appendChild(titles);
     linkList.appendChild(linkWrapper);
   });
   }
 
   function getThumbnailUrl(videoId) {
     return `https://img.youtube.com/vi/${videoId}/default.jpg`;
+  }
+  async function getTitle(videoId) {
+    try {
+      const response = await fetch(`http://www.youtube.com/oembed?url=http%3A//youtube.com/watch?v=${videoId}&format=json`);
+      const data = await response.json();
+      return data.title;
+    } catch (error) {
+      console.log('Error:', error);
+    }
   }
 
   linkList.addEventListener('click', (e) => {
@@ -42,11 +57,20 @@ function displayLinks(links) {
     }
   });
 
+  linkList.addEventListener('click', (e) => {
+    if (e.target.matches('.link-item p')) {
+      e.preventDefault();
+      const clickedLink = e.target.getAttribute('data-link');
+      videoLink = clickedLink;
+      embedVideo2();
+    }
+  });
+
   let storedLinks = localStorage.getItem('youtubeLinks');
   storedLinks = storedLinks ? JSON.parse(storedLinks) : [];
   displayLinks(storedLinks);
 
-function embedVideo2(){
+async function embedVideo2(){
     var videoId = extractVideoId(videoLink);
 
     var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
@@ -66,9 +90,15 @@ function embedVideo2(){
 
     if (link.trim() !== '') {
 
+      var head = "";
+      await getTitle(videoId).then(title => {
+           head = title
+        })
+
       const videoDetails = {
         link: link,
-        thumbnail: getThumbnailUrl(videoId)
+        thumbnail: getThumbnailUrl(videoId),
+        title: head
       };
 
       let links = localStorage.getItem('youtubeLinks');
@@ -86,7 +116,7 @@ function embedVideo2(){
 }
 
 
-function embedVideo() {
+async function embedVideo() {
   var videoLink = document.getElementById('video-link').value;
   var videoId = extractVideoId(videoLink);
 
@@ -108,11 +138,16 @@ function embedVideo() {
 
     if (link.trim() !== '') {
 
-      const videoDetails = {
-        link: link,
-        thumbnail: getThumbnailUrl(videoId)
-      };
+      var head = "";
+      await getTitle(videoId).then(title => {
+           head = title;
+        })
 
+       const videoDetails = {
+        link: link,
+        thumbnail: getThumbnailUrl(videoId),
+        title: head
+      };
       let links = localStorage.getItem('youtubeLinks');
       links = links ? JSON.parse(links) : [];
 
@@ -261,6 +296,9 @@ document.getElementById('stop').addEventListener('click',()=>{
 document.getElementById('restart').addEventListener('click',()=>{
   player.seekTo(sliderOne.value/1000*player.getDuration());
 })
+
+
+
 
 
 
