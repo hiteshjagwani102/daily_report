@@ -52,10 +52,9 @@
     font-family: "Poppins",sans-serif;
 }
 body{
-    height: 160vh;
+    height: 100vh;
     display: -ms-grid;
     display: grid;
-    background-color: #312f2f;
     place-items: center;
 }
 
@@ -102,7 +101,7 @@ input[type="range"]::-webkit-slider-thumb{
     -webkit-appearance: none;
     height: 1.7em;
     width: 1.7em;
-    background-color: #3264fe;
+    background-color: #485fc7;
     cursor: pointer;
     margin-top: -9px;
     pointer-events: auto;
@@ -114,7 +113,7 @@ input[type="range"]::-moz-range-thumb{
     width: 1.7em;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #3264fe;
+    background-color: #485fc7;
     pointer-events: auto;
 }
 input[type="range"]::-ms-thumb{
@@ -123,15 +122,15 @@ input[type="range"]::-ms-thumb{
     width: 1.7em;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #3264fe;
+    background-color: #485fc7;
     pointer-events: auto;
 }
 input[type="range"]:active::-webkit-slider-thumb{
     background-color: #ffffff;
-    border: 3px solid #3264fe;
+    border: 3px solid #485fc7;
 }
 .values{
-    background-color: #3264fe;
+    background-color: #485fc7;
     width: 200px;
     position: relative;
     margin: auto;
@@ -147,7 +146,7 @@ input[type="range"]:active::-webkit-slider-thumb{
     position: absolute;
     height: 0;
     width: 0;
-    border-top: 15px solid #3264fe;
+    border-top: 15px solid #485fc7;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     margin: auto;
@@ -158,12 +157,11 @@ input[type="range"]:active::-webkit-slider-thumb{
 
 .link-item{
   color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin: 15px;
+  padding: 8px 8px 8px 32px;
   display: flex;
   flex-direction: row;
-  background-color: #1a1919;
+  background-color: #485fc7;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -171,6 +169,75 @@ input[type="range"]:active::-webkit-slider-thumb{
 .head{
   margin-left: 10px;
   margin-top: 5px;
+}
+
+
+/* sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #485fc7;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position:absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  padding: 10px 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.openbtn:hover {
+  background-color: #485fc7 ;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+      padding-top: 15px;
+  }
+
+  .sidebar a {
+      font-size: 18px;
+  }
 }
 
 

@@ -7,6 +7,7 @@ var duration = 0;
 
 const linkInput = document.getElementById('link-input');
 const linkList = document.getElementById('link-list');
+const popular = document.getElementById('popular');
 
 
 function displayLinks(links) {
@@ -36,12 +37,13 @@ function displayLinks(links) {
   }
 
   function getThumbnailUrl(videoId) {
-    return `https://img.youtube.com/vi/${videoId}/default.jpg`;
+    return `http://img.youtube.com/vi/${videoId}/default.jpg`;
   }
   async function getTitle(videoId) {
     try {
       const response = await fetch(`http://www.youtube.com/oembed?url=http%3A//youtube.com/watch?v=${videoId}&format=json`);
       const data = await response.json();
+      console.log(data);
       return data.title;
     } catch (error) {
       console.log('Error:', error);
@@ -66,6 +68,24 @@ function displayLinks(links) {
     }
   });
 
+  popular.addEventListener('click', (e) => {
+    if (e.target.matches('.link-item img')) {
+      e.preventDefault();
+      const clickedLink = e.target.getAttribute('data-link');
+      videoLink = clickedLink;
+      embedVideo2();
+    }
+  });
+
+  popular.addEventListener('click', (e) => {
+    if (e.target.matches('.link-item p')) {
+      e.preventDefault();
+      const clickedLink = e.target.getAttribute('data-link');
+      videoLink = clickedLink;
+      embedVideo2();
+    }
+  });
+
   let storedLinks = localStorage.getItem('youtubeLinks');
   storedLinks = storedLinks ? JSON.parse(storedLinks) : [];
   displayLinks(storedLinks);
@@ -73,9 +93,9 @@ function displayLinks(links) {
 async function embedVideo2(){
     var videoId = extractVideoId(videoLink);
 
-    var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
+    var embedUrl = "http://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
   var playerContainer = document.getElementById('player-container');
-  playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0" allowfullscreen></iframe>';
+  playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0";encrypted-media; gyroscope;  allowfullscreen></iframe>';
   document.getElementById('holder').style.display = "none";
 
   var playerIframe = document.getElementById('player');
@@ -120,10 +140,10 @@ async function embedVideo() {
   var videoLink = document.getElementById('video-link').value;
   var videoId = extractVideoId(videoLink);
 
-  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
+  var embedUrl = "http://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
 
   var playerContainer = document.getElementById('player-container');
-  playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0" allowfullscreen></iframe>';
+  playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0";encrypted-media; gyroscope;  allowfullscreen></iframe>';
   document.getElementById('holder').style.display = "none";
 
   var playerIframe = document.getElementById('player');
@@ -131,7 +151,7 @@ async function embedVideo() {
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
-    }
+    },
   });
 
   const link = videoLink;
@@ -224,7 +244,7 @@ function slideTwo(){
 function fillColor(){
   percent1 = (sliderOne.value / sliderMaxValue) * 100;
   percent2 = (sliderTwo.value / sliderMaxValue) * 100;
-  sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+  sliderTrack.style.background = `linear-gradient(to right, #686565 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #686565 ${percent2}%)`;
 }
 
 
@@ -240,7 +260,7 @@ document.getElementById('slider-2').addEventListener('change',()=>{
   started = true;
 })
 
-setInterval(check,1000);
+setInterval(check,100);
 function check() {
   if(started){
   if(endTime<=player.getCurrentTime()){
@@ -266,7 +286,7 @@ function onPlayerStateChange(event) {
 
 
 var tag = document.createElement('script');
-tag.src = 'https://www.youtube.com/iframe_api';
+tag.src = 'http://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -296,6 +316,15 @@ document.getElementById('stop').addEventListener('click',()=>{
 document.getElementById('restart').addEventListener('click',()=>{
   player.seekTo(sliderOne.value/1000*player.getDuration());
 })
+
+
+const openSidebar = () => {
+  document.getElementById("mySidebar").style.width = "50%";
+};
+
+const closeSidebar = () => {
+  document.getElementById("mySidebar").style.width = "0";
+};
 
 
 
