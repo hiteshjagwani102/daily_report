@@ -50,41 +50,15 @@ function displayLinks(links) {
     }
   }
 
-  linkList.addEventListener('click', (e) => {
-    if (e.target.matches('.link-item img')) {
-      e.preventDefault();
-      const clickedLink = e.target.getAttribute('data-link');
-      videoLink = clickedLink;
-      embedVideo2();
-    }
-  });
-
-  linkList.addEventListener('click', (e) => {
-    if (e.target.matches('.link-item p')) {
-      e.preventDefault();
-      const clickedLink = e.target.getAttribute('data-link');
-      videoLink = clickedLink;
-      embedVideo2();
-    }
-  });
-
-  popular.addEventListener('click', (e) => {
-    if (e.target.matches('.link-item img')) {
-      e.preventDefault();
-      const clickedLink = e.target.getAttribute('data-link');
-      videoLink = clickedLink;
-      embedVideo2();
-    }
-  });
-
-  popular.addEventListener('click', (e) => {
-    if (e.target.matches('.link-item p')) {
-      e.preventDefault();
-      const clickedLink = e.target.getAttribute('data-link');
-      videoLink = clickedLink;
-      embedVideo2();
-    }
-  });
+  const handleClick = (e) => {
+    e.preventDefault();
+    const clickedLink = e.target.getAttribute('data-link');
+    videoLink = clickedLink;
+    embedVideo2();
+  };
+  
+  linkList.addEventListener('click', handleClick);
+  popular.addEventListener('click', handleClick);
 
   let storedLinks = localStorage.getItem('youtubeLinks');
   storedLinks = storedLinks ? JSON.parse(storedLinks) : [];
@@ -319,7 +293,7 @@ document.getElementById('restart').addEventListener('click',()=>{
 
 
 const openSidebar = () => {
-  document.getElementById("mySidebar").style.width = "50%";
+  document.getElementById("mySidebar").style.width = "40%";
 };
 
 const closeSidebar = () => {
