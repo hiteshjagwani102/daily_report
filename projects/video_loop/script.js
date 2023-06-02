@@ -37,11 +37,11 @@ function displayLinks(links) {
   }
 
   function getThumbnailUrl(videoId) {
-    return `http://img.youtube.com/vi/${videoId}/default.jpg`;
+    return `https://img.youtube.com/vi/${videoId}/default.jpg`;
   }
   async function getTitle(videoId) {
     try {
-      const response = await fetch(`http://www.youtube.com/oembed?url=http%3A//youtube.com/watch?v=${videoId}&format=json`);
+      const response = await fetch(`https://www.youtube.com/oembed?url=http%3A//youtube.com/watch?v=${videoId}&format=json`);
       const data = await response.json();
       console.log(data);
       return data.title;
@@ -67,7 +67,7 @@ function displayLinks(links) {
 async function embedVideo2(){
     var videoId = extractVideoId(videoLink);
 
-    var embedUrl = "http://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
+    var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
   var playerContainer = document.getElementById('player-container');
   playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0";encrypted-media; gyroscope;  allowfullscreen></iframe>';
   document.getElementById('holder').style.display = "none";
@@ -114,7 +114,7 @@ async function embedVideo() {
   var videoLink = document.getElementById('video-link').value;
   var videoId = extractVideoId(videoLink);
 
-  var embedUrl = "http://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
+  var embedUrl = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&start=" + startTime + "&end=" + endTime + "&loop=1" + "&autoplay=1" + "&playlist="+videoId;
 
   var playerContainer = document.getElementById('player-container');
   playerContainer.innerHTML = '<iframe id="player" width="560" height="315" style="border-radius:10px;" src="' + embedUrl + '" frameborder="0";encrypted-media; gyroscope;  allowfullscreen></iframe>';
@@ -260,7 +260,7 @@ function onPlayerStateChange(event) {
 
 
 var tag = document.createElement('script');
-tag.src = 'http://www.youtube.com/iframe_api';
+tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
