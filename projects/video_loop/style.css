@@ -188,7 +188,6 @@ input[type="range"]:active::-webkit-slider-thumb{
   background-color: #35363a;
   overflow-x: hidden;
   padding-top: 60px;
-  transition: 0.5s;
 }
 
 .sidebar::-webkit-scrollbar {
