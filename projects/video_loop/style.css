@@ -133,7 +133,7 @@ input[type="range"]:active::-webkit-slider-thumb{
 }
 .values{
     background-color: #485fc7;
-    width: 200px;
+    width: 350px;
     position: relative;
     margin: auto;
     padding: 10px 0;

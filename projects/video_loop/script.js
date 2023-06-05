@@ -42,7 +42,6 @@ function displayLinks(links) {
     try {
       const response = await fetch(`https://www.youtube.com/oembed?url=http%3A//youtube.com/watch?v=${videoId}&format=json`);
       const data = await response.json();
-      console.log(data);
       return data.title;
     } catch (error) {
       console.log('Error:', error);
@@ -51,11 +50,13 @@ function displayLinks(links) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    const clickedLink = e.target.getAttribute('data-link');
+    var clickedLink = e.target.getAttribute('data-link');
+    if(clickedLink==null) clickedLink = e.target.childNodes[1].getAttribute('data-link')
     document.getElementById('video-link').value = clickedLink;
     embedVideo();
   };
-  
+
+
   linkList.addEventListener('click', handleClick);
   popular.addEventListener('click', handleClick);
 
@@ -189,11 +190,10 @@ document.getElementById('slider-2').addEventListener('change',()=>{
 
 setInterval(check,100);
 function check() {
-  if(started && getCurrentTime){
+  if(started){
   if(endTime<=player.getCurrentTime()){
     player.seekTo(sliderOne.value/1000*player.getDuration());
   }
-  else check();
 }
 }
 
@@ -257,7 +257,6 @@ function validLink(videoLink){
 
 document.getElementById('video-link').addEventListener('keyup', () =>{
     if(auto_embed.checked && validLink(document.getElementById('video-link').value)){
-      console.log("yes");
       embedVideo();
     }
 })
