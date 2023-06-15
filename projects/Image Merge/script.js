@@ -6,12 +6,12 @@ var mergedImage;
 
 document.getElementById("horizontal").addEventListener('click',()=>{
   vertical = false;
-  document.getElementById("horizontal").style.backgroundColor = "blue";
+  document.getElementById("horizontal").style.backgroundColor = "#00d1b2 ";
   document.getElementById("vertical").style.backgroundColor = null;
 })
 document.getElementById("vertical").addEventListener('click',()=>{
   vertical = true;
-  document.getElementById("vertical").style.backgroundColor = "blue";
+  document.getElementById("vertical").style.backgroundColor = "#00d1b2 ";
   document.getElementById("horizontal").style.backgroundColor = null;
 })
 function mergeImages() {
@@ -44,13 +44,13 @@ function mergeImages() {
       else if(options.value==1){
         if(img1.width>img2.width){
           canvas.width = img2.width;
-          canvas.height = 2*img2.height;
+          canvas.height = 2*img1.height*(img2.width/img1.width);
           ctx.drawImage(img1,0,0,img2.width,img1.height*(img2.width/img1.width));
-          ctx.drawImage(img2, 0, img2.height);
+          ctx.drawImage(img2, 0, img1.height*(img2.width/img1.width));
 
         }
         else{
-          canvas.height = 2*img1.height;
+          canvas.height = img1.height+img2.height*(img1.width/img2.width);
           canvas.width = img1.width;
           ctx.drawImage(img1, 0, 0);
           ctx.drawImage(img2, 0, img1.height,img1.width,img2.height*(img1.width/img2.width));
@@ -61,7 +61,7 @@ function mergeImages() {
         if(img1.width>img2.width){
           canvas.width = img2.width;
           canvas.height = 2*img2.height;
-          ctx.drawImage(img1,50,50,img2.width,img2.height,0,0,img2.width,img2.height);
+          ctx.drawImage(img1,0,0,img2.width,img1.height,0,0,img2.width,img1.height);
           ctx.drawImage(img2, 0, img2.height);
 
         }
@@ -69,7 +69,7 @@ function mergeImages() {
           canvas.height = 2*img1.height;
           canvas.width = img1.width;
           ctx.drawImage(img1, 0, 0);
-          ctx.drawImage(img2,50,50,img1.width,img1.height, 0, img1.height,img1.width,img1.height);
+          ctx.drawImage(img2,0,0,img1.width,img2.height, 0, img1.height,img1.width,img2.height);
 
         }
       }
@@ -86,13 +86,13 @@ function mergeImages() {
         else if(options.value==1){
           if(img1.height>img2.height){
             canvas.height = img2.height;
-            canvas.width = 2*img2.width;
+            canvas.width = 2*img1.width*(img2.height/img1.height);
             ctx.drawImage(img1,0,0,img1.width*(img2.height/img1.height),img2.height);
-            ctx.drawImage(img2, img2.width, 0);
+            ctx.drawImage(img2,img1.width*(img2.height/img1.height), 0);
   
           }
           else{
-            canvas.width = 2*img1.width;
+            canvas.width = img1.width+img2.width*(img1.height/img2.height);
             canvas.height = img1.height;
             ctx.drawImage(img1, 0, 0);
             ctx.drawImage(img2, img1.width,0,img2.width*(img1.height/img2.height),img1.height);
@@ -103,15 +103,15 @@ function mergeImages() {
           if(img1.height>img2.height){
             canvas.height = img2.height;
             canvas.width = 2*img2.width;
-            ctx.drawImage(img1,50,50,img2.width,img2.height,0,0,img2.width,img2.height);
-            ctx.drawImage(img2, img2.width, 0);
+            ctx.drawImage(img1,0,0,img1.width,img2.height,0,0,img2.width,img2.height);
+            ctx.drawImage(img2,img1.width, 0);
   
           }
           else{
             canvas.width = 2*img1.width;
             canvas.height = img1.height;
             ctx.drawImage(img1, 0, 0);
-            ctx.drawImage(img2,50,50,img1.width,img1.height, img1.width, 0,img1.width,img1.height);
+            ctx.drawImage(img2,0,0,img2.width,img1.height, img1.width, 0,img1.width,img1.height);
   
           }
         }
