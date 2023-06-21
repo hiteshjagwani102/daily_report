@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Image Merger</title>
-    <link rel="stylesheet" href="./styles.css" >
+    <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 </head>
+
 <body>
     <h1 class="m-2 title is-4">Image Merger</h1>
 
-    <div class="file m-2">
-        <label for="image1" class="file-label">
-          <input id="image1" accept="image/*" class="file-input" type="file">
-          <span class="file-cta">
-            <span class="file-label">
-                ▲ Choose image 1...
-            </span>
-          </span>
-        </label>
-      </div>
+    <div style="display: flex; flex-direction: row; justify-content:space-evenly; margin-bottom: 40px;">
+        <div>
+            <div class="file m-2">
+                <label for="image1" class="file-label">
+                    <input id="image1" accept="image/*" class="file-input" type="file">
+                    <span class="file-cta">
+                        <span class="file-label">
+                            ▲ Choose image 1...
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="m-2" style="min-height: 100px;">
+                <img id="image1-preview" src="https://via.placeholder.com/600x600?text=Sample+Image+1" alt="Image 1"
+                    style="max-width: 500px; max-height: 500px;">
+            </div>
+        </div>
+        <div>
+            <div class="file m-2">
+                <label for="image2" class="file-label">
+                    <input id="image2" accept="image/*" class="file-input" type="file">
+                    <span class="file-cta">
+                        <span class="file-label">
+                            ▲ Choose image 2...
+                        </span>
+                    </span>
+                </label>
+            </div>
     
-    <!-- <div class="m-2">
-        <input type="file" id="image1" accept="image/*">
-        <label for="image1">Select Image 1</label>
-    </div> -->
-<div class="m-2" style="min-height: 100px;">
-    <img id="image1-preview" src="https://via.placeholder.com/600x600?text=Sample+Image+1" alt="Image 1" style="max-width: 500px; max-height: 500px;">
-</div>
-    <div class="file m-2">
-        <label for="image2" class="file-label">
-          <input id="image2" accept="image/*" class="file-input" type="file">
-          <span class="file-cta">
-            <span class="file-label">
-                ▲ Choose image 2...
-            </span>
-          </span>
-        </label>
-      </div>
-    
-    <!-- <div class="m-2">
-        <input type="file" id="image2" accept="image/*">
-        <label for="image2">Select Image 2</label>
-    </div> -->
-<div class="m-2" style="min-height: 100px;">
-    <img>
-    <img id="image2-preview" src="https://via.placeholder.com/400x300?text=Sample+Image+2" alt="Image 2" style="max-width: 500px; max-height: 500px;">
-</div>
-    <div class="m-2" style="display: flex; flex-direction: row;">
-        <button id="horizontal" class="button is-danger" style="border-radius: 0; box-shadow: none; background-color:#00d1b2 ;">Horizontal</button>
+            <div class="m-2" style="min-height: 100px;">
+                <img>
+                <img id="image2-preview" src="https://via.placeholder.com/400x300?text=Sample+Image+2" alt="Image 2"
+                    style="max-width: 500px; max-height: 500px;">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="m-2" style="display: flex; flex-direction: row; justify-content: center;">
+        <button id="horizontal" class="button is-danger"
+            style="border-radius: 0; box-shadow: none; background-color:#00d1b2 ;">Horizontal</button>
         <button id="vertical" class="button is-danger" style="border-radius: 0; box-shadow: none;">Vertical</button>
-        <div class="select is-primary ml-4">
+        <div class="select is-primary" style="margin-left: 30px;">
             <select id="options" name="options">
                 <option value="0">Original Sizes</option>
                 <option value="1">Larger shrinked</option>
                 <option value="2">Larger cropped</option>
-              </select>
+            </select>
         </div>
     </div>
-    <button class="button merge-button is-link m-2" onclick="mergeImages()">Merge Images</button>
-
-<div class="m-2">
-
-    <img id="merged-image-preview" src="https://via.placeholder.com/800x600?text=Sample+Image+3" alt="Merged Image">
 
 
-</div>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+        <button class="button merge-button is-link" style="margin-top: 30px; margin-bottom: 20px; width: fit-content;" onclick="mergeImages()">Merge Images</button>
+
+        <img id="merged-image-preview" src="https://via.placeholder.com/800x600?text=Sample+Image+3" alt="Merged Image">
+
+    </div>
     <button id="download" class="button is-info m-2" style="width: 100%;">Download</button>
 
-    
+
     <!-- <a id="download-link" style="display: none;"></a> -->
 
     <script src="./script.js"></script>
 </body>
-</html>
 
+</html>

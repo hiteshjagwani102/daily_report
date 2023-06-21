@@ -102,16 +102,16 @@ function mergeImages() {
         else{
           if(img1.height>img2.height){
             canvas.height = img2.height;
-            canvas.width = 2*img2.width;
-            ctx.drawImage(img1,0,0,img1.width,img2.height,0,0,img2.width,img2.height);
+            canvas.width = img1.width+img2.width;
+            ctx.drawImage(img1,0,0,img1.width,img2.height,0,0,img1.width,img2.height);
             ctx.drawImage(img2,img1.width, 0);
   
           }
           else{
-            canvas.width = 2*img1.width;
+            canvas.width = img1.width+img2.width;
             canvas.height = img1.height;
             ctx.drawImage(img1, 0, 0);
-            ctx.drawImage(img2,0,0,img2.width,img1.height, img1.width, 0,img1.width,img1.height);
+            ctx.drawImage(img2,0,0,img2.width,img1.height, img1.width, 0,img2.width,img1.height);
   
           }
         }
