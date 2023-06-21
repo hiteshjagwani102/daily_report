@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <h1 class="m-2 title is-4">Image Merger</h1>
+    <h1 class="m-2 title is-4" style="text-align: center;">Image Merger</h1>
 
-    <div style="display: flex; flex-direction: row; justify-content:space-evenly; margin-bottom: 40px;">
-        <div>
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content:center; margin-bottom: 40px; margin-top: 20px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
             <div class="file m-2">
                 <label for="image1" class="file-label">
                     <input id="image1" accept="image/*" class="file-input" type="file">
@@ -28,7 +28,7 @@
                     style="max-width: 500px; max-height: 500px;">
             </div>
         </div>
-        <div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
             <div class="file m-2">
                 <label for="image2" class="file-label">
                     <input id="image2" accept="image/*" class="file-input" type="file">
@@ -70,8 +70,10 @@
 
         <img id="merged-image-preview" src="https://via.placeholder.com/800x600?text=Sample+Image+3" alt="Merged Image">
 
+        <button id="download" class="button is-info" style="width: fit-content; margin-top: 30px; margin-bottom: 30px;">Download</button>
+
+
     </div>
-    <button id="download" class="button is-info m-2" style="width: 100%;">Download</button>
 
 
     <!-- <a id="download-link" style="display: none;"></a> -->
